@@ -8,7 +8,7 @@ You can create a Blastbot Cloud account for free here: https://cloud.blastbot.io
 
 ## Installation and prerequisites
 
-This Add-on requires your Home Assitant installation to already have a properly configured MQTT Broker (recommended: Mosquitto broker offial Add-on), and the MQTT integration configured to accept MQTT Discovery messages.
+This Add-on requires your Home Assitant installation to already have a properly configured MQTT Broker (recommended: Mosquitto broker official Add-on), and the MQTT integration configured to accept MQTT Discovery messages.
 
 ### Prerequisite 1: Installing a MQTT Broker
 
@@ -29,8 +29,8 @@ Follow these steps to get the MQTT Broker add-on installed on your system:
 
 ### Installation
 
-1. Add this Add-on repository (TODO)
-2. Navigate in your Home Assistant frontend to Settings -> Add-ons -> Add-on store.
+1. Navigate in your Home Assistant frontend to Settings -> Add-ons -> Add-on store.
+2. Add this Add-on repository: https://github.com/Rodmg/blastbot-hass-bridge.git
 3. Find the "Blastbot Bridge" add-on and click it.
 4. Click on the "INSTALL" button.
 5. After it finishes installing, go to the "Configuration" tab.
