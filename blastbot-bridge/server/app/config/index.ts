@@ -47,6 +47,7 @@ export const config = {
     clientId: "BLASTBOT_BRIDGE",
     uri: process.env.MQTT_URI || "mqtt://localhost:1883",
     address: process.env.MQTT_ADDRESS || "localhost",
+    discoveryPrefix: process.env.MQTT_DISCOVERY_PREFIX || "homeassistant"
   },
   blastbotCloudApi: {
     baseUrl: process.env.BB_CLOUD_URL || "https://cloud.blastbot.io",

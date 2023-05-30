@@ -2,6 +2,9 @@ configuration:
   external_mqtt_broker_address:
     name: External MQTT Broker Address
     description: The address that your Blastbot devices will need to know to connect to the broker over your local network, usually the ip address of your Home Assistant server
+  discovery_prefix:
+    name: MQTT Discovery Prefix
+    description: MQTT prefix used by the MQTT Home Assistant integration to discover the devices and show them in Home Assistant. IMPORTANT - must match with the one in your MQTT integration configuration
   blastbot_cloud_url:
     name: Blastbot Cloud URL
     description: URL to connect to the Blastbot Cloud API, used to fetch IR control definitions used during the "Add Control" flow

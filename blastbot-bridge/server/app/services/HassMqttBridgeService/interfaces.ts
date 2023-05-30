@@ -1,5 +1,5 @@
 export interface MQTTDiscoveryDevice {
-  configuration_url: string;
+  configuration_url?: string;
   identifiers: string[];
   manufacturer: string;
   model: string;

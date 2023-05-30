@@ -1,6 +1,6 @@
 import { Device } from "@/models/Device";
 import { MQTTDiscoveryDevice } from "./interfaces";
-import { config } from "@/config";
+// import { config } from "@/config";
 
 export async function getDiscoveryDeviceDetails(
   device: Device,
@@ -32,7 +32,7 @@ export async function getDiscoveryDeviceDetails(
     // TODO?
   }
   return {
-    configuration_url: config.urls.base,
+    // configuration_url: config.urls.base,
     identifiers: [device.udid],
     manufacturer: "Blastbot",
     model,

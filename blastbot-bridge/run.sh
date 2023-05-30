@@ -27,6 +27,7 @@ else
     export MQTT_ADDRESS='none'
     export MQTT_URI='mqtt://localhost:1880'
 fi
+export MQTT_DISCOVERY_PREFIX=$(bashio::config 'discovery_prefix')
 
 export BB_CLOUD_URL=$(bashio::config 'blastbot_cloud_url')
 export BB_CLOUD_API_USER=$(bashio::config 'blastbot_cloud_api_user')
