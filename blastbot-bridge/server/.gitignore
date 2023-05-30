@@ -62,5 +62,5 @@ node_modules
 ### Dist:
 
 dist
-public/*
-!public/favicon.ico
+# public/*
+# !public/favicon.ico

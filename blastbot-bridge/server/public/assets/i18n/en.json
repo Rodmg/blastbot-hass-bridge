@@ -1,0 +1,805 @@
+{
+  "cancel": "Cancel",
+  "ok": "Ok",
+  "apply": "Apply",
+  "yes": "Yes",
+  "share": "Share",
+  "edit": "Edit",
+  "remove": "Remove",
+  "done": "Done",
+  "loading": "Loading...",
+  "connected": "Connected",
+  "disconnected": "Disconnected",
+  "save": "Save",
+  "next": "Next",
+  "close": "Close",
+  "back": "Back",
+  "search": "Search",
+
+  "es": "Español",
+  "en": "English",
+  "de": "Deutsch",
+  "pt": "Português",
+
+  "from": "From",
+  "to": "To",
+
+  "weekdays": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday"
+  },
+
+  "months-n": {
+    "1": "January",
+    "2": "February",
+    "3": "March",
+    "4": "April",
+    "5": "May",
+    "6": "June",
+    "7": "July",
+    "8": "August",
+    "9": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+  },
+
+  "january": "January",
+  "february": "February",
+  "march": "March",
+  "april": "April",
+  "may": "May",
+  "june": "June",
+  "july": "July",
+  "august": "August",
+  "september": "September",
+  "october": "October",
+  "november": "November",
+  "december": "December",
+
+  "sunday": "Sunday",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+
+  "main": {
+    "dashboard": "Controls",
+    "controls": "Controls",
+    "scenes": "Scenes",
+    "configure-new-device": "Setup new Device",
+    "manage-devices": "Devices",
+    "tasks": "Tasks",
+    "automation": "Automation",
+    "preferences": "Preferences",
+    "help": "Help",
+    "close-session": "Log Out"
+  },
+
+  "controls": {
+    "SCENES": "SCENES",
+    "CONTROLS": "CONTROLS",
+    "add-new-control": "Add Control",
+    "add-new-scene": "Add Scene",
+    "add-new-device": "Add Device",
+    "title": "Controls",
+    "no-control": "No Control Configured",
+    "add-control": "Add Control",
+    "my-controls": "My Controls",
+    "share": "Share",
+    "edit": "Edit",
+    "remove": "Remove",
+    "shared-by": "Shared by: {{user}}",
+    "unfollow": "Unfollow",
+    "disconnected": "(disconnected)",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "invalid-name": "Invalid name",
+    "invalid-name-msg": "The name must contain between 1 and 30 characters",
+    "actionsheet": {
+      "title": "Edit {{name}}"
+    },
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove the control \"{{name}}\"?"
+    },
+    "unfollow-prompt": {
+      "title": "Unfollow",
+      "text": "Are you sure you want to unfollow the control \"{{name}}\"?"
+    }
+  },
+  "action-editor": {
+    "control-or-scene": "Control or Scene",
+    "control": "Control",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "select-control-scene": "Please, select a control or scene",
+    "select-control": "Please, select a control",
+    "button": "Button",
+    "select-button": "Please, select a button",
+    "command": "Command",
+    "select-command": "Please, select a command",
+    "temperature": "Temperature",
+    "select-temperature": "Please, select a temperature",
+    "fan": "Fan",
+    "select-fan": "Please, select a fan speed",
+    "timer": "Timer",
+    "select-timer": "Please, select a timer duration"
+  },
+  "action-links": {
+    "links": "Links",
+    "done": "Done",
+    "no-links": "No Link Configured",
+    "configure-new": "Configure New Link",
+    "active-links": "Active Links",
+    "remove": "Remove",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "actionsheet": {
+      "title": "Edit {{name}}"
+    },
+    "delete-prompt": {
+      "title": "Confirm Remove",
+      "text": "Are you sure you want to remove the link \"{{name}}\"?"
+    },
+    "link-copied": "Link copied.",
+    "copy-to-clipboard": "Copy to clipboard: Ctrl+C, Enter"
+  },
+  "add-button": {
+    "add-button": "Add Button",
+    "edit-button": "Edit Button",
+    "name": "Name",
+    "icon": "Icon",
+    "text-only": "Text Only",
+    "color": "Color",
+    "code": "Code",
+    "test": "Test",
+    "learn": "Learn",
+    "save": "Save",
+    "new-button": "New Button",
+    "loading": "Loading..."
+  },
+  "add-control": {
+    "add-control": "Add Control",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "select-blastbot": "Select the Blastbot to which the control will be associated.",
+    "no-blastbot": "No Blastbot configured",
+    "no-blastbot-configure": "Already have a Blastbot?",
+    "configure-it": "Configure it",
+    "buy-blastbot": "Buy a Blastbot",
+    "select-type": "Select the kind of device that you would like to control, or create a blank control.",
+    "select-brand": "Select the brand of your device.",
+    "position-instructions": "Make sure that the device is <b>off</b> and is at <b>line of sight</b> of the Blastbot.",
+    "next": "Next",
+    "test-buttons": "Try the buttons. If they don't work, press \"Try another\" until you find one that works. Once you find one that works, press \"This works\".",
+    "model:": "Model:",
+    "assure-ac-off": "Make sure that the AC <b>is off</b>.",
+    "scan-all-controls": "Scan all controls",
+    "this-works": "This works",
+    "try-another": "Try another",
+    "blank-control": "Blank Control",
+    "cant-find-brand": "I can't find my brand",
+    "new-control": "New Control",
+    "blastbot-disconnected": "Blastbot disconnected",
+    "blastbot-disconnected-msg": "The Blastbot \"{{name}}\" must be on and connected before adding a new control.",
+    "no-more-controls": "There are no more controls",
+    "no-more-controls-msg": "You can create a blank control and copy the codes from your original control.",
+    "save-control": "Save Control",
+    "new-name": "New name",
+    "or": "Or",
+    "configure-new-device": "Setup new Device",
+    "type-not-found": "Couldn't find any type matching the search terms.",
+    "brand-not-found": "Couldn't find any brand matching the search terms.",
+    "types": {
+      "blank-control": "Blank Control",
+      "Otros": "Other",
+      "Televisión": "TV",
+      "Audio": "Audio",
+      "Receptor A/V": "A/V Receiver",
+      "Reproductor de DVD": "DVD Player",
+      "Aire Acondicionado (control sin pantalla)": "Air Conditioner (control without screen)",
+      "Reproductor de Blu-ray": "Blu-ray Player",
+      "Decodificador / Caja Digital": "Decoder / Digital Box",
+      "VCR": "VCR",
+      "Consola de Juegos": "Game console",
+      "Media Manager Box": "Media Manager Box",
+      "Proyector": "Projector",
+      "Aire Acondicionado": "Air Conditioner"
+    }
+  },
+  "change-password": {
+    "change-password": "Change Password",
+    "user:": "User: {{name}}",
+    "current-password": "Current password",
+    "new-password": "New password",
+    "repeat-new-password": "Repeat new password",
+    "bad-current-msg": "The password could not be changed. make sure that the original password is correct.",
+    "bad-repeat-msg": "Passwords must match",
+    "password-successfully-changed": "Password successfully changed"
+  },
+  "control": {
+    "edit-instructions": "Select a button to edit, hold it pressed and slide to move.",
+    "no-communication": "There is no communication with the Blastbot",
+    "temperature-in-room": "Temperature in room",
+    "blastbot-disconnected": "Blastbot disconnected",
+    "check-blastbot-connected": "Please make sure that the device \"{{name}}\" is correctly connected and configured.",
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove the button \"{{name}}\"?"
+    },
+    "edit-button": "Edit button",
+    "add-button": "Add button",
+    "history": "History"
+  },
+  "history": {
+    "history": "History",
+    "temperature": "Temperature",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "no-enough-data": "There isn't enough data to show",
+    "no-enough-data-msg": "It may take some hours to appear",
+    "events": "Events",
+    "no-events": "There aren't any events yet",
+    "button-pressed": "Button pressed: {{name}}",
+    "blastbot-connected": "Device connected",
+    "blastbot-disconnected": "Device disconnected",
+    "ac-set": "The AC changed to {{temperature}}ºC, Fan {{fan}}",
+    "on": "On",
+    "off": "Off",
+    "toggle": "Toggle",
+    "failed": "Failed"
+  },
+  "device": {
+    "name:": "Name:",
+    "state:": "State:",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "mac-address:": "MAC Address:",
+    "address:": "Address:",
+    "bridge:": "Hub:",
+    "hub-channel:": "Hub Channel:",
+    "firmware-version:": "Firmware Version:",
+    "device-disconnected": "Device disconnected",
+    "device-disconnected-msg": "Please make sure that the device \"{{name}}\" is correctly connected and configured.",
+    "no-presence-delay:": "No presence delay:",
+    "presence:": "Presence:",
+    "minutes": "minutes",
+    "virtual-pir": "Generic RF Presence sensor",
+    "virtual-door": "Geneirc RF Door sensor",
+    "virtual-button": "Generic RF Button"
+  },
+  "devices": {
+    "devices": "Devices",
+    "my-blastbot": "My Blastbot",
+    "no-device-configured": "No Device Configured",
+    "no-device-configured-msg": "Already have a Blastbot?",
+    "configure-it": "Configure it",
+    "buy-blastbot": "Buy a Blastbot",
+    "reconfigure": "Configure again",
+    "change-name": "Change name",
+    "new-name": "New name",
+    "edit-device": "Edit \"{{name}}\"",
+    "invalid-name": "Invalid name",
+    "invalid-name-msg": "The name must contain between 1 and 30 characters",
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove the device \"{{name}}\"?"
+    }
+  },
+  "edit-action": {
+    "edit-action": "Edit Action",
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove this action?"
+    }
+  },
+  "edit-action-link": {
+    "new-link": "New Link"
+  },
+  "edit-control": {
+    "edit-control": "Edit Control",
+    "name": "Name",
+    "icon": "Icon",
+    "text-only": "Text Only"
+  },
+  "edit-scene": {
+    "edit-scene": "Edit Scene",
+    "add-scene": "Add Scene",
+    "name": "Name",
+    "icon": "Icon",
+    "text-only": "Text Only",
+    "new-scene": "New Scene"
+  },
+  "error": {
+    "there-was-a-problem": "There was a problem...",
+    "no-communication": "THERE IS NO COMMUNUCATION WITH BLASTBOT BRIDGE",
+    "check-network": "Check your internet connection.",
+    "retry": "Retry"
+  },
+  "help": {
+    "title": "Help Topics",
+    "welcome": "Welcome",
+    "controls": "Controls",
+    "edit-controls": "Edit Controls",
+    "share-controls": "Share Controls",
+    "configure-new-blastbot": "Configure a new Blastbot",
+    "configure-blastbot": "Configure Blastbot",
+    "configure-blastbot-again": "Configure a previously configured Blastbot",
+    "reconfigure-blastbot": "Reconfigure Blastbot",
+    "tasks": "Tasks",
+    "using-tasks": "Using Tasks",
+    "scenes": "Scenes",
+    "using-scenes": "Using Scenes"
+  },
+  "help-item": {
+    "controls": {
+      "s1": {
+        "title": "Add a control",
+        "p1": "At the control list, press the plus icon (+) and select \"Add Control\".",
+        "p2": "Select the blastbot to which the control will be associated.",
+        "p3": "Select the type and brand of the device you want to control.",
+        "p4": "Follow the on screen instructions for testing available controls and selecting one that works."
+      },
+      "s2": {
+        "title": "Edit or remove a control",
+        "p1": "At the control list, slide the control to the left for showing the options."
+      },
+      "s3": {
+        "title": "Change the order of controls",
+        "p1": "At the control list, press the pencil icon.",
+        "p2": "Press on the three lines at the right of the control that you wish to move.",
+        "p3": "Slide the control to the desired place."
+      }
+    },
+    "share": {
+      "s1": {
+        "title": "Share a control",
+        "p1": "At the control list, slide the control to the right for revealing the share button.",
+        "p2": "Press the share button.",
+        "p3": "Then, press the plus icon (+) and enter the email address registered in Blastbot Cloud to which you wish to share the control."
+      }
+    },
+    "new-blastbot": {
+      "s1": {
+        "title": "Configuring a new Blastbot",
+        "p1": "Open the left side menu and select \"Cofigure new Blastbot\", then follow the on screen steps."
+      }
+    },
+    "reconfigure": {
+      "s1": {
+        "title": "Configuring a Blastbot again",
+        "p1": "Open the left side menu and select \"Devices\".",
+        "p2": "At the device list, slide the Blastbot to configure to the right and select \"Configure Again\".",
+        "p3": "Then, follow the on screen steps."
+      }
+    },
+    "task": {
+      "s1": {
+        "title": "Create a Task",
+        "p1": "Open the left side menu and select \"Tasks\".",
+        "p2": "Press the plus icon (+).",
+        "p3": "Then, follow the on screen steps."
+      },
+      "s2": {
+        "title": "Edit a Task",
+        "p1": "At the task list, slide the control to the left for showing the options."
+      }
+    },
+    "scenes": {
+      "s1": {
+        "title": "Create a Scene",
+        "p1": "At the control list, press the plus icon (+) and select \"Add Scene\".",
+        "p2": "Then, follow the on screen steps."
+      },
+      "s2": {
+        "title": "Edit Scene",
+        "p1": "At the control list, press the pencil icon.",
+        "p2": "Select the scene to edit.",
+        "p3": "Select the desired option."
+      }
+    }
+  },
+  "learn-code": {
+    "learn-code": "Learn Code",
+    "instructions-1": "Point your remote control towards the Blastbot.",
+    "instructions-2": "Press \"Start Capture\".",
+    "instructions-3": "When a red light turns on in the Blastbot, press the desired button from the remote control to copy.",
+    "instructions-4": "<b>Important:</b> Press the button only once and don't hold it pressed.",
+    "rf": {
+      "instructions-1": "Press \"Start Capture\".",
+      "instructions-2": "Make the RF control or device emit the signal to learn."
+    },
+    "start-capture": "Start Capture",
+    "learning": "Learning...",
+    "error-1": "The code couldn't be copied",
+    "error-2": "Please try again",
+    "error-3": "There is no communication with the Blastbot"
+  },
+  "login": {
+    "title-login": "Login",
+    "title-recover": "Recover password",
+    "title-new-account": "New account",
+    "bad-password": "Invalid user or password",
+    "no-internet": "No Internet connection",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "no-account?": "No account?",
+    "go-register": "Register",
+    "forgot-password?": "Forgot password?",
+    "go-recover": "Recover it",
+    "privacy-policy": "Privacy policy",
+    "send-recovery-email": "Send recovery Email",
+    "register": "Register",
+    "starting-session": "Logging in...",
+    "sending": "Sending...",
+    "email-sent": "Email sent",
+    "email-sent-msg": "Please check your inbox for instructions for restoring your password",
+    "bad-account": "This account doesn't exist",
+    "bad-account-msg": "This Email is not in our database",
+    "email-exists": "This Email is already registered",
+    "email-exists-msg": "Try recovering the password or using a different address",
+    "form-bad-email-msg": "Must be a valid email address",
+    "form-bad-pass-msg": "At least 8 characters"
+  },
+  "scan-controls": {
+    "scan-controls": "Scan Controls",
+    "instructions-1": "Make sure that your AC is off.",
+    "instructions-2": "Point the Blastbot towards the AC.",
+    "instructions-3": "Press \"Start Scan\".",
+    "instructions-4": "When you hear the AC turning on, immediately press \"Stop Scan\".",
+    "scanning-control-n-of-total": "Scanning controls: {{n}} of {{total}}",
+    "start-scan": "Start Scan",
+    "end-scan": "Stop Scan"
+  },
+  "scene": {
+    "scene": "Scene",
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove the scene \"{{name}}\"?"
+    },
+    "max-reached": "Limit reached",
+    "max-reached-msg": "Max 10 actions per scene",
+    "1-second": "1 second",
+    "n-seconds": "{{n}} seconds",
+    "wait-between-actions": "Wait between actions",
+    "start": "Start",
+    "add-actions-to-start": "Add actions to start",
+    "end": "End"
+  },
+  "scenes": {
+    "my-scenes": "My Scenes",
+    "no-scenes": "No scenes configured",
+    "create-a-scene": "Create a scene",
+    "preparing-scene": "Executing scene...",
+    "scene-prepared-ok": "Scene executed correctly.",
+    "scene-not-prepared-ok": "The scene wasn't executed correctly",
+    "action-error": "One action couldn't be executed. Please make sure that the Blastbot are connected to the Internet.",
+    "n-action-error": "{{n}} actions couldn't be executed. Please make sure that the Blastbot are connected to the Internet.",
+    "edit-name": "Edit {{name}}",
+    "change-name-icon": "Change name and icon",
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove the scene \"{{name}}\"?"
+    }
+  },
+  "select-color": {
+    "select-color": "Select Color"
+  },
+  "select-icon": {
+    "select-icon": "Select Icon",
+    "none-text-only": "None (Text only)"
+  },
+  "settings": {
+    "settings": "Settings",
+    "general": "General",
+    "sound-press-button": "Make sound when pressing buttons",
+    "timezone": "Time Zone",
+    "advanced-user": "Advanced user",
+    "notifications": "Notifications",
+    "notification-email": "Email for notifications",
+    "address": "Address",
+    "notify-errors": "Notify errors",
+    "notify-tasks": "Notify executed tasks",
+    "notify-disconnect": "Notify Blastbot disconnected",
+    "notify-connect": "Notify Blastbot connected",
+    "security": "Security",
+    "change-password": "Change password",
+    "api-links": "API Links",
+    "language": "Language",
+    "notify_via_email": "Notify via Email",
+    "notify_via_push": "Notify via Push"
+  },
+  "share-control": {
+    "share-control": "Share Control",
+    "users-shared-name": "Users with access to \"{{name}}\"",
+    "unshare": "Stop sharing",
+    "unshare-msg": "Are you sure you want to stop sharing with this user?",
+    "share-with-user": "Share with user",
+    "blastbot-cloud-user": "Blastbot Bridge User",
+    "already-shared": "Already shared",
+    "already-shared-msg": "This control is already shared with \"{{name}}\".",
+    "user-not-found": "Couldn't find user",
+    "user-not-found-msg": "We couldn't find any user with the Email \"{{email}}\", please make sure is correct.",
+    "no-shares": "Not shared"
+  },
+  "smart-control": {
+    "no-communication": "There is no communication with the Blastbot",
+    "temperature-in-room": "Temperature in room",
+    "blastbot-disconnected": "Blastbot disconnected",
+    "check-blastbot-connected": "Please make sure that the device \"{{name}}\" is correctly connected and configured.",
+    "sleep-timer": "Sleep timer",
+    "disabled": "Disabled",
+    "1-hour": "1 hour",
+    "n-hours": "{{n}} hours"
+  },
+  "switch": {
+    "no-communication": "There is no communication with the device",
+    "device-disconnected": "Device disconnected",
+    "check-device-connected": "Please make sure that the device \"{{name}}\" is correctly connected and configured."
+  },
+  "task": {
+    "edit-task": "Edit Task",
+    "new-task": "New Task",
+    "enable": "Enable",
+    "frequency": "Frequency",
+    "timezone": "Time zone",
+    "weekdays": "Weekdays",
+    "day": "Day",
+    "date": "Date",
+    "hour": "Time",
+    "minute": "Minute",
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove this task?"
+    },
+    "select-a-day": "Please, select at least one weekday",
+
+    "hourly": "Hourly",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "once": "Once"
+  },
+  "tasks": {
+    "tasks": "Tasks",
+    "no-tasks": "No Task configured",
+    "create-a-task": "Create a task",
+    "delete-prompt": {
+      "title": "Confirm remove",
+      "text": "Are you sure you want to remove the task \"{{name}}\"?"
+    },
+    "description": {
+      "hourly": "Each hour at {{minutes}} minutes ({{timezone}})",
+      "daily": "Every day at {{hour}}:{{minutes}} ({{timezone}})",
+      "weekly": "Every week the days {{days}} at {{hour}}:{{minutes}} ({{timezone}})",
+      "monthly": "Every month the day {{day}} at {{hour}}:{{minutes}} ({{timezone}})",
+      "yearly": "Each year the day {{day}} of {{month}} at {{hour}}:{{minutes}} ({{timezone}})",
+      "once": "{{month}} {{day}}, {{year}} at {{hour}}:{{minutes}} ({{timezone}})"
+    }
+  },
+  "welcome": {
+    "skip": "Skip",
+    "s1": {
+      "title": "Welcome to Blastbot!",
+      "p1": "You need a <b>Blastbot</b> for using this app, if you don't have one yet, you can get it here:",
+      "buy-blastbot": "Buy Blastbot",
+      "p2": "<b>Slide</b> to the left for more."
+    },
+    "s2": {
+      "title": "All your controls in one app",
+      "p1": "With <b>Blastbot</b> you can control all your infrared remote controlled devices from your smartphone, no matter where you are."
+    },
+    "s3": {
+      "title": "Program Tasks",
+      "p1": "With <b>Tasks</b>, you can set, for example, that the office's AC turns on at <b>8:00</b> and off at <b>18:00</b>."
+    },
+    "s4": {
+      "title": "Create scenes with your favorite settings",
+      "p1": "With <b>Scenes</b>, you can get ready for a movies night with a press of just one button.",
+      "p2": "<b>Blastbot</b> will turn the TV on, set your Home Theater and AC, and put your favorite channel on."
+    },
+    "s5": {
+      "title": "Configure your Blastbot",
+      "p1": "First we need to configure your <b>Blastbot</b> and add all the controls you want.",
+      "start": "Start"
+    }
+  },
+  "setup-device": {
+    "initial-setup": "Initial Setup",
+    "which-device-type": "What type of device do you want to setup?",
+    "blastbot-description": "Control your AC and IR devices.",
+    "switch-description": "Replace the swithces in your wall.",
+    "plug-description": "Control your lamp, fan or any mains appliance.",
+    "sensor-description": "Get signals from alarm sensors and other devices.",
+    "sensor-name": "RF Sensor"
+  },
+  "setup-blastbot": {
+    "blastbot-connection-lost": "Lost connection to your Blastbot",
+    "blastbot-connection-lost-msg": "Please make sure you are in range of your Blastbot before retrying or that it still has the green LED on.",
+    "no-blastbot-found": "No Blastbot found",
+    "no-blastbot-found-msg": "Please make sure that you followed the previous instructions correctly.",
+    "go-back": "Go back",
+    "retry": "Retry",
+    "there-was-a-problem": "There was a problem",
+    "no-networks": "Couldn't get a list of networks.",
+    "no-internet": "There is no Internet connection",
+    "no-internet-msg": "Please make sure you are connected to a network with Internet access.",
+    "searching-blastbot": "Searching Blastbot...",
+    "searching-networks": "Searching Networks...",
+    "applying": "Applying...",
+    "waiting-network": "Waiting for network...",
+    "other-ssid": "Other SSID",
+    "initial-setup": "Initial Setup",
+    "next": "Next",
+    "locationPermission": "Allow use location to proceed",
+    "invalid-name": "Invalid SSID",
+    "invalid-name-msg": "The SSID must contain between 1 and 31 characters",
+    "s1": {
+      "p1": "Connect the Blastbot to the power."
+    },
+    "s2": {
+      "p1": "<b>Hold the configuration button pressed</b> until the green LED stays on."
+    },
+    "s3": {
+      "p1": "When the green LED stays <b>on and still</b>, press \"Next\"."
+    },
+    "s4": {
+      "p1": "Exit the app and go to the Wi-Fi configuration of your device.",
+      "p2": "Connect to a network called BlastbotXXXX (XXXX varies for each Blastbot).",
+      "p3": "Go back to this app, it will automatically connect to the Blastbot."
+    },
+    "s5": {
+      "p1": "Select the name of the Wi-Fi network to which the Blastbot will be connected and enter its password. Finally press \"Apply\".",
+      "net-name": "Network name (SSID):",
+      "other": "Other...",
+      "required-field": "Required field.",
+      "password": "Password:",
+      "max-64-characters": "Max 64 characters.",
+      "repeat-password": "Repeat the password:",
+      "passwords-dont-match": "The passwords don't match.",
+      "search-more-networks": "Search more networks",
+      "use-dhcp": "Use DHCP (Automatic configuration)",
+      "use-ui": "Use Local API",
+      "invalid-address": "Invalid address"
+    }
+  },
+  "setup-blastbot-plug": {
+    "no-blastbot-found": "No Blastbot Smart Plug found",
+    "searching-blastbot": "Searching Blastbot Smart Plug...",
+    "s1": {
+      "p1": "Connect the Blastbot Smart Plug to a free power receptacle."
+    },
+    "s4": {
+      "p2": "Connect to a network called BlastbotPlugXXXX (XXXX varies for each Blastbot Smart Plug)."
+    },
+    "s5": {
+      "p1": "Select the name of the Wi-Fi network to which the Blastbot Smart Plug will be connected and enter its password. Finally press \"Apply\"."
+    }
+  },
+  "setup-blastbot-switch": {
+    "no-blastbot-found": "No Blastbot Smart Switch found",
+    "searching-blastbot": "Searching Blastbot Smart Switch...",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "or": "or",
+    "no-blastbot": "No Blastbot Hub configured",
+    "no-blastbot-configure": "already have a Blastbot Hub?",
+    "configure-new-device": "Setup new Blastbot Hub",
+    "configure-it": "Configure it",
+    "buy-blastbot": "Buy Blastbot Hub",
+    "blastbot-disconnected": "Blastbot Hub disconnected",
+    "blastbot-disconnected-msg": "The Blastbot \"{{name}}\" must be on and connected before adding a new Blastbot Smart Switch.",
+    "s1": {
+      "p1": "Select the Blastbot Hub to which the Blastbot Smart Switch will be associated."
+    },
+    "s2" :{
+      "p1": "Make sure the Blastbot Smart Switch is correctly installed and is working by pressing the hardware buttons."
+    },
+    "s3" :{
+      "p1": "<b>Hold pressed</b> both hardware buttons (or, if there is only one, hold it firmly) until the white LEDs start blinking."
+    }
+  },
+  "setup-rf-sensor": {
+    "start-pair": "Start Pairing",
+    "pair-again": "Pair again",
+    "pairing": "Waiting for sensor signal...",
+    "pairing-pir": "Make the sensor detect movement by passing your hand in front of it...",
+    "pairing-door": "Make the sensor detect opening by separing its parts...",
+    "pairing-button": "Press the button in the RF device...",
+    "no-sensor-found": "No RF sensor detected",
+    "save-sensor": "Save sensor",
+    "new-name": "New name",
+    "s1": {
+      "p1": "Select the Blastbot Hub to which the RF sensor will be associated."
+    },
+    "s2" :{
+      "p1": "Pair a RF sensor. For more information on how to do this, please read: <a href='#'>What kind of sensors can I pair?</a> ",
+      "frequency": "Frequency:",
+      "type": "Type:",
+      "delay": "No presence delay (min):",
+      "pir": "Presence sensor",
+      "door": "Door sensor",
+      "button": "Button"
+    },
+    "s3" :{
+      "p1": "<b>Sensor Pairing</b>",
+      "instructions-pir": "1. Press \"START PAIRING\"<br>2. Make the sensor detect movement by passing your hand in front of it.<br>3. Check that is correctly pairing by repeating the action and making sure that the indicator is lit correspondingly.",
+      "instructions-door": "1. Press \"START PAIRING\"<br>2. Make the sensor detect opening by separing its parts.<br>3. Check that is correctly pairing by repeating the action and making sure that the indicator is lit correspondingly.",
+      "instructions-button": "1. Press \"START PAIRING\"<br>2. Press the button in the RF device.<br>3. Check that is correctly pairing by repeating the action and making sure that the indicator is lit correspondingly."
+    }
+  },
+  "automations": {
+    "automation": "Automation",
+    "no-automations": "No automation configured",
+    "create-an-automation": "Create an automation",
+    "no-actions": "No actions",
+    "delete-prompt": {
+      "title": "Confirm deletion",
+      "text": "Are you sure you want to delete the automation \"{{name}}\"?"
+    }
+  },
+  "new-automation": {
+    "title": "New Automation",
+    "question": "When do you want this automation to occur?",
+    "task": {
+      "description": "At some time in the day",
+      "example": "Example: \"At 8:00\" or \"Each Monday at 6:30\""
+    },
+    "sensor": {
+      "description": "When a sensor detects something",
+      "example": "Example: \"Presence detected\" or \"Door open\""
+    },
+    "control": {
+      "description": "When a Device is controlled",
+      "example": "Example: \"TV: on\" or \"AC: off\""
+    }
+  },
+  "automation-sensor": {
+    "edit": "Edit Automation",
+    "new": "New Automation",
+    "when": "When:",
+    "actions": "Actions:",
+    "sensor:": "Sensor:",
+    "detects:": "Detects:",
+    "pressed": "Activated",
+    "open": "Open",
+    "presence": "Presence",
+    "no-presence": "No Presence",
+    "no-actions": "No actions",
+    "control:": "Control:",
+    "action:": "Action:",
+    "on": "On",
+    "off": "Off",
+    "toggle": "Toggle",
+    "set": "Set",
+    "delete-prompt": {
+      "title": "Confirm deletion",
+      "text": "Are you sure you want to delete this automation?"
+    }
+  },
+  "times-editor": {
+    "validity": "Validity",
+    "validity-time": "Active during",
+    "always": "Always",
+    "daily": "Daily (Specific time)",
+    "weekly": "Custom (Day and time)",
+    "monthly": "Monthly",
+    "specific": "Once (Specific date)",
+    "add-range": "Add Time Range",
+    "delete-range": "Delete Time Range",
+    "add-month-day": "Add Month Day",
+    "day": "Day"
+  }
+
+}
