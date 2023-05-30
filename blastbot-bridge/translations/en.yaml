@@ -1,0 +1,13 @@
+configuration:
+  external_mqtt_broker_address:
+    name: External MQTT Broker Address
+    description: The address that your Blastbot devices will need to know to connect to the broker over your local network, usually the ip address of your Home Assistant server
+  blastbot_cloud_url:
+    name: Blastbot Cloud URL
+    description: URL to connect to the Blastbot Cloud API, used to fetch IR control definitions used during the "Add Control" flow
+  blastbot_cloud_api_user:
+    name: Blastbot Cloud API User
+    description: User email used to authenticate with Blastbot Cloud to fetch IR control definitions
+  blastbot_cloud_api_password:
+    name: Blastbot Cloud API Password
+    description: User password used to authenticate with Blastbot Cloud to fetch IR control definitions

@@ -1,0 +1,40 @@
+name: Blastbot Bridge
+version: 0.1.0
+slug: blastbot_bridge
+description: Blastbot Bridge for Home Assistant
+arch:
+  - amd64
+  - i386
+  - armhf
+  - armv7
+  - aarch64
+startup: services
+init: false
+url: https://blastbot.io
+webui: http://[HOST]:[PORT:5555]/
+ingress: true
+ingress_port: 5555
+ports:
+  5555/tcp: 5555
+ports_description:
+  5555/tcp: Web configuration interface
+services:
+  - mqtt:need
+options:
+  external_mqtt_broker_address: ""
+  blastbot_cloud_url: https://cloud.blastbot.io
+  blastbot_cloud_api_user: ""
+  blastbot_cloud_api_password: ""
+schema:
+  external_mqtt_broker_address: "str"
+  blastbot_cloud_url: "url?"
+  blastbot_cloud_api_user: "email?"
+  blastbot_cloud_api_password: "password?"
+
+hassio_api: true
+hassio_role: manager
+homeassistant_api: true
+host_network: true
+auth_api: true
+discovery:
+  - mqtt
