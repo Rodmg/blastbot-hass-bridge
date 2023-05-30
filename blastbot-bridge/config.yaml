@@ -1,5 +1,5 @@
 name: Blastbot Bridge
-version: 0.1.0
+version: 1.0.0
 slug: blastbot_bridge
 description: Blastbot Bridge for Home Assistant
 arch:
@@ -14,10 +14,6 @@ url: https://blastbot.io
 webui: http://[HOST]:[PORT:5555]/
 ingress: true
 ingress_port: 5555
-ports:
-  5555/tcp: 5555
-ports_description:
-  5555/tcp: Web configuration interface
 services:
   - mqtt:need
 options:
@@ -33,10 +29,7 @@ schema:
   blastbot_cloud_api_user: "email?"
   blastbot_cloud_api_password: "password?"
 
-hassio_api: true
-hassio_role: manager
 homeassistant_api: true
-host_network: true
 auth_api: true
 panel_icon: "mdi:circle-double"
 discovery:
