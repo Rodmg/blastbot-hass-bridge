@@ -1,0 +1,7 @@
+{
+  "name": "blastbot-bridge-frontend",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

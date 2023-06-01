@@ -1,0 +1,39 @@
+<ion-header class="switch-page proto-page">
+
+  <ion-navbar [color]="control.device.connected ? 'primary' : null">
+    <ion-title (click)="controlListPopover($event)">
+      {{control.name}}
+      <ion-icon name="md-arrow-dropdown"></ion-icon>
+    </ion-title>
+
+    <ion-buttons end *ngIf="!control.device.connected">
+      <button ion-button icon-only (click)="checkDisconnected()">
+        <ion-icon class="bb-disconnected"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="control.device.connected">
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="switch-page proto-page" no-bounce>
+
+  <div class="flex-container">
+
+    <div class="row" *ngFor=" let sw of switches; let i = index ">
+      <switch-view [switch]="sw" [direction]=" switches.length > 1 ? 'horizontal' : 'vertical' " (onToggle)="set($event, i)"></switch-view>
+    </div>
+
+    <div class="row-bottom">
+      <div text-center *ngIf="loading" class="loadingSpinner">
+        <ion-spinner></ion-spinner>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

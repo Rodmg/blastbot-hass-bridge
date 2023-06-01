@@ -1,0 +1,69 @@
+<ion-content class="welcome" no-bounce>
+
+  <ion-slides pager>
+
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="dismiss()">{{ 'welcome.skip' | translate }}</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/img/welcome/bbbox.jpg" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s1.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s1.p1' | translate "></p>
+      <p><a href="#/" (click)="buyBlastbot()">{{ 'welcome.s1.buy-blastbot' | translate }}</a></p>
+      <p [innerHTML]=" 'welcome.s1.p2' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="dismiss()">{{ 'welcome.skip' | translate }}</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/img/welcome/bbcontrols.jpg" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s2.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s2.p1' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="dismiss()">{{ 'welcome.skip' | translate }}</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/img/welcome/calendar.png" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s3.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s3.p1' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="dismiss()">{{ 'welcome.skip' | translate }}</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/img/welcome/scene.png" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s4.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s4.p1' | translate "></p>
+      <p [innerHTML]=" 'welcome.s4.p2' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="dismiss()">{{ 'welcome.skip' | translate }}</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/img/welcome/bbhand.jpg" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s5.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s5.p1' | translate "></p>
+      <button ion-button large clear icon-right color="primary" (click)="addBB()">
+        {{ 'welcome.s5.start' | translate }}
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

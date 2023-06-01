@@ -1,0 +1,119 @@
+.no-animate {
+  transform: none !important;
+}
+
+.toolbar-background {
+  opacity: 0.9;
+}
+
+.red-title {
+  .toolbar-title {
+    color: #d81d55 !important;
+  }
+}
+
+.translucent-divider {
+  opacity: 0.9;
+}
+
+.controls {
+
+  background-color: #F4F4F4;
+  border: 0px;
+
+  .control-item {
+    margin: 8px 8px 0 8px;
+    width: calc(100% - 16px);
+    // border-width: 8px 8px 0 8px;
+    // border-style: solid;
+    // border-color: #F4F4F4;
+    .item {
+      padding-left: 8px;
+    }
+
+    ion-label {
+      margin-right: 0px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+  }
+
+  .l-icon {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    /*padding-top: 3px;*/
+    font-size: 36px;
+
+    /*border-radius: 20px;
+    border: 0px;
+    background-color: #8e9093;
+    color: white !important;*/
+
+    /*color: #8e9093 !important;*/
+    /*color: #1f363A ! important;*/
+    color: black;
+  }
+
+  .r-icon {
+    font-size: 20px;
+    padding-top: 3px;
+  }
+
+  .list-icon {
+    border-radius: 20px;
+    border: 0px;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    background-color: #FF5722;
+    color: white;
+    margin-bottom: 8px;
+    margin-left: 0px;
+    margin-right: 16px;
+    margin-top: 8px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .empty-icon {
+    font-size: 100px;
+  }
+
+  .empty-title {
+    margin-top: 0px;
+    margin-bottom: 35px;
+    font-weight: 400;
+  }
+
+  @keyframes edit-icon-in {
+    from { opacity: 0.0; left: -20px; }
+    to { opacity: 1.0; left: 0px; }
+  }
+
+  .edit-icon {
+    position: relative;
+    animation-name: edit-icon-in;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+  }
+
+  .item-animated {
+    transition: position 1s;
+  }
+
+}

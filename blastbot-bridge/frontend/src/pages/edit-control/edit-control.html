@@ -1,0 +1,28 @@
+<ion-header class="edit-control">
+
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss(null)">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'edit-control.edit-control' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="edit-control">
+
+  <form [formGroup]="form" #f="ngForm" (ngSubmit)="submit()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>{{ 'edit-control.name' | translate }}</ion-label>
+        <ion-input [(ngModel)]="name" type="text" formControlName="name"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!f.form.valid">{{ 'save' | translate }}</button>
+    </div>
+  </form>
+
+</ion-content>

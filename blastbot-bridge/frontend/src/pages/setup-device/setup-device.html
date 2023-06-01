@@ -1,0 +1,60 @@
+<ion-header class="setup-device proto-page">
+
+  <ion-navbar color="primary">
+    <ion-buttons start *ngIf="isModal">
+      <button ion-button (click)="dismiss(null)">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+
+    <button ion-button icon-only menuToggle *ngIf="!isModal">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ 'setup-device.initial-setup' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="setup-device proto-page" no-bounce>
+
+  <div>
+    <div class="page-title">
+      <h2>{{ 'setup-device.which-device-type' | translate }}</h2>
+    </div>
+
+    <ion-list>
+      <button ion-item (click)="setup('blastbot-ir')">
+        <ion-thumbnail item-left>
+          <img src="assets/img/setup-device/blastbot-ir.png">
+        </ion-thumbnail>
+        <h2>Blastbot Smart Control / Hub</h2>
+        <p>{{ 'setup-device.blastbot-description' | translate }}</p>
+      </button>
+      <button ion-item (click)="setup('blastbot-plug')">
+        <ion-thumbnail item-left>
+          <img src="assets/img/setup-device/blastbot-plug.png">
+        </ion-thumbnail>
+        <h2>Blastbot Smart Plug</h2>
+        <p>{{ 'setup-device.plug-description' | translate }}</p>
+      </button>
+      <button ion-item (click)="setup('blastbot-switch')">
+        <ion-thumbnail item-left>
+          <img src="assets/img/setup-device/blastbot-switch.png">
+        </ion-thumbnail>
+        <h2>Blastbot Smart Switch</h2>
+        <p>{{ 'setup-device.switch-description' | translate }}</p>
+      </button>
+      <button ion-item (click)="setup('rf-sensor')">
+        <ion-thumbnail item-left>
+          <img src="assets/img/setup-device/virtual-devices.png">
+        </ion-thumbnail>
+        <h2>{{ 'setup-device.sensor-name' | translate }}</h2>
+        <p>{{ 'setup-device.sensor-description' | translate }}</p>
+      </button>
+    </ion-list>
+
+  </div>
+
+</ion-content>

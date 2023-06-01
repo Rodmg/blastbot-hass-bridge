@@ -1,0 +1,139 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="settings">
+
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'settings.settings' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="settings">
+  <ion-list no-border>
+
+    <ion-list-header>
+      {{ 'settings.general' | translate }}
+    </ion-list-header>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.sound" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.sound-press-button' | translate }}
+      </ion-label>
+      <ion-icon name="volume-up" *ngIf="profile.sound" item-left></ion-icon>
+      <ion-icon name="volume-off" *ngIf="!profile.sound" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ 'settings.language' | translate }}</ion-label>
+      <ion-select [(ngModel)]="profile.locale" cancelText="{{ 'cancel' | translate }}" okText="{{ 'ok' | translate }}" (ngModelChange)="onToggleChanged()">
+        <ion-option *ngFor="let language of languages" value="{{language}}">{{ language | translate }}</ion-option>
+      </ion-select>
+      <ion-icon name="globe" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ 'settings.timezone' | translate }}</ion-label>
+      <ion-select [(ngModel)]="profile.time_zone" cancelText="{{ 'cancel' | translate }}" okText="{{ 'ok' | translate }}" (ngModelChange)="onToggleChanged()">
+        <ion-option *ngFor="let timezone of timezones" value="{{timezone}}">{{timezone}}</ion-option>
+      </ion-select>
+      <ion-icon name="clock" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.advanced_user" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.advanced-user' | translate }}
+      </ion-label>
+      <ion-icon name="code" item-left></ion-icon>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-list-header>
+      {{ 'settings.notifications' | translate }}
+    </ion-list-header>
+
+    <button ion-item (click)="editEmail()">
+      <ion-label>
+        {{ 'settings.notification-email' | translate }}
+      </ion-label>
+      <ion-icon name="mail" item-left></ion-icon>
+    </button>
+
+    <!-- <ion-item>
+      <ion-toggle [(ngModel)]="profile.notify_errors" (ionChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        Notificar por correo
+      </ion-label>
+      <ion-icon name="send" item-left></ion-icon>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.notify_via_push" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.notify_via_push' | translate }}
+      </ion-label>
+      <ion-icon name="notifications" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.notify_via_email" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.notify_via_email' | translate }}
+      </ion-label>
+      <ion-icon name="mail" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.notify_errors" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.notify-errors' | translate }}
+      </ion-label>
+      <ion-icon name="bug" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.notify_task" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.notify-tasks' | translate }}
+      </ion-label>
+      <ion-icon name="alarm" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.notify_disconnect" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.notify-disconnect' | translate }}
+      </ion-label>
+      <ion-icon class="bb-disconnected" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="profile.notify_connect" (ngModelChange)="onToggleChanged()"></ion-toggle>
+      <ion-label>
+        {{ 'settings.notify-connect' | translate }}
+      </ion-label>
+      <ion-icon name="wifi" item-left></ion-icon>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-list-header>
+      {{ 'settings.security' | translate }}
+    </ion-list-header>
+
+  </ion-list>
+</ion-content>

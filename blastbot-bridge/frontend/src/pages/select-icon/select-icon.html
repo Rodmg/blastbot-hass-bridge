@@ -1,0 +1,21 @@
+<ion-header class="select-icon">
+
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss(null)">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'select-icon.select-icon' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="select-icon" padding>
+
+  <button ion-button *ngIf="showNoIcon" [outline]="icon === '' ? null : true" block (click)="dismiss({ icon: '' })">{{ 'select-icon.none-text-only' | translate}}</button>
+
+  <button ion-button class="icon-button" [outline]="icon === item ? null : true" color="dark" *ngFor="let item of icons" (click)="dismiss({ icon: item })"><ion-icon class="icon-item {{item}}"></ion-icon></button>
+
+</ion-content>

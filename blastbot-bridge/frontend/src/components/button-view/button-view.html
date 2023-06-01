@@ -1,0 +1,18 @@
+
+<div class="control-centerer">
+  <div class="control-container" [sortablejs]="buttons" [sortablejsOptions]="sortableOptions">
+    <button ion-button class="control-button spinner-white" *ngFor="let button of buttons" [ngClass]="buttonClass(button)" (click)="press(button)">
+      <div *ngIf="!button.busy && !button.blank">
+        <ion-icon *ngIf="button.icon" [ngClass]=" button.icon " class="button-icon" ></ion-icon>
+        <span class="button-name" 
+        [ngClass]=" (button.name.length === 1) ? 'one-letter' : '' "
+         *ngIf="!button.icon">{{button.name}}</span>
+
+         <div class="button-name name-icon" 
+          *ngIf="button.icon">{{button.name}}</div>
+
+      </div>
+      <ion-spinner *ngIf="button.busy"></ion-spinner>
+    </button>
+  </div>
+</div>

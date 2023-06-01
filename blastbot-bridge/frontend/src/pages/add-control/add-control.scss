@@ -1,0 +1,125 @@
+.add-control {
+  background-color: #d81d55;
+  color: white;
+
+  .page-flex {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100%;
+  }
+
+  .page-flex-section {
+    flex: 1 !important;
+    flex-direction: column !important;
+  }
+
+  .page-flex-button {
+    display: flex;
+    flex: 1 !important;
+    justify-content: flex-end !important;
+    flex-direction: column !important;
+
+    button {
+      align-self: flex-end;
+      min-height: 44px;
+    }
+  }
+
+
+  .page-flex-image {
+    padding: 0px;
+    display: flex !important;
+    flex: 1 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    img {
+      max-width: 400px;
+      width: 100vw;
+    }
+  }
+
+  .page-flex-image-big {
+    padding: 0px;
+    display: flex !important;
+    flex: 3 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+
+    img {
+      object-fit: contain;
+      max-height: 256px;
+      position: relative;
+    }
+
+  }
+
+  .buttons {
+    flex-direction: column;
+    .round-med {
+      border-radius: 28px;
+      border: 0px;
+      min-width: 56px;
+      min-height: 56px;
+      max-width: 56px;
+      max-height: 56px;
+      font-size: 20px;
+    }
+
+    .round-big {
+      border-radius: 40px;
+      border: 0px;
+      min-width: 80px;
+      min-height: 80px;
+      max-width: 80px;
+      max-height: 80px;
+      font-size: 26px;
+      margin-top: 16px;
+    }
+  }
+
+  .spinner-white {
+    .spinner-crescent circle {
+      stroke: #FFF;
+    }
+    .spinner-bubbles circle {
+      stroke: #FFF;
+    }
+    .spinner-circles circle {
+      stroke: #FFF;
+      fill: #FFF;
+    }
+    .spinner-dots circle {
+      stroke: #FFF;
+    }
+    .spinner-ios line {
+      stroke: #FFF;
+    }
+  }
+
+  .button-row {
+    display: flex;
+    flex-drection: row;
+
+    .button-prev-next {
+      flex: 1;
+    }
+
+    .button-scan {
+      flex: 6;
+    }
+
+  }
+
+  .control-container {
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  button-view {
+    flex: 3;
+    overflow-y: scroll;
+  }
+
+}

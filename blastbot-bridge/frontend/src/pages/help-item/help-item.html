@@ -1,0 +1,167 @@
+<ion-header class="help-item">
+
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="help-item" no-bounce>
+
+  <!-- Welcome topic -->
+  <ion-slides pager *ngIf=" helpTopic === 'welcome' ">
+    <ion-slide>
+      <img src="assets/img/welcome/bbbox.jpg" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s1.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s1.p1' | translate "></p>
+      <p><a href="#/" (click)="buyBlastbot()">{{ 'welcome.s1.buy-blastbot' | translate }}</a></p>
+      <p [innerHTML]=" 'welcome.s1.p2' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/welcome/bbcontrols.jpg" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s2.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s2.p1' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/welcome/calendar.png" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s3.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s3.p1' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/welcome/scene.png" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s4.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s4.p1' | translate "></p>
+      <p [innerHTML]=" 'welcome.s4.p2' | translate "></p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/welcome/bbhand.jpg" class="slide-image" />
+      <h2 class="slide-title">{{ 'welcome.s5.title' | translate }}</h2>
+      <p [innerHTML]=" 'welcome.s5.p1' | translate "></p>
+      <button ion-button large clear icon-right color="primary" (click)="addBB()">
+        {{ 'welcome.s5.start' | translate }}
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+  <!-- END Welcome topic -->
+
+  <!-- Controls topic -->
+  <ion-slides pager *ngIf=" helpTopic === 'controls' ">
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.controls.s1.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/add-control.gif" class="slide-image" />
+      <ol>
+        <li><span>{{ 'help-item.controls.s1.p1' | translate }}</span></li>
+        <li><span>{{ 'help-item.controls.s1.p2' | translate }}</span></li>
+        <li><span>{{ 'help-item.controls.s1.p3' | translate }}</span></li>
+        <li><span>{{ 'help-item.controls.s1.p4' | translate }}</span></li>
+      </ol>
+      <!-- <p><b>Nota: </b> Si no encuentra el control, puede crear uno en blanco y copiar los comandos de su control actual.</p> -->
+    </ion-slide>
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.controls.s2.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/edit-control.gif" class="slide-image" />
+      <p>{{ 'help-item.controls.s2.p1' | translate }}</p>
+    </ion-slide>
+
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.controls.s3.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/move-control.gif" class="slide-image" />
+      <ol>
+        <li><span>{{ 'help-item.controls.s3.p1' | translate }}</span></li>
+        <li><span>{{ 'help-item.controls.s3.p2' | translate }}</span></li>
+        <li><span>{{ 'help-item.controls.s3.p3' | translate }}</span></li>
+      </ol>
+    </ion-slide>
+  </ion-slides>
+  <!-- END Controls topic -->
+
+  <!-- Share topic -->
+  <ion-slides pager *ngIf=" helpTopic === 'share' ">
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.share.s1.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/share-control.gif" class="slide-image" />
+      <ol>
+        <li><span>{{ 'help-item.share.s1.p1' | translate }}</span></li>
+        <li><span>{{ 'help-item.share.s1.p2' | translate }}</span></li>
+        <li><span>{{ 'help-item.share.s1.p3' | translate }}</span></li>
+      </ol>
+    </ion-slide>
+  </ion-slides>
+  <!-- END Share topic -->
+
+  <!-- New Blastbot topic -->
+  <ion-slides pager *ngIf=" helpTopic === 'new-blastbot' ">
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.new-blastbot.s1.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/new-blastbot.gif" class="slide-image" />
+      <p>{{ 'help-item.new-blastbot.s1.p1' | translate }}</p>
+    </ion-slide>
+  </ion-slides>
+  <!-- END New Blastbot topic -->
+
+  <!-- Reconfigure Blastbot topic -->
+  <ion-slides pager *ngIf=" helpTopic === 'reconfigure-blastbot' ">
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.reconfigure.s1.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/reconfigure-blastbot.gif" class="slide-image" />
+      <ol>
+        <li><span>{{ 'help-item.reconfigure.s1.p1' | translate }}</span></li>
+        <li><span>{{ 'help-item.reconfigure.s1.p2' | translate }}</span></li>
+        <li><span>{{ 'help-item.reconfigure.s1.p3' | translate }}</span></li>
+      </ol>
+    </ion-slide>
+  </ion-slides>
+  <!-- END Reconfigure Blastbot topic -->
+
+  <!-- Tasks topic -->
+  <ion-slides pager *ngIf=" helpTopic === 'tasks' ">
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.task.s1.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/new-task.gif" class="slide-image" />
+      <ol>
+        <li><span>{{ 'help-item.task.s1.p1' | translate }}</span></li>
+        <li><span>{{ 'help-item.task.s1.p2' | translate }}</span></li>
+        <li><span>{{ 'help-item.task.s1.p3' | translate }}</span></li>
+      </ol>
+    </ion-slide>
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.task.s2.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/edit-task.gif" class="slide-image" />
+      <p>{{ 'help-item.task.s2.p1' | translate }}</p>
+    </ion-slide>
+  </ion-slides>
+  <!-- END Tasks topic -->
+
+  <!-- Scenes topic -->
+  <ion-slides pager *ngIf=" helpTopic === 'scenes' ">
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.scenes.s1.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/add-scene.gif" class="slide-image" />
+      <ol>
+        <li><span>{{ 'help-item.scenes.s1.p1' | translate }}</span></li>
+        <li><span>{{ 'help-item.scenes.s1.p2' | translate }}</span></li>
+      </ol>
+    </ion-slide>
+    <ion-slide>
+      <h2 class="slide-title">{{ 'help-item.scenes.s2.title' | translate }}</h2>
+      <img src="https://cloud.blastbot.io/help/edit-scene.gif" class="slide-image" />
+      <ol>
+        <li><span>{{ 'help-item.scenes.s2.p1' | translate }}</span></li>
+        <li><span>{{ 'help-item.scenes.s2.p2' | translate }}</span></li>
+        <li><span>{{ 'help-item.scenes.s2.p3' | translate }}</span></li>
+      </ol>
+    </ion-slide>
+  </ion-slides>
+  <!-- END Scenes topic -->
+
+
+</ion-content>

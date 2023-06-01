@@ -1,0 +1,11 @@
+
+<div class="row" [class.vertical]="direction=='vertical'" [class.horizontal]="direction=='horizontal'" [class.horizontal-sm]="direction=='horizontal-sm'">
+
+  <label class="switch" [class.loading]="loading" [hidden]="switch == null">
+    <input type="checkbox" [(ngModel)]="switch.state" disabled>
+    <div class="slider" id="toggle-switch"></div>
+    <div class="blocker"></div>
+    <ion-spinner></ion-spinner>
+  </label>
+
+</div>

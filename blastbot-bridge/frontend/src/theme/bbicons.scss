@@ -1,0 +1,272 @@
+@charset "UTF-8";
+/*!
+  bbicons, v2.0.2
+  Created by Ben Sperry for the Ionic Framework, http://bbicons.com/
+  https://twitter.com/benjsperry  https://twitter.com/ionicframework
+  MIT License: https://github.com/driftyco/bbicons
+
+  Android-style icons originally built by Google’s
+  Material Design Icons: https://github.com/google/material-design-icons
+  used under CC BY http://creativecommons.org/licenses/by/4.0/
+  Modified icons to fit ionicon’s grid from original.
+*/
+@font-face { font-family: "BBicons"; src: url("../assets/fonts/bbicons.eot?v=2.0.2"); src: url("../assets/fonts/bbicons.eot?v=2.0.2#iefix") format("embedded-opentype"), url("../assets/fonts/bbicons.ttf?v=2.0.2") format("truetype"), url("../assets/fonts/bbicons.woff?v=2.0.2") format("woff"), url("../assets/fonts/bbicons.svg?v=2.0.2#bbicons") format("svg"); font-weight: normal; font-style: normal; }
+.ion, .bbicons, .bb-ac:before, .bb-adjust:before, .bb-airplay:before, .bb-alarm:before, .bb-alarm-on:before, .bb-aspect-ratio:before, .bb-audio:before, .bb-back:before, .bb-bar:before, .bb-blastbot:before, .bb-blastbot-outline:before, .bb-building:before, .bb-calendar:before, .bb-camera:before, .bb-cancel:before, .bb-cancel-circle:before, .bb-cc:before, .bb-chan-down:before, .bb-chan-up:before, .bb-city:before, .bb-clock:before, .bb-cloud:before, .bb-cloudy-night:before, .bb-coffee:before, .bb-color:before, .bb-dashboard:before, .bb-dinner:before, .bb-disc:before, .bb-disconnected:before, .bb-down:before, .bb-dvr:before, .bb-dvr-letters:before, .bb-eject:before, .bb-enter:before, .bb-extension:before, .bb-fan:before, .bb-favorite:before, .bb-ff:before, .bb-film:before, .bb-fitness:before, .bb-flag:before, .bb-forward-10:before, .bb-forward-30:before, .bb-forward-5:before, .bb-fridge:before, .bb-games:before, .bb-garden:before, .bb-history:before, .bb-home:before, .bb-hottub:before, .bb-info:before, .bb-input:before, .bb-input-antenna:before, .bb-input-composite:before, .bb-input-hdmi:before, .bb-input-power:before, .bb-input-svideo:before, .bb-key:before, .bb-language:before, .bb-laundry:before, .bb-left:before, .bb-library:before, .bb-light-off:before, .bb-light-on:before, .bb-list:before, .bb-location:before, .bb-lock-closed:before, .bb-lock-open:before, .bb-media-box:before, .bb-menu:before, .bb-moon:before, .bb-movie:before, .bb-music:before, .bb-mute:before, .bb-next:before, .bb-off:before, .bb-on:before, .bb-outlet:before, .bb-overscan:before, .bb-partlysunny:before, .bb-pause:before, .bb-pets:before, .bb-plane:before, .bb-play:before, .bb-play-pause:before, .bb-plug:before, .bb-prev:before, .bb-projector:before, .bb-radio:before, .bb-rainy:before, .bb-rec:before, .bb-remote:before, .bb-repeat:before, .bb-replay:before, .bb-reply:before, .bb-right:before, .bb-router:before, .bb-rw:before, .bb-school:before, .bb-seat:before, .bb-sleep:before, .bb-sofa:before, .bb-speaker:before, .bb-speedometer:before, .bb-star:before, .bb-stereo:before, .bb-stop:before, .bb-store:before, .bb-sun:before, .bb-thermometer:before, .bb-thumb-down:before, .bb-thumb-up:before, .bb-thunderstorm:before, .bb-timer:before, .bb-today:before, .bb-toggle:before, .bb-touch:before, .bb-tv:before, .bb-umbrella:before, .bb-up:before, .bb-vcr:before, .bb-videocam:before, .bb-videogame:before, .bb-vol-down:before, .bb-vol-up:before, .bb-warning:before, .bb-wc:before, .bb-work:before { display: inline-block; font-family: "BBicons"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.bb-ac:before { content: "\f100"; }
+
+.bb-adjust:before { content: "\f101"; }
+
+.bb-airplay:before { content: "\f142"; }
+
+.bb-alarm:before { content: "\f103"; }
+
+.bb-alarm-on:before { content: "\f102"; }
+
+.bb-aspect-ratio:before { content: "\f143"; }
+
+.bb-audio:before { content: "\f104"; }
+
+.bb-back:before { content: "\f105"; }
+
+.bb-bar:before { content: "\f153"; }
+
+.bb-blastbot:before { content: "\f107"; }
+
+.bb-blastbot-outline:before { content: "\f106"; }
+
+.bb-building:before { content: "\f154"; }
+
+.bb-calendar:before { content: "\f108"; }
+
+.bb-camera:before { content: "\f155"; }
+
+.bb-cancel:before { content: "\f10a"; }
+
+.bb-cancel-circle:before { content: "\f109"; }
+
+.bb-cc:before { content: "\f10b"; }
+
+.bb-chan-down:before { content: "\f10c"; }
+
+.bb-chan-up:before { content: "\f10d"; }
+
+.bb-city:before { content: "\f156"; }
+
+.bb-clock:before { content: "\f10e"; }
+
+.bb-cloud:before { content: "\f157"; }
+
+.bb-cloudy-night:before { content: "\f158"; }
+
+.bb-coffee:before { content: "\f159"; }
+
+.bb-color:before { content: "\f15a"; }
+
+.bb-dashboard:before { content: "\f144"; }
+
+.bb-dinner:before { content: "\f15b"; }
+
+.bb-disc:before { content: "\f10f"; }
+
+.bb-disconnected:before { content: "\f110"; }
+
+.bb-down:before { content: "\f111"; }
+
+.bb-dvr:before { content: "\f113"; }
+
+.bb-dvr-letters:before { content: "\f112"; }
+
+.bb-eject:before { content: "\f145"; }
+
+.bb-enter:before { content: "\f114"; }
+
+.bb-extension:before { content: "\f15c"; }
+
+.bb-fan:before { content: "\f115"; }
+
+.bb-favorite:before { content: "\f146"; }
+
+.bb-ff:before { content: "\f116"; }
+
+.bb-film:before { content: "\f15d"; }
+
+.bb-fitness:before { content: "\f15e"; }
+
+.bb-flag:before { content: "\f117"; }
+
+.bb-forward-10:before { content: "\f118"; }
+
+.bb-forward-30:before { content: "\f119"; }
+
+.bb-forward-5:before { content: "\f11a"; }
+
+.bb-fridge:before { content: "\f11b"; }
+
+.bb-games:before { content: "\f147"; }
+
+.bb-garden:before { content: "\f15f"; }
+
+.bb-history:before { content: "\f11c"; }
+
+.bb-home:before { content: "\f11d"; }
+
+.bb-hottub:before { content: "\f160"; }
+
+.bb-info:before { content: "\f11e"; }
+
+.bb-input:before { content: "\f14d"; }
+
+.bb-input-antenna:before { content: "\f148"; }
+
+.bb-input-composite:before { content: "\f149"; }
+
+.bb-input-hdmi:before { content: "\f14a"; }
+
+.bb-input-power:before { content: "\f14b"; }
+
+.bb-input-svideo:before { content: "\f14c"; }
+
+.bb-key:before { content: "\f161"; }
+
+.bb-language:before { content: "\f14e"; }
+
+.bb-laundry:before { content: "\f162"; }
+
+.bb-left:before { content: "\f11f"; }
+
+.bb-library:before { content: "\f163"; }
+
+.bb-light-off:before { content: "\f120"; }
+
+.bb-light-on:before { content: "\f121"; }
+
+.bb-list:before { content: "\f14f"; }
+
+.bb-location:before { content: "\f164"; }
+
+.bb-lock-closed:before { content: "\f165"; }
+
+.bb-lock-open:before { content: "\f166"; }
+
+.bb-media-box:before { content: "\f122"; }
+
+.bb-menu:before { content: "\f123"; }
+
+.bb-moon:before { content: "\f168"; }
+
+.bb-movie:before { content: "\f150"; }
+
+.bb-music:before { content: "\f124"; }
+
+.bb-mute:before { content: "\f125"; }
+
+.bb-next:before { content: "\f126"; }
+
+.bb-off:before { content: "\f127"; }
+
+.bb-on:before { content: "\f128"; }
+
+.bb-outlet:before { content: "\f169"; }
+
+.bb-overscan:before { content: "\f151"; }
+
+.bb-partlysunny:before { content: "\f16a"; }
+
+.bb-pause:before { content: "\f129"; }
+
+.bb-pets:before { content: "\f16b"; }
+
+.bb-plane:before { content: "\f16c"; }
+
+.bb-play:before { content: "\f12b"; }
+
+.bb-play-pause:before { content: "\f12a"; }
+
+.bb-plug:before { content: "\f12c"; }
+
+.bb-prev:before { content: "\f12d"; }
+
+.bb-projector:before { content: "\f12e"; }
+
+.bb-radio:before { content: "\f16d"; }
+
+.bb-rainy:before { content: "\f16e"; }
+
+.bb-rec:before { content: "\f12f"; }
+
+.bb-remote:before { content: "\f130"; }
+
+.bb-repeat:before { content: "\f131"; }
+
+.bb-replay:before { content: "\f132"; }
+
+.bb-reply:before { content: "\f152"; }
+
+.bb-right:before { content: "\f133"; }
+
+.bb-router:before { content: "\f16f"; }
+
+.bb-rw:before { content: "\f134"; }
+
+.bb-school:before { content: "\f170"; }
+
+.bb-seat:before { content: "\f171"; }
+
+.bb-sleep:before { content: "\f172"; }
+
+.bb-sofa:before { content: "\f173"; }
+
+.bb-speaker:before { content: "\f135"; }
+
+.bb-speedometer:before { content: "\f174"; }
+
+.bb-star:before { content: "\f136"; }
+
+.bb-stereo:before { content: "\f137"; }
+
+.bb-stop:before { content: "\f138"; }
+
+.bb-store:before { content: "\f175"; }
+
+.bb-sun:before { content: "\f176"; }
+
+.bb-thermometer:before { content: "\f177"; }
+
+.bb-thumb-down:before { content: "\f178"; }
+
+.bb-thumb-up:before { content: "\f179"; }
+
+.bb-thunderstorm:before { content: "\f17a"; }
+
+.bb-timer:before { content: "\f139"; }
+
+.bb-today:before { content: "\f17b"; }
+
+.bb-toggle:before { content: "\f13a"; }
+
+.bb-touch:before { content: "\f13b"; }
+
+.bb-tv:before { content: "\f13c"; }
+
+.bb-umbrella:before { content: "\f17c"; }
+
+.bb-up:before { content: "\f13d"; }
+
+.bb-vcr:before { content: "\f13e"; }
+
+.bb-videocam:before { content: "\f17e"; }
+
+.bb-videogame:before { content: "\f13f"; }
+
+.bb-vol-down:before { content: "\f140"; }
+
+.bb-vol-up:before { content: "\f141"; }
+
+.bb-warning:before { content: "\f17f"; }
+
+.bb-wc:before { content: "\f180"; }
+
+.bb-work:before { content: "\f181"; }
+
+/*# sourceMappingURL=bbicons.css.map */

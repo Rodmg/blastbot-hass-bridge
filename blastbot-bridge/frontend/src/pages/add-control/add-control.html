@@ -1,0 +1,169 @@
+<!--
+  Generated template for the AddControl page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-buttons start *ngIf="currentPage === 1">
+      <button ion-button (click)="dismiss(null)">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+
+    <ion-buttons start *ngIf="currentPage > 1">
+      <button ion-button icon-only (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>{{ 'add-control.add-control' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="add-control proto-page">
+
+  <div class="page1" *ngIf="currentPage === 1">
+    <h1>1/5</h1>
+    <p>{{ 'add-control.select-blastbot' | translate }}</p>
+
+    <ion-list>
+      <button ion-item *ngFor="let device of devices" (click)="selectDevice(device)">
+        <h2>{{device.name}}</h2>
+        <p>{{device.connected ? ('add-control.connected' | translate) : ('add-control.disconnected' | translate )}} </p>
+      </button>
+    </ion-list>
+
+    <div text-center *ngIf="devices != null && devices.length">
+      <p>{{ 'add-control.or' | translate }}</p>
+      <p>
+        <button ion-button color="light" (click)="configureBlastbot()">{{ 'add-control.configure-new-device' | translate }}</button>
+      </p>
+    </div>
+
+    <div text-center *ngIf="devices != null && !devices.length">
+      <h1>{{ 'add-control.no-blastbot' | translate }}</h1>
+      <p>{{ 'add-control.no-blastbot-configure' | translate }}</p>
+      <p>
+        <button ion-button color="light" (click)="configureBlastbot()">{{ 'add-control.configure-it' | translate }}</button>
+      </p>
+      <p>
+        <button ion-button color="secondary" (click)="buyBlastbot()" icon-left>
+          <ion-icon name="cart"></ion-icon>
+          {{ 'add-control.buy-blastbot' | translate }}
+        </button>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="page2" *ngIf="currentPage === 2">
+    <h1>2/5</h1>
+    <p>{{ 'add-control.select-type' | translate }}</p>
+
+    <!-- <ion-searchbar [placeholder]="'search' | translate" [(ngModel)]="typeFilter" (ionClear)="filterTypes(null)" (ionInput)="filterTypes($event)"></ion-searchbar> -->
+    <ion-list>
+      <button ion-item *ngFor="let type of types" (click)="selectType(type)">
+        <ion-icon [ngClass]="getIcon(type)" item-left></ion-icon>
+        {{ 'add-control.types.'+type.name | translate }}
+      </button>
+    </ion-list>
+    <p *ngIf="types != null && !types.length">{{ 'add-control.type-not-found' | translate }}</p>
+
+  </div>
+
+  <div class="page3" *ngIf="currentPage === 3">
+    <h1>3/5</h1>
+    <p>{{ 'add-control.select-brand' | translate }}</p>
+
+    <ion-searchbar [placeholder]="'search' | translate" [(ngModel)]="brandFilter" (ionClear)="filterBrands(null)" (ionInput)="filterBrands($event)"></ion-searchbar>
+    <ion-list>
+      <button ion-item *ngFor="let brand of brands" (click)="selectBrand(brand)">
+        <h2>{{brand.name}}</h2>
+      </button>
+    </ion-list>
+    <p *ngIf="brands != null && !brands.length">{{ 'add-control.brand-not-found' | translate }}</p>
+
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 4">
+    <div class="page-flex-section">
+      <h1>4/5</h1>
+      <p [innerHTML]=" 'add-control.position-instructions' | translate "></p>
+    </div>
+
+    <div class="page-flex-image-big">
+      <img src="assets/img/BlastbotPoint.png">
+    </div>
+
+    <div class="page-flex-button">
+      <button ion-button color="light" full (click)="next()">{{ 'add-control.next' | translate }}</button>
+    </div>
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 5">
+    <div class="page-flex-section">
+      <h1>5/5</h1>
+      <p>{{ 'add-control.test-buttons' | translate }}</p>
+      <ion-item>
+        <ion-label>
+          {{ 'add-control.model:' | translate }}
+        </ion-label>
+        <ion-select [(ngModel)]="controlSelect" (ionChange)="controlListChanged($event, controlSelect)" cancelText="{{ 'cancel' | translate }}" okText="{{ 'ok' | translate }}">
+          <ion-option *ngFor="let control of controls" value="{{control.id}}">{{control.model}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+    <div class="page-flex-image buttons" *ngIf="currentControl != null && currentControl.type === 'ac'">
+      <p [innerHTML]=" 'add-control.assure-ac-off' | translate "></p>
+      <div>
+        <button ion-button color="secondary" class="round-big" (click)="emitSmart('on')" [attr.disabled]="emittingSmart ? true : null">
+          <span *ngIf="!emittingSmart">ON</span>
+          <ion-spinner *ngIf="emittingSmart"></ion-spinner>
+        </button>
+        <button ion-button color="secondary" class="round-big" (click)="emitSmart('off')" [attr.disabled]="emittingSmart ? true : null">
+          <span *ngIf="!emittingSmart" name="power">OFF</span>
+          <ion-spinner *ngIf="emittingSmart"></ion-spinner>
+        </button>
+      </div>
+    </div>
+
+    <!-- <div class="control-centerer" *ngIf="selectedType.id !== 'smartcontrol' && currentControl != null">
+      <div class="control-container">
+        <button ion-button class="control-button spinner-white" *ngFor="let button of currentControl.buttons" [attr.disabled]="button.busy ? true : null" [ngClass]="button.busy ? 'gray' : button.color" (click)="emit(button)">
+          <span *ngIf="!button.busy">{{button.name}}</span>
+          <ion-spinner *ngIf="button.busy"></ion-spinner>
+        </button>
+      </div>
+    </div> -->
+
+    <button-view [buttons]="currentControl.buttons" (onPress)="emit($event)" *ngIf="currentControl != null && currentControl.type === 'ir'">
+    </button-view>
+
+    <div class="page-flex-button" *ngIf="currentControl != null && currentControl.type === 'ac'">
+      <div class="button-row">
+        <button class="button-prev-next" ion-button icon-only color="light" (click)="prevControl()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+        <button class="button-scan" ion-button color="light" (click)="startScan()">{{ 'add-control.scan-all-controls' | translate }}</button>
+        <button class="button-prev-next" ion-button icon-only color="light" (click)="nextControl()">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+
+      <button ion-button color="light" (click)="showSaveDialog(currentControl)" full>{{ 'add-control.this-works' | translate }}</button>
+    </div>
+
+    <div class="page-flex-button" *ngIf="currentControl != null && currentControl.type === 'ir'">
+      <button class="button-prev-next" ion-button color="light" (click)="nextControl()" full>{{ 'add-control.try-another' | translate }}</button>
+      <button ion-button color="light" (click)="showSaveDialog(currentControl)" full>{{ 'add-control.this-works' | translate }}</button>
+    </div>
+
+  </div>
+
+</ion-content>

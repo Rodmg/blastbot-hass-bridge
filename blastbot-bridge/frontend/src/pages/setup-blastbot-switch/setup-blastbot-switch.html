@@ -1,0 +1,89 @@
+<ion-header class="setup-blastbot-switch proto-page">
+
+  <ion-navbar color="primary">
+    <ion-buttons start *ngIf="currentPage === 1 && isModal">
+      <button ion-button (click)="dismiss(null)">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+
+    <ion-buttons start *ngIf="currentPage > 1">
+      <button ion-button icon-only (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>{{ 'setup-blastbot.initial-setup' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="setup-blastbot-switch proto-page" no-bounce>
+
+  <div class="page-flex" *ngIf="currentPage === 1">
+    <div>
+      <h1>1/3</h1>
+      <p [innerHTML]=" 'setup-blastbot-switch.s1.p1' | translate "></p>
+    </div>
+
+    <ion-list>
+      <button ion-item *ngFor="let device of devices" (click)="selectDevice(device)">
+        <h2>{{device.name}}</h2>
+        <p>{{device.connected ? ('setup-blastbot-switch.connected' | translate) : ('setup-blastbot-switch.disconnected' | translate )}} </p>
+      </button>
+    </ion-list>
+
+    <!-- <div text-center *ngIf="devices != null && devices.length">
+      <p>{{ 'setup-blastbot-switch.or' | translate }}</p>
+      <p>
+        <button ion-button color="light" (click)="configureBlastbot()">{{ 'setup-blastbot-switch.configure-new-device' | translate }}</button>
+      </p>
+    </div> -->
+
+    <div text-center *ngIf="devices != null && !devices.length">
+      <h1>{{ 'setup-blastbot-switch.no-blastbot' | translate }}</h1>
+      <p>{{ 'setup-blastbot-switch.no-blastbot-configure' | translate }}</p>
+      <p>
+        <button ion-button color="light" (click)="configureBlastbot()">{{ 'setup-blastbot-switch.configure-it' | translate }}</button>
+      </p>
+      <p>
+        <button ion-button color="secondary" (click)="buyBlastbot()" icon-left>
+          <ion-icon name="cart"></ion-icon>
+          {{ 'setup-blastbot-switch.buy-blastbot' | translate }}
+        </button>
+      </p>
+    </div>
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 2">
+    <div class="page-flex-section">
+      <h1>2/3</h1>
+      <p [innerHTML]=" 'setup-blastbot-switch.s2.p1' | translate "></p>
+    </div>
+
+    <div class="page-flex-image-big">
+      <img src="assets/img/setup-blastbot-switch/switch.png">
+    </div>
+
+    <div class="page-flex-button">
+      <button ion-button color="light" full (click)="next()">{{ 'setup-blastbot.next' | translate }}</button>
+    </div>
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 3">
+    <div class="page-flex-section">
+      <h1>3/3</h1>
+      <p [innerHTML]=" 'setup-blastbot-switch.s3.p1' | translate "></p>
+    </div>
+
+    <div class="page-flex-image-big">
+      <img src="assets/img/setup-blastbot-switch/switch-blink.gif">
+    </div>
+
+    <div class="page-flex-button">
+      <button ion-button color="light" full (click)="next()">{{ 'setup-blastbot.next' | translate }}</button>
+    </div>
+  </div>
+
+</ion-content>

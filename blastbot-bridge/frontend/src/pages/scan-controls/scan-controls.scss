@@ -1,0 +1,31 @@
+.scan-controls {
+
+  .page-flex {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100%;
+  }
+
+  .page-flex-section {
+    flex: 1 !important;
+    flex-direction: column !important;
+  }
+
+  .page-flex-buttons {
+    display: flex;
+    flex: 1 !important;
+    justify-content: flex-end !important;
+    flex-direction: column !important;
+
+    button {
+      align-self: flex-end;
+      min-height: 44px;
+    }
+  }
+
+  ol {
+    padding-left: 16px;
+  }
+
+}
+

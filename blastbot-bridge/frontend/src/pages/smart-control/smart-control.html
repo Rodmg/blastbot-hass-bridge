@@ -1,0 +1,99 @@
+<!--
+  Generated template for the SmartControlPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="smart-control proto-page">
+
+  <ion-navbar [color]="control.device.connected ? 'primary' : null">
+    <ion-title (click)="controlListPopover($event)">
+      {{control.name}}
+      <ion-icon name="md-arrow-dropdown"></ion-icon>
+    </ion-title>
+    <ion-buttons end *ngIf="!control.device.connected">
+      <button ion-button icon-only (click)="checkDisconnected()">
+        <ion-icon class="bb-disconnected"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="control.device.connected">
+      <button ion-button class="spinner-white" *ngIf="tempLoading">
+        <ion-spinner></ion-spinner>
+      </button>
+      <button ion-button icon-only (click)="getTemp()" *ngIf="!tempLoading && !control.isShared">
+        <ion-icon name="thermometer"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="smart-control proto-page" no-bounce>
+
+  <div class="control">
+    <div class="screen">
+      <ion-grid text-center>
+
+        <ion-row center>
+          <ion-col class="temperature" *ngIf="!loading">
+            {{settings.state === "on" ? settings.temperature + 'º' : 'OFF'}}
+          </ion-col>
+          <ion-col class="temperature" *ngIf="loading">
+            <ion-spinner></ion-spinner>
+          </ion-col>
+        </ion-row>
+
+        <ion-row center>
+          <ion-col>
+            <ion-icon class="fan-icon bb-fan" [ngClass]="showLow() ? '': 'inactive'"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon class="fan-icon bb-fan" [ngClass]="showMed() ? '': 'inactive'"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon class="fan-icon bb-fan" [ngClass]="showHigh() ? '': 'inactive'"></ion-icon>
+          </ion-col>
+        </ion-row>
+
+        <ion-row center>
+          <ion-col>
+            <span *ngIf=" settings.sleepTime != null && getRemainingTime(settings.sleepTime) >= 0 " class="timer-display-container">
+              <ion-icon name="timer"></ion-icon>
+              <span class="timer-display">{{ getRemainingTime(settings.sleepTime) === 0 ? '<1' : getRemainingTime(settings.sleepTime) }}h</span>
+            </span>
+          </ion-col>
+          <ion-col class="fan-auto" [ngClass]="showAuto() ? '': 'inactive'">
+            AUTO
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+    <ion-grid class="buttons" text-center>
+
+      <ion-row center>
+        <ion-col width-33>
+          <button ion-button icon-only (click)="temperature(-1)" class="round-med" [attr.disabled]="settings.state === 'off' || loading ? true : null"><ion-icon name="remove"></ion-icon></button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button (click)="fan(1)" [attr.disabled]="settings.state === 'off' || loading ? true : null">FAN</button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button icon-only (click)="temperature(+1)" class="round-med" [attr.disabled]="settings.state === 'off' || loading ? true : null"><ion-icon name="add"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row center>
+        <ion-col></ion-col>
+        <ion-col>
+          <button ion-button icon-only (click)="toggle()" class="round-big" [attr.disabled]="loading ? true : null"><ion-icon name="power"></ion-icon></button>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+</ion-content>

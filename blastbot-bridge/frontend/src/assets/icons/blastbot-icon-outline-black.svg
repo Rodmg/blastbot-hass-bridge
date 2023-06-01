@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="24"
+   viewBox="0 0 24 24"
+   width="24"
+   id="svg4141"
+   version="1.1"
+   inkscape:version="0.91+devel+osxmenu r12922"
+   sodipodi:docname="blastbot-icon-outline-black.svg"
+   style="fill:#000000">
+  <metadata
+     id="metadata4151">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4149" />
+  <sodipodi:namedview
+     pagecolor="#ff9292"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="855"
+     id="namedview4147"
+     showgrid="false"
+     inkscape:zoom="16"
+     inkscape:cx="9.0125516"
+     inkscape:cy="17.972723"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g4221-3"
+     scale-x="1" />
+  <path
+     d="M 0,0 24,0 24,24 0,24 Z"
+     id="path4145"
+     inkscape:connector-curvature="0"
+     style="fill:none" />
+  <g
+     style="display:inline;fill:#ffffff;fill-opacity:1"
+     id="g4221-3"
+     transform="matrix(0.53965948,0,0,0.53965948,-52.446502,-138.48969)"
+     inkscape:export-filename="/Users/rod/Desktop/iconos InfraControl App/icon/android/icon-36-ldpi.png"
+     inkscape:export-xdpi="24.192001"
+     inkscape:export-ydpi="24.192001">
+    <ellipse
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.58678389;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4148"
+       cx="119.42068"
+       cy="278.86047"
+       rx="21.442444"
+       ry="21.032045" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.37486681"
+       d="m 119.15918,265.06944 c -2.06139,0 -3.73813,1.68019 -3.73813,3.74196 0,1.65999 1.09589,3.05154 2.59591,3.53811 l 0,2.81513 c -2.88305,0.64816 -5.06107,3.22436 -5.06107,6.29558 0,3.55522 2.90955,6.46477 6.46479,6.46477 3.55598,0 6.46479,-2.90955 6.46479,-6.46477 0,-3.25282 -2.44246,-5.93455 -5.58026,-6.37248 l 0,-2.73823 c 1.49901,-0.48715 2.59207,-1.87883 2.59207,-3.53811 0,-2.06177 -1.67673,-3.74196 -3.7381,-3.74196 z m 0,2.29209 c 0.79957,0 1.44985,0.65027 1.44985,1.44987 0,0.79958 -0.65028,1.44985 -1.44985,1.44985 -0.7996,0 -1.44988,-0.65027 -1.44988,-1.44985 0,-0.7996 0.65028,-1.44987 1.44988,-1.44987 z m 0.2615,10.51824 c 1.98942,0 3.58043,1.5914 3.58043,3.58045 0,1.98903 -1.59101,3.58043 -3.58043,3.58043 -1.98905,0 -3.58043,-1.5914 -3.58043,-3.58043 0,-1.98905 1.59138,-3.58045 3.58043,-3.58045 z m -5.81484,11.88736 0,2.88434 11.48738,0 0,-2.88434 -11.48738,0 z"
+       id="path4191-6-8"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

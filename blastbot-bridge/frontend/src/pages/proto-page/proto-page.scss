@@ -1,0 +1,150 @@
+.proto-page {
+
+  /* Background Color */
+  .red {
+    background-color: #F44336;
+  }
+
+  .purple {
+    background-color: #9C27B0;
+  }
+
+  .light-blue {
+    background-color: #2196F3;
+  }
+
+  .orange {
+    background-color: #FF5722;
+  }
+
+  .green {
+    background-color: #009688;
+  }
+
+  .brown {
+    background-color: #795548;
+  }
+
+  .blue {
+    background-color: #3F51B5;
+  }
+
+  .pink {
+    background-color: #D81D55;
+  }
+
+  .gray {
+    background-color: #8e9093;
+  }
+
+  .red:hover {
+    background-color: darken(#F44336, 5%);
+  }
+
+  .purple:hover {
+    background-color: darken(#9C27B0, 5%);
+  }
+
+  .light-blue:hover {
+    background-color: darken(#2196F3, 5%);
+  }
+
+  .orange:hover {
+    background-color: darken(#FF5722, 5%);
+  }
+
+  .green:hover {
+    background-color: darken(#009688, 5%);
+  }
+
+  .brown:hover {
+    background-color: darken(#795548, 5%);
+  }
+
+  .blue:hover {
+    background-color: darken(#3F51B5, 5%);
+  }
+
+  .pink:hover {
+    background-color: darken(#D81D55, 5%);
+  }
+
+  .gray:hover {
+    background-color: darken(#8e9093, 5%);
+  }
+
+  /* Color */
+  .color-red {
+    color: #F44336;
+  }
+
+  .color-purple {
+    color: #9C27B0;
+  }
+
+  .color-light-blue {
+    color: #2196F3;
+  }
+
+  .color-orange {
+    color: #FF5722;
+  }
+
+  .color-green {
+    color: #009688;
+  }
+
+  .color-brown {
+    color: #795548;
+  }
+
+  .color-blue {
+    color: #3F51B5;
+  }
+
+  .color-pink {
+    color: #D81D55;
+  }
+
+  .color-gray {
+    color: #8e9093;
+  }
+
+  /* Spinners */
+  .loadingSpinner {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .spinner-white {
+    .spinner-crescent circle {
+      stroke: #FFF;
+    }
+    .spinner-bubbles circle {
+      stroke: #FFF;
+    }
+    .spinner-circles circle {
+      stroke: #FFF;
+      fill: #FFF;
+    }
+    .spinner-dots circle {
+      stroke: #FFF;
+    }
+    .spinner-ios line {
+      stroke: #FFF;
+    }
+  }
+
+  /* Errors */
+  .input-error {
+    padding-left: 16px;
+    font-size: 14px;
+    color: rgb(221,44,0);
+    margin: 0px;
+  }
+
+  .input-error-container {
+    min-height: 19px;
+  }
+
+}

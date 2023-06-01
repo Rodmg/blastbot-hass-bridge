@@ -1,0 +1,26 @@
+.switch-page {
+
+  .flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .row {
+    width: auto;
+  }
+
+  .row-bottom {
+    width: auto;
+    height: 20px;
+  }
+
+}

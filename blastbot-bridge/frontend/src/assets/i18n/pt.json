@@ -1,0 +1,804 @@
+{
+  "cancel": "Cancelar",
+  "ok": "Ok",
+  "apply": "Aplicar",
+  "yes": "Sim",
+  "share": "Compartilhar",
+  "edit": "Editar",
+  "remove": "Remover",
+  "done": "Pronto",
+  "loading": "Carregando...",
+  "connected": "Conectado",
+  "disconnected": "Desconectado",
+  "save": "Salvar",
+  "next": "Próximo",
+  "close": "Fechar",
+  "back": "Voltar",
+  "search": "Busca",
+
+  "es": "Español",
+  "en": "English",
+  "de": "Deutsch",
+  "pt": "Português",
+
+  "from": "De",
+  "to": "Para",
+
+  "weekdays": {
+    "sunday": "Domingo",
+    "monday": "Segunda",
+    "tuesday": "Terça",
+    "wednesday": "Quarta",
+    "thursday": "Quinta",
+    "friday": "Sexta",
+    "saturday": "Sábado"
+  },
+
+  "months-n": {
+    "1": "Janeiro",
+    "2": "Fevereiro",
+    "3": "Março",
+    "4": "Abril",
+    "5": "Maio",
+    "6": "Junho",
+    "7": "Julho",
+    "8": "Agosto",
+    "9": "Setembro",
+    "10": "Outubro",
+    "11": "Novembro",
+    "12": "Dezembro"
+  },
+
+  "january": "Janeiro",
+  "february": "Fevereiro",
+  "march": "Março",
+  "april": "Abril",
+  "may": "Maio",
+  "june": "Junho",
+  "july": "Julho",
+  "august": "Agosto",
+  "september": "Setembro",
+  "october": "Outubro",
+  "november": "Novembro",
+  "december": "Dezembro",
+
+  "sunday": "Domingo",
+  "monday": "Segunda",
+  "tuesday": "Terça",
+  "wednesday": "Quarta",
+  "thursday": "Quinta",
+  "friday": "Sexta",
+  "saturday": "Sábado",
+
+  "main": {
+    "dashboard": "Controles",
+    "controls": "Controles",
+    "scenes": "Cenas",
+    "configure-new-device": "Adicionar",
+    "manage-devices": "Dispositivos",
+    "tasks": "Tarefas",
+    "automation": "Automação",
+    "preferences": "Preferências",
+    "help": "Ajuda",
+    "close-session": "Sair"
+  },
+
+  "controls": {
+    "SCENES": "CENAS",
+    "CONTROLS": "CONTROLES",
+    "add-new-control": "Novo Controle",
+    "add-new-scene": "Nova Cena",
+    "add-new-device": "Novo Dispositivo",
+    "title": "Controles",
+    "no-control": "Nenhum Controle",
+    "add-control": "Novo Controle",
+    "my-controls": "Meus Controles",
+    "share": "Compartilhar",
+    "edit": "Editar",
+    "remove": "Remover",
+    "shared-by": "Compartilhado por: {{user}}",
+    "unfollow": "Deixar de seguir",
+    "disconnected": "(desconectado)",
+    "cancel": "Cancelar",
+    "yes": "Sim",
+    "invalid-name": "Nome inválido",
+    "invalid-name-msg": "O nome deve ter de 1 a 30 caracteres",
+    "actionsheet": {
+      "title": "Editar {{name}}"
+    },
+    "delete-prompt": {
+      "title": "Confirmação",
+      "text": "Tem certeza que deseja remover o controle \"{{name}}\"?"
+    },
+    "unfollow-prompt": {
+      "title": "Deixar de seguir",
+      "text": "Tem certeza que deseja deixar de seguir o controle \"{{name}}\"?"
+    }
+  },
+  "action-editor": {
+    "control-or-scene": "Controle ou Cena",
+    "control": "Controle",
+    "cancel": "Cancelar",
+    "ok": "Ok",
+    "select-control-scene": "Selecione um controle ou cena",
+    "select-control": "Selecione um controle",
+    "button": "Botão",
+    "select-button": "Selecione um botão",
+    "command": "Comando",
+    "select-command": "Selecione um comando",
+    "temperature": "Temperatura",
+    "select-temperature": "Seleciona a temperatura",
+    "fan": "Ventilador",
+    "select-fan": "Selecione a velocidade",
+    "timer": "Temporizador",
+    "select-timer": "Selecione a duração do tempo"
+  },
+  "action-links": {
+    "links": "Links",
+    "done": "Pronto",
+    "no-links": "Nenhum Link Configurado",
+    "configure-new": "Configurar Link",
+    "active-links": "Links Ativos",
+    "remove": "Remover",
+    "cancel": "Cancelar",
+    "yes": "Sim",
+    "actionsheet": {
+      "title": "Editar {{name}}"
+    },
+    "delete-prompt": {
+      "title": "Confirmação",
+      "text": "Tem certeza que deseja remover o link \"{{name}}\"?"
+    },
+    "link-copied": "Link copiado.",
+    "copy-to-clipboard": "Para copiar: Ctrl+C, Enter"
+  },
+  "add-button": {
+    "add-button": "Novo Botão",
+    "edit-button": "Editar Botão",
+    "name": "Nome",
+    "icon": "Ícone",
+    "text-only": "Só Texto",
+    "color": "Cor",
+    "code": "Código",
+    "test": "Testar",
+    "learn": "Aprender",
+    "save": "Salvar",
+    "new-button": "Novo Botão",
+    "loading": "Carregando..."
+  },
+  "add-control": {
+    "add-control": "Novo Controle",
+    "connected": "Conectado",
+    "disconnected": "Desconectado",
+    "select-blastbot": "Seleciona a central que o controle será associado.",
+    "no-blastbot": "Nenhuma central configurada",
+    "no-blastbot-configure": "Você tem uma central?",
+    "configure-it": "Configurar",
+    "buy-blastbot": "Comprar",
+    "select-type": "Seleciona o tipo do dispositivo que deseja controlar, ou crie um controle em branco.",
+    "select-brand": "Selecione a marca.",
+    "position-instructions": "Verifique se o dispositivo está <b>desligado</b> e está com <b>visada</b> para a central.",
+    "next": "Próximo",
+    "test-buttons": "Teste os botões. Se não funcionarem, aperte \"Tentar outro\" até encontrar o que funciona. Assim que encontrar o que funciona, aperte \"Esse funciona\".",
+    "model:": "Modelo:",
+    "assure-ac-off": "Verifique que o AC <b>está desligado</b>.",
+    "scan-all-controls": "Testar todos",
+    "this-works": "Esse funciona",
+    "try-another": "Tentar outro",
+    "blank-control": "Controle em branco",
+    "cant-find-brand": "Não encontrei a marca",
+    "new-control": "Novo controle",
+    "blastbot-disconnected": "Central desconectada",
+    "blastbot-disconnected-msg": "A central \"{{name}}\" deve estar ligada e conectada para adicionar um novo controle.",
+    "no-more-controls": "Sem mais controles",
+    "no-more-controls-msg": "Você pode criar um novo controle e copiar os códigos do controle original.",
+    "save-control": "Salvar controle",
+    "new-name": "Novo nome",
+    "or": "Ou",
+    "configure-new-device": "Novo Dispositivo",
+    "type-not-found": "Nenhum resultado para a busca.",
+    "brand-not-found": "Nenhum resultado para a busca.",
+    "types": {
+      "blank-control": "Controle em branco",
+      "Otros": "Outro",
+      "Televisión": "TV",
+      "Audio": "Áudio",
+      "Receptor A/V": "A/V Receiver",
+      "Reproductor de DVD": "DVD Player",
+      "Aire Acondicionado (control sin pantalla)": "Ar Condicionado (sem tela)",
+      "Reproductor de Blu-ray": "Blu-ray Player",
+      "Decodificador / Caja Digital": "Decoder / Digital Box",
+      "VCR": "VCR",
+      "Consola de Juegos": "Game console",
+      "Media Manager Box": "Media Manager Box",
+      "Proyector": "Projetor",
+      "Aire Acondicionado": "Ar Condicionado"
+    }
+  },
+  "change-password": {
+    "change-password": "Alterar Senha",
+    "user:": "Usuário: {{name}}",
+    "current-password": "Senha atual",
+    "new-password": "Nova senha",
+    "repeat-new-password": "Repita a nova senha",
+    "bad-current-msg": "A senha não foi alterada, verifique a senha original",
+    "bad-repeat-msg": "Senhas não conferem",
+    "password-successfully-changed": "Senha alterada"
+  },
+  "control": {
+    "edit-instructions": "Selecione um botão para editar. Aperte, segure e deslize para mover.",
+    "no-communication": "Sem comunicação com a central",
+    "temperature-in-room": "Temperatura no local",
+    "blastbot-disconnected": "Central desconectada",
+    "check-blastbot-connected": "Verifique se o dispositivo \"{{name}}\" está conectado e configurado.",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover o botão \"{{name}}\"?"
+    },
+    "edit-button": "Editar botão",
+    "add-button": "Novo botão",
+    "history": "Histórico"
+  },
+  "history": {
+    "history": "Histórico",
+    "temperature": "Temperatura",
+    "day": "Dia",
+    "week": "Semana",
+    "month": "Mes",
+    "no-enough-data": "Sem dados para mostrar",
+    "no-enough-data-msg": "Demora algumas horas para aparecer",
+    "events": "Eventos",
+    "no-events": "Nenhum evento",
+    "button-pressed": "Botão pressionado: {{name}}",
+    "blastbot-connected": "Dispositivo conectado",
+    "blastbot-disconnected": "Dispositivo desconectado",
+    "ac-set": "O AC foi ajustado para {{temperature}}ºC, velocidade {{fan}}",
+    "on": "Ligado",
+    "off": "Desligado",
+    "toggle": "Alterar",
+    "failed": "Falhou"
+  },
+  "device": {
+    "name:": "Nome:",
+    "state:": "Estado:",
+    "connected": "Conectado",
+    "disconnected": "Desconectado",
+    "mac-address:": "MAC:",
+    "address:": "Endereço:",
+    "bridge:": "Central:",
+    "hub-channel:": "Canal:",
+    "firmware-version:": "Versão Firmware:",
+    "device-disconnected": "Dispositivo desconectado",
+    "device-disconnected-msg": "Verifique que o dispositivo \"{{name}}\" está conectado e configurado.",
+    "no-presence-delay:": "Tempo de presença:",
+    "presence:": "Presença:",
+    "minutes": "minutos",
+    "virtual-pir": "Sensor de presença RF genérico",
+    "virtual-door": "Sensor de porta RF genérico",
+    "virtual-button": "Botão RF genérico"
+  },
+  "devices": {
+    "devices": "Dispositivos",
+    "my-blastbot": "Minha central",
+    "no-device-configured": "Nenhum dispositivo configurado",
+    "no-device-configured-msg": "Já tem uma central?",
+    "configure-it": "Configurar",
+    "buy-blastbot": "Comprar",
+    "reconfigure": "Configurar novamente",
+    "change-name": "Alterar nome",
+    "new-name": "Novo nome",
+    "edit-device": "Editar \"{{name}}\"",
+    "invalid-name": "Nome inválido",
+    "invalid-name-msg": "O nome deve ter de 1 a 30 caracteres",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover o dispositivo \"{{name}}\"?"
+    }
+  },
+  "edit-action": {
+    "edit-action": "Editar Ação",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover essa ação?"
+    }
+  },
+  "edit-action-link": {
+    "new-link": "Novo Link"
+  },
+  "edit-control": {
+    "edit-control": "Editar Controle",
+    "name": "Nome",
+    "icon": "Ícone",
+    "text-only": "Somente Texto"
+  },
+  "edit-scene": {
+    "edit-scene": "Editar Cena",
+    "add-scene": "Nova Cena",
+    "name": "Nome",
+    "icon": "Ícone",
+    "text-only": "Somente Texto",
+    "new-scene": "Nova Cena"
+  },
+  "error": {
+    "there-was-a-problem": "Houve um problema...",
+    "no-communication": "SEM COMUNICAÇÃO COM O SERVIDOR",
+    "check-network": "Verifique sua conexão com a Internet.",
+    "retry": "Tentar novamente"
+  },
+  "help": {
+    "title": "Tópicos de ajuda",
+    "welcome": "Bem vindo",
+    "controls": "Controles",
+    "edit-controls": "Editar Controles",
+    "share-controls": "Compartilhar Controles",
+    "configure-new-blastbot": "Configurar nova Central",
+    "configure-blastbot": "Configurar Central",
+    "configure-blastbot-again": "Configurar uma Central novamente",
+    "reconfigure-blastbot": "Reconfigurar a Central",
+    "tasks": "Tarefas",
+    "using-tasks": "Usando Tarefas",
+    "scenes": "Cenas",
+    "using-scenes": "Usando Cenas"
+  },
+  "help-item": {
+    "controls": {
+      "s1": {
+        "title": "Adicionar um controle",
+        "p1": "Na lista de controles, pressione o ícone (+) e selecione \"Novo Controle\".",
+        "p2": "Selecione a central que o controle será atribuído.",
+        "p3": "Selecione o tipo e marca do dispositivo que você quer controlar.",
+        "p4": "Siga as orientações da tela para testar os controles."
+      },
+      "s2": {
+        "title": "Editar ou remover um controle",
+        "p1": "Na lista de controles, deslize o controle para a esquerda para ver as opções."
+      },
+      "s3": {
+        "title": "Alterar a ordem dos controles",
+        "p1": "Na lista de controles, pressione o ícone lápis.",
+        "p2": "Pressione nas três linhas ao lado direito do controle que deseja mover.",
+        "p3": "Posicione o controle no local desejado."
+      }
+    },
+    "share": {
+      "s1": {
+        "title": "Compartilhar um controle",
+        "p1": "Na lista de controles, deslize o controle para a esquerda para ver as opções.",
+        "p2": "Pressione o botão para compartilhar.",
+        "p3": "Então, pressione o ícone (+) e digite o e-mail da conta que irá receber o controle."
+      }
+    },
+    "new-blastbot": {
+      "s1": {
+        "title": "Configurar uma nova central",
+        "p1": "Abra o menu principal e escolha \"Configurar nova central\", e siga as instruções da tela."
+      }
+    },
+    "reconfigure": {
+      "s1": {
+        "title": "Configurar uma central novamente",
+        "p1": "Abra o menu principal e escolha \"Dispositivos\".",
+        "p2": "Na lista de dispositivos, deslize a central para a direita e selecione \"Configurar novamente\".",
+        "p3": "Siga as instruções da tela."
+      }
+    },
+    "task": {
+      "s1": {
+        "title": "Criar nova tarefa",
+        "p1": "Abra o menu principal e escolha \"Tarefas\".",
+        "p2": "Pressione o ícone (+).",
+        "p3": "Siga as instruções da tela."
+      },
+      "s2": {
+        "title": "Editar tarefa",
+        "p1": "Na lista de tarefas, deslize o controle para a esquerda para ver as opçõess."
+      }
+    },
+    "scenes": {
+      "s1": {
+        "title": "Criar cena",
+        "p1": "Na lista de controles, pressione o ícone (+) e selecione \"Nova cena\".",
+        "p2": "Siga as instruções da tela."
+      },
+      "s2": {
+        "title": "Editar cena",
+        "p1": "Na lista de controles, pressione o ícone lápis.",
+        "p2": "Selecione a cena que deseja editar.",
+        "p3": "Selecione a opção desejada."
+      }
+    }
+  },
+  "learn-code": {
+    "learn-code": "Aprender código",
+    "instructions-1": "Aponte o controle remoto para a central, a um palmo de distância.",
+    "instructions-2": "Pressione \"Iniciar Captura\".",
+    "instructions-3": "Quando a luz vermelha na central ascender, pressione o botão do controle remoto que deseja aprender.",
+    "instructions-4": "<b>Importante:</b> Pressione o botão somente uma vez e não segure o botão.",
+    "rf": {
+      "instructions-1": "Pressione \"Iniciar Captura\".",
+      "instructions-2": "Faça o equipamento emitir o código RF que deseja aprender."
+    },
+    "start-capture": "Iniciar Captura",
+    "learning": "Copiando...",
+    "error-1": "O código não pode ser copiado",
+    "error-2": "Por favor tente novamente",
+    "error-3": "Sem comunicação com a central"
+  },
+  "login": {
+    "title-login": "Login",
+    "title-recover": "Recuperar senha",
+    "title-new-account": "Nova conta",
+    "bad-password": "Senha ou usuário inválido",
+    "no-internet": "Sem conexão a Internet",
+    "email": "Email",
+    "password": "Senha",
+    "login": "Login",
+    "no-account?": "Não tem conta?",
+    "go-register": "Criar conta",
+    "forgot-password?": "Esqueceu a senha?",
+    "go-recover": "Recuperar",
+    "privacy-policy": "Privacidade",
+    "send-recovery-email": "Enviar e-mail de recuperação",
+    "register": "Criar conta",
+    "starting-session": "Entrando...",
+    "sending": "Enviando...",
+    "email-sent": "Email enviado",
+    "email-sent-msg": "Verifique seu e-mail com as instruções",
+    "bad-account": "Esta conta não existe",
+    "bad-account-msg": "Este e-mail não existe na nossa base de dados",
+    "email-exists": "Esse e-mail já foi usado",
+    "email-exists-msg": "Tente recuperar a senha ou usar um novo e-mail",
+    "form-bad-email-msg": "Deve ser um e-mail válido",
+    "form-bad-pass-msg": "Pelo menos 8 caracteres"
+  },
+  "scan-controls": {
+    "scan-controls": "Buscar Controles",
+    "instructions-1": "Verifique que seu AC está desligado.",
+    "instructions-2": "Aponte a central para o AC.",
+    "instructions-3": "Pressione \"Iniciar Busca\".",
+    "instructions-4": "Quando você ouvir o AC ligar, imediatamente pressione \"Parar Busca\".",
+    "scanning-control-n-of-total": "Buscando controle: {{n}} de {{total}}",
+    "start-scan": "Iniciar Busca",
+    "end-scan": "Parar Busca"
+  },
+  "scene": {
+    "scene": "Cena",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover a cena \"{{name}}\"?"
+    },
+    "max-reached": "Limite atingido",
+    "max-reached-msg": "Máximo de 10 ações por cena",
+    "1-second": "1 segundo",
+    "n-seconds": "{{n}} segundos",
+    "wait-between-actions": "Pausa entre as ações",
+    "start": "Iniciar",
+    "add-actions-to-start": "Adicione ações para iniciar",
+    "end": "Terminar"
+  },
+  "scenes": {
+    "my-scenes": "Minhas Cenas",
+    "no-scenes": "Nenhuma cena configurada",
+    "create-a-scene": "Criar uma cena",
+    "preparing-scene": "Executando cena...",
+    "scene-prepared-ok": "Cena executada com sucesso.",
+    "scene-not-prepared-ok": "A cena não foi executada corretamente",
+    "action-error": "Uma ação não pode ser executada. Verifique que a central está conectada a Internet.",
+    "n-action-error": "{{n}} ações não puderam ser executadas. Verifique que a central está conectada a Internet.",
+    "edit-name": "Editar {{name}}",
+    "change-name-icon": "Alterar o nome e ícone",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover a cena \"{{name}}\"?"
+    }
+  },
+  "select-color": {
+    "select-color": "Selecionar Cor"
+  },
+  "select-icon": {
+    "select-icon": "Selecionar Ícone",
+    "none-text-only": "Nenhum (Somente texto)"
+  },
+  "settings": {
+    "settings": "Configurações",
+    "general": "Gerais",
+    "sound-press-button": "Tocar som ao apertar um botão",
+    "timezone": "Fuso horário",
+    "advanced-user": "Avançado",
+    "notifications": "Notificações",
+    "notification-email": "Notificações por E-mail",
+    "address": "Endereço",
+    "notify-errors": "Notificar erros",
+    "notify-tasks": "Notificar tarefas executadas",
+    "notify-disconnect": "Notificar perda de conexão a Internet",
+    "notify-connect": "Notificar ao conectar a Internet",
+    "security": "Segurança",
+    "change-password": "Alterar senha",
+    "api-links": "API Links",
+    "language": "Idioma",
+    "notify_via_email": "Notificar por E-mail",
+    "notify_via_push": "Notificar por Push"
+  },
+  "share-control": {
+    "share-control": "Compartilhar Controle",
+    "users-shared-name": "Usuários com acesso a \"{{name}}\"",
+    "unshare": "Parar compartilhamento",
+    "unshare-msg": "Tem certeza que deseja parar o compartilhamento com esse usuário?",
+    "share-with-user": "Compartilhar com usuário",
+    "blastbot-cloud-user": "Usuário",
+    "already-shared": "Já foi compartilhado",
+    "already-shared-msg": "Este controle já foi compartilhado com \"{{name}}\".",
+    "user-not-found": "Usuário não encontrado",
+    "user-not-found-msg": "O usuário com o e-mail \"{{email}}\" não foi encontrado.",
+    "no-shares": "Não compartilhado"
+  },
+  "smart-control": {
+    "no-communication": "Sem comunicação com a central",
+    "temperature-in-room": "Temperatura no local",
+    "blastbot-disconnected": "Central desconectada",
+    "check-blastbot-connected": "Verifique que o dispositivo \"{{name}}\" está conectado e configurado.",
+    "sleep-timer": "Dormir",
+    "disabled": "Desativado",
+    "1-hour": "1 hora",
+    "n-hours": "{{n}} horas"
+  },
+  "switch": {
+    "no-communication": "Sem comunicação com o dispositivo",
+    "device-disconnected": "Dispositivo desconectado",
+    "check-device-connected": "Verifique que o dispositivo \"{{name}}\" está conectado e configurado."
+  },
+  "task": {
+    "edit-task": "Editar Tarefa",
+    "new-task": "Nova Tarefa",
+    "enable": "Ativar",
+    "frequency": "Frequência",
+    "timezone": "Fuso Horário",
+    "weekdays": "Dias da semana",
+    "day": "Dia",
+    "date": "Data",
+    "hour": "Hora",
+    "minute": "Minuto",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover essa tarefa?"
+    },
+    "select-a-day": "Selecione ao menos um dia da semana",
+
+    "hourly": "Por hora",
+    "daily": "Por dia",
+    "weekly": "Por semana",
+    "monthly": "Por mes",
+    "yearly": "Por ano",
+    "once": "Uma vez"
+  },
+  "tasks": {
+    "tasks": "Tarefas",
+    "no-tasks": "Nenhuma tarefa configurada",
+    "create-a-task": "Criar tarefa",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover a tarefa \"{{name}}\"?"
+    },
+    "description": {
+      "hourly": "Cada hora nos {{minutes}} minutos ({{timezone}})",
+      "daily": "Cada dia as {{hour}}:{{minutes}} ({{timezone}})",
+      "weekly": "Cada semana nos dias {{days}} as {{hour}}:{{minutes}} ({{timezone}})",
+      "monthly": "Cada mes no dia {{day}} as {{hour}}:{{minutes}} ({{timezone}})",
+      "yearly": "Cada ano no dia {{day}} de {{month}} as {{hour}}:{{minutes}} ({{timezone}})",
+      "once": "{{month}} {{day}}, {{year}} as {{hour}}:{{minutes}} ({{timezone}})"
+    }
+  },
+  "welcome": {
+    "skip": "Pular",
+    "s1": {
+      "title": "Bem vindo!",
+      "p1": "Você precisa de uma central para usar esse App, se você não tem você pode comprar aqui:",
+      "buy-blastbot": "Comprar",
+      "p2": "<b>Deslize</b> para a esquerda para ver mais."
+    },
+    "s2": {
+      "title": "Todos os controles em um App",
+      "p1": "Controle todos os seus dispositivos do seu celular, de qualquer lugar."
+    },
+    "s3": {
+      "title": "Programe tarefas",
+      "p1": "Com as <b>Tarefas</b>, você pode definir, por exemplo, que o ar condicionado do escritório irá ligar às <b>9:00</b> e desligar às <b>17:00</b>."
+    },
+    "s4": {
+      "title": "Crie suas cenas favoritas",
+      "p1": "Com as <b>Cenas</b>, você fica pronto para uma sessão de cinema com apenas um toque no botão.",
+      "p2": "A central irá ligar a TV, ajustar o Home Theater, ligar o AC e colocar no seu canal favorito."
+    },
+    "s5": {
+      "title": "Configure a sua central",
+      "p1": "Primeiro precisamos configurar a sua central e adicionar todos os seus controles.",
+      "start": "Começar"
+    }
+  },
+  "setup-device": {
+    "initial-setup": "Configuração Inicial",
+    "which-device-type": "Qual tipo de dispositivo você quer controlar?",
+    "blastbot-description": "Controle seu AC e dispositivos por IR.",
+    "switch-description": "Troque os interruptores da parede.",
+    "plug-description": "Controle uma tomada comandada.",
+    "sensor-description": "Use sensores de alarme.",
+    "sensor-name": "Sensor RF"
+  },
+  "setup-blastbot": {
+    "blastbot-connection-lost": "A conexão com a central foi perdida",
+    "blastbot-connection-lost-msg": "Verifique que você está próximo da central e que o LED verde está aceso.",
+    "no-blastbot-found": "Nenhuma central encontrada",
+    "no-blastbot-found-msg": "Verifique que você segui as orientações corretamente.",
+    "go-back": "Voltar",
+    "retry": "Repetir",
+    "there-was-a-problem": "Ops! Encontramos um problema",
+    "no-networks": "Não foi possível encontrar redes sem fio.",
+    "no-internet": "Sem conexão a Internet",
+    "no-internet-msg": "Verifique que essa rede possui conexão a Internet.",
+    "searching-blastbot": "Procurando central...",
+    "searching-networks": "Procurando redes...",
+    "applying": "Um momento...",
+    "waiting-network": "Aguardando rede...",
+    "other-ssid": "Outro SSID",
+    "initial-setup": "Configuração Inicial",
+    "next": "Próximo",
+    "invalid-name": "SSID inválido",
+    "invalid-name-msg": "O SSID deve conter de 1 a 30 caracteres",
+    "s1": {
+      "p1": "Conecte a central na energia."
+    },
+    "s2": {
+      "p1": "<b>Aperte e segure o botão de configuração</b> até que o LED verde fique aceso."
+    },
+    "s3": {
+      "p1": "Quando o LED verde ficar <b>aceso e sem piscar</b>, pressione \"Próximo\"."
+    },
+    "s4": {
+      "p1": "Saia do App e abra as configurações de Wi-Fi do seu celular.",
+      "p2": "Conecte na rede chamada BlastbotXXXX (XXXX varia para cada central).",
+      "p3": "Volte aqui e o App irá conectar automaticamente na central."
+    },
+    "s5": {
+      "p1": "Selecione a rede Wi-Fi que a central vai conectar e digite a senha. Pressione \"Aplicar\".",
+      "net-name": "Wi-Fi (SSID):",
+      "other": "Outro...",
+      "required-field": "Campo obrigatório.",
+      "password": "Senha:",
+      "max-64-characters": "Max 64 caracteres.",
+      "repeat-password": "Repita a senha:",
+      "passwords-dont-match": "As senhas não conferem.",
+      "search-more-networks": "Procurar mais redes",
+      "use-dhcp": "Use o DHCP (configuração automática)",
+      "use-ui": "Usar API Local",
+      "invalid-address": "Endereço inválido"
+    }
+  },
+  "setup-blastbot-plug": {
+    "no-blastbot-found": "Nenhum plugue de tomada encontrado",
+    "searching-blastbot": "Procurando por plugue de tomada...",
+    "s1": {
+      "p1": "Conecte o plugue de tomada na energia."
+    },
+    "s4": {
+      "p2": "Conecte na rede Wi-Fi chamada BlastbotPlugXXXX (XXXX varia para cada dispositivo)."
+    },
+    "s5": {
+      "p1": "Selecione a rede Wi-Fi que o plugue irá conectar e digite a senha. Pressione \"Aplicar\"."
+    }
+  },
+  "setup-blastbot-switch": {
+    "no-blastbot-found": "Nenhum interruptor encontrado",
+    "searching-blastbot": "Procurando interruptores...",
+    "connected": "Conectado",
+    "disconnected": "Desconectado",
+    "or": "ou",
+    "no-blastbot": "Nenhuma central configurada",
+    "no-blastbot-configure": "Já tem uma central?",
+    "configure-new-device": "Configurar nova central",
+    "configure-it": "Configurar",
+    "buy-blastbot": "Comprar",
+    "blastbot-disconnected": "Central desconectada",
+    "blastbot-disconnected-msg": "A central \"{{name}}\" deve estar ligada e conectada antes de adicionar um interruptor.",
+    "s1": {
+      "p1": "Selecione a central que o interruptor será atribuído."
+    },
+    "s2" :{
+      "p1": "Verifique que o interruptor está instalado corretamente, aperte os botões no interruptor."
+    },
+    "s3" :{
+      "p1": "<b>Aperte e segure</b> os dois botões (ou se tiver apenas um) até que os LEDs brancos pisquem."
+    }
+  },
+  "setup-rf-sensor": {
+    "start-pair": "Parear",
+    "pair-again": "Parear novamente",
+    "pairing": "Aguardando sensor...",
+    "pairing-pir": "Faça o sensor detectar movimento, passe a mão na frente dele...",
+    "pairing-door": "Faça o sensor detectar abertura, separe as duas partes...",
+    "pairing-button": "Aperte o botão no dispositivo RF...",
+    "no-sensor-found": "Nenhum sensor RF encontrado",
+    "save-sensor": "Salvar sensor",
+    "new-name": "Novo nome",
+    "s1": {
+      "p1": "Selecione a central que o sensor RF será atribuído."
+    },
+    "s2" :{
+      "p1": "Parear o sensor RF. Para mais informações leia: <a href='#'>Quais sensores eu posso parear?</a> ",
+      "frequency": "Frequência:",
+      "type": "Tipo:",
+      "delay": "Tempo sem presença (min):",
+      "pir": "Sensor de presença",
+      "door": "Sensor de porta",
+      "button": "Botão"
+    },
+    "s3" :{
+      "p1": "<b>Pareando o Sensor</b>",
+      "instructions-pir": "1. Pressione \"PAREAR\"<br>2. Faça o sensor detectar movimento, passe a mão na frente dele.<br>3. Verifique que deu certo, repita a ação e veja se o LED ascende.",
+      "instructions-door": "1. Pressione \"PAREAR\"<br>2. Faça o sensor detectar abertura, separe as duas partes.<br>3. Verifique que deu certo, repita a ação e veja se o LED ascende.",
+      "instructions-button": "1. Pressione \"PAREAR\"<br>2. Aperte o botão no dispositivo RF.<br>3. Verifique que deu certo, repita a ação e veja se o LED ascende"
+    }
+  },
+  "automations": {
+    "automation": "Automação",
+    "no-automations": "Nenhuma automação configurada",
+    "create-an-automation": "Criar nova automação",
+    "no-actions": "Nenhuma ação",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover a automação \"{{name}}\"?"
+    }
+  },
+  "new-automation": {
+    "title": "Nova Automação",
+    "question": "Quando você quer que seja executada?",
+    "task": {
+      "description": "Em um horário do dia",
+      "example": "Exemplo: \"As 8:00\" ou \"Toda Segunda as 6:30\""
+    },
+    "sensor": {
+      "description": "Quando o sensor detectar algo",
+      "example": "Exemplo: \"Presença detectada\" ou \"Porta aberta\""
+    },
+    "control": {
+      "description": "Quando um dispositivo é controlado",
+      "example": "Exemplo: \"TV: ligada\" ou \"AC: desligado\""
+    }
+  },
+  "automation-sensor": {
+    "edit": "Editar Automação",
+    "new": "Nova Automação",
+    "when": "Quando:",
+    "actions": "Ações:",
+    "sensor:": "Sensor:",
+    "detects:": "Detectar:",
+    "pressed": "Ativado",
+    "open": "Aberto",
+    "presence": "Presença",
+    "no-presence": "Não presença",
+    "no-actions": "Nenhuma ação",
+    "control:": "Controle:",
+    "action:": "Ação:",
+    "on": "Ligado",
+    "off": "Desligado",
+    "toggle": "Toggle",
+    "set": "Definir",
+    "delete-prompt": {
+      "title": "Confirmar remoção",
+      "text": "Tem certeza que deseja remover essa automação?"
+    }
+  },
+  "times-editor": {
+    "validity": "Validade",
+    "validity-time": "Ativo",
+    "always": "Sempre",
+    "daily": "Diariamente (hora específica)",
+    "weekly": "Customizado (Dia e hora)",
+    "monthly": "Mensalmente",
+    "specific": "Uma vez (data específica)",
+    "add-range": "Adicionar espaço de tempo",
+    "delete-range": "Apagar espaço de tempo",
+    "add-month-day": "Adicionar Mes Dia",
+    "day": "Dia"
+  }
+
+}

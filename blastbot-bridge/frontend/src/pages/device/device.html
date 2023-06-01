@@ -1,0 +1,42 @@
+<ion-header class="device">
+
+  <ion-navbar [color]="device.connected ? 'primary' : null">
+    <ion-title>{{device.name}}</ion-title>
+    <ion-buttons end *ngIf="!device.connected">
+      <button ion-button icon-only (click)="checkDisconnected()">
+        <ion-icon class="bb-disconnected"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="device.connected">
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="device" padding>
+  <div text-center *ngIf="loading" class="loadingSpinner">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <div text-center>
+    <h1>
+      <ion-icon *ngIf=" !device.type.startsWith('virtual-') " class="bb-blastbot blastbot-red"></ion-icon>
+      <ion-icon *ngIf=" device.type.startsWith('virtual-') " class="bb-input-antenna blastbot-red"></ion-icon>
+    </h1>
+    <h1>{{getDeviceTypeName(device)}}</h1>
+    <p><b>{{ 'device.name:' | translate }}</b> {{device.name}}</p>
+    <p><b>{{ 'device.state:' | translate }}</b> {{ device.connected ? ( 'device.connected' | translate ) : ( 'device.disconnected' | translate ) }}</p>
+    <p *ngIf="device.mac && !device.type.startsWith('virtual-')"><b>{{ 'device.mac-address:' | translate }}</b> {{parseMAC(device.mac)}}</p>
+    <p *ngIf="device.bridgeId"><b>{{ 'device.bridge:' | translate }}</b> {{device.bridge.name}}</p>
+    <p *ngIf="device.address"><b>{{ 'device.address:' | translate }}</b> {{device.address}}</p>
+    <!-- <p *ngIf="device.version"><b>Revisión de Hardware:</b> {{device.version}}</p> -->
+    <p *ngIf="device.version"><b>{{ 'device.firmware-version:' | translate }}</b> {{device.version}}</p>
+    <p *ngIf="config && config.channel"><b>{{ 'device.hub-channel:' | translate }}</b> {{config.channel}}</p>
+    <p *ngIf="device.type.startsWith('virtual-')"><b>{{ 'device.address:' | translate }}</b> {{device.mac}}</p>
+    <p *ngIf="config && config.noPresenceDelay"><b>{{ 'device.no-presence-delay:' | translate }}</b> {{config.noPresenceDelay/60}} {{ 'device.minutes' | translate }}</p>
+    <p *ngIf="config && config.presence"><b>{{ 'device.presence:' | translate }}</b> {{config.presence ? translate.instant('yes') : translate.instant('no') }}</p>
+    <!-- <p><b>Primera Conexión:</b> {{device.logged_at}}</p> -->
+  </div>
+
+</ion-content>

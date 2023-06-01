@@ -1,0 +1,53 @@
+<ion-header class="scan-controls proto-page">
+
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss(null)">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'scan-controls.scan-controls' | translate }}</ion-title>
+    <ion-buttons end *ngIf="!stop">
+      <button ion-button icon-only class="spinner-white">
+        <ion-spinner></ion-spinner>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="scan-controls proto-page">
+
+  <div class="page-flex">
+    <div class="page-flex-section">
+      <ol>
+        <li>{{ 'scan-controls.instructions-1' | translate }}</li>
+        <li>{{ 'scan-controls.instructions-2' | translate }}</li>
+        <li>{{ 'scan-controls.instructions-3' | translate }}</li>
+        <li>{{ 'scan-controls.instructions-4' | translate }}</li>
+      </ol>
+    </div>
+
+    <div class="page-flex-section">
+
+      <div *ngIf="!loading && !stop">
+        <p>
+          {{ 'scan-controls.scanning-control-n-of-total' | translate:{ n: index + 1, total: controls.length } }}
+        </p>
+        <p text-center><ion-icon name="pause" *ngIf="!emittingSmart"></ion-icon><ion-icon name="wifi" *ngIf="emittingSmart"></ion-icon></p>
+        <ion-range min="0" [max]="controls.length - 1" step="1" snaps="true" [(ngModel)]="index" color="danger" pin="true" *ngIf="controls.length"></ion-range>
+      </div>
+
+      <div text-center *ngIf="loading">
+        <ion-spinner></ion-spinner>
+      </div>
+    </div>
+
+    <div class="page-flex-buttons" *ngIf="!loading">
+
+      <button ion-button color="primary" (click)="startScanning()" [disabled]="!stop" full>{{ 'scan-controls.start-scan' | translate }}</button>
+      <button ion-button color="primary" (click)="stopScanning()" [disabled]="stop" full>{{ 'scan-controls.end-scan' | translate }}</button>
+    </div>
+  </div>
+
+</ion-content>

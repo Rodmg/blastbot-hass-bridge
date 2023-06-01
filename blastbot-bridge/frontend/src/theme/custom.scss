@@ -1,0 +1,115 @@
+
+#sideMenu {
+  @media screen and (min-width: 1024px) {
+    /* Limit sidebar size in desktop screen sizes */
+    max-width: 304px;
+  }
+}
+
+.sideToolbar {
+  min-height: 172px !important;
+  -webkit-box-align: flex-end !important;
+  -webkit-align-items: flex-end !important;
+  -ms-flex-align: flex-end !important;
+  align-items: flex-end !important;
+
+  p {
+    padding-left: 12px;
+    color: white;
+    font-size: 12px;
+  }
+
+  toolbar-title {
+    padding-left: 12px;
+    color: white;
+  }
+
+  img {
+    min-width: calc(100% - 25px);
+    max-width: calc(100% - 25px);
+  }
+
+  ion-title {
+    padding: 0px !important;
+    position: relative !important;
+  }
+
+}
+
+.sideToolbarContent {
+  /*
+    Fixes when part of the list of the side menu ends up being hidden on first login:
+  */
+  .fixed-content {
+    margin-top: 172px;
+  }
+  .scroll-content {
+    margin-top: 172px;
+    overflow: hidden;
+  }
+}
+
+.ion-ios-blastbot,
+.ion-md-blastbot {
+  content: url('../assets/icons/blastbot-icon-black.svg');
+  width: 24px;
+  height: 32px;
+  padding: 6px, 4px, 2px;
+}
+
+.ion-ios-blastbot-white,
+.ion-md-blastbot-white {
+  content: url('../assets/icons/blastbot-icon-white.svg');
+  width: 24px;
+  height: 32px;
+  padding: 6px, 4px, 2px;
+}
+
+.ion-ios-blastbot-outline-black,
+.ion-md-blastbot-outline-black {
+  content: url('../assets/icons/blastbot-icon-outline-black.svg');
+  width: 24px;
+  height: 32px;
+  padding: 6px, 4px, 2px;
+}
+
+// text size Doesn't work ok in android, check:
+ion-item-options {
+  .button-ios {
+    min-width: 80px;
+    max-width: 80px;
+    font-size: 1.4rem;
+    white-space: normal;
+
+    ion-icon {
+      font-size: 2.3rem;
+      padding-bottom: 3px !important;
+    }
+  }
+
+  .button-md {
+    min-width: 80px;
+    max-width: 80px;
+    font-size: 1.2rem;
+    white-space: normal;
+
+    ion-icon {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+ion-navbar {
+  ion-icon {
+    min-width: 30px;
+  }
+}
+
+// Fix rounded list items on md
+.item-md {
+  border-radius: 0px;
+}
+
+.action-sheet-group {
+  overflow: hidden !important;
+}

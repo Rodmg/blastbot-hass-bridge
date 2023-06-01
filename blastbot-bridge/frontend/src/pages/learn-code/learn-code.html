@@ -1,0 +1,58 @@
+<ion-header class="learn-code">
+
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss(null)" *ngIf="!isLearning">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'learn-code.learn-code' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="learn-code" padding>
+
+  <div *ngIf=" type === 'ir' ">
+    <ol>
+      <li>{{ 'learn-code.instructions-1' | translate }}</li>
+      <li>{{ 'learn-code.instructions-2' | translate }}</li>
+      <li>{{ 'learn-code.instructions-3' | translate }}</li>
+    </ol>
+
+    <div text-center padding>
+      <img src="assets/img/blastbotLearn.png" height="200px">
+    </div>
+
+    <p [innerHTML]="'learn-code.instructions-4' | translate"></p>
+  </div>
+
+  <div *ngIf=" type === 'rf' ">
+    <ol>
+      <li>{{ 'learn-code.rf.instructions-1' | translate }}</li>
+      <li>{{ 'learn-code.rf.instructions-2' | translate }}</li>
+    </ol>
+
+    <div text-center padding>
+      <img src="assets/img/blastbotLearn.png" height="200px">
+    </div>
+
+  </div>
+
+  <div *ngIf="showAlert" class="alert">
+    <h4>{{alertTitle}}</h4>
+    <p>{{alertSubtitle}}</p>
+  </div>
+
+  <button ion-button block (click)="learn()" *ngIf="!isLearning">{{ 'learn-code.start-capture' | translate }}</button>
+
+  <div text-center *ngIf="isLearning">
+    <h3>{{ 'learn-code.learning' | translate }}</h3>
+  </div>
+
+  <div text-center class="loadingSpinner" padding *ngIf="isLearning">
+    <ion-spinner></ion-spinner>
+  </div>
+
+</ion-content>

@@ -1,0 +1,105 @@
+<!--
+  Generated template for the DevicesPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'devices.devices' | translate }}</ion-title>
+    <ion-buttons end *ngIf="!inEditMode">
+      <button ion-button icon-only (click)="editMode()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="configure(null)">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="inEditMode">
+      <button ion-button (click)="editMode()">
+        {{ 'done' | translate }}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="devices proto-page">
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div text-center padding *ngIf="devices != null && !devices.length">
+    <ion-icon name="blastbot" class="empty-icon"></ion-icon>
+    <h1 class="empty-title">{{ 'devices.no-device-configured' | translate }}</h1>
+    <p>{{ 'devices.no-device-configured-msg' | translate }}</p>
+    <p>
+      <button class="empty-button" ion-button color="primary" (click)="configure(null)">{{ 'devices.configure-it' |
+        translate }}</button>
+    </p>
+    <p>
+      <button class="empty-button" ion-button color="secondary" (click)="buyBlastbot()" icon-left>
+        <ion-icon name="cart"></ion-icon>
+        {{ 'devices.buy-blastbot' | translate }}
+      </button>
+    </p>
+  </div>
+
+  <ion-list>
+
+    <ion-list-header *ngIf="(devices && devices.length)">
+      {{ 'devices.my-blastbot' | translate }}
+    </ion-list-header>
+    <ion-item-sliding *ngFor="let device of devices">
+      <button ion-item (click)="open(device)" [attr.detail-none]="inEditMode? true: null">
+        <div item-left *ngIf="inEditMode" class="edit-icon">
+          <ion-icon name="build" color="secondary"></ion-icon>
+        </div>
+        <ion-thumbnail item-left>
+          <img src="assets/img/setup-device/blastbot-ir.png" *ngIf=" device.type == 'blastbot-ir' ">
+          <img src="assets/img/setup-device/blastbot-ir.png" *ngIf=" device.type == 'blastbot-hub' ">
+          <img src="assets/img/setup-device/blastbot-plug.png" *ngIf=" device.type == 'blastbot-plug' ">
+          <img src="assets/img/setup-device/blastbot-switch.png" *ngIf=" device.type == 'blastbot-switch' ">
+          <img src="assets/img/setup-device/blastbot-switch-1.png" *ngIf=" device.type == 'blastbot-switch-1' ">
+          <img src="assets/img/setup-device/blastbot-switch-3.png" *ngIf=" device.type == 'blastbot-switch-3' ">
+          <img src="assets/img/setup-device/virtual-pir.png" *ngIf=" device.type == 'virtual-pir' ">
+          <img src="assets/img/setup-device/virtual-door.png" *ngIf=" device.type == 'virtual-door' ">
+          <img src="assets/img/setup-device/virtual-button.png" *ngIf=" device.type == 'virtual-button' ">
+        </ion-thumbnail>
+        <!-- <div item-left class="list-icon" [ngClass]="device.connected ? 'red' : 'gray'">{{initials(device.name)}}</div> -->
+        <!-- <ion-icon item-left class="bb-blastbot-outline blastbot-list-logo" [ngClass]="device.connected ? 'blastbot-red' : 'blastbot-gray'"></ion-icon> -->
+        <h2>{{device.name}}</h2>
+        <p *ngIf="!device.type.startsWith('virtual-')">{{device.connected ? ('connected' | translate) : ('disconnected'
+          | translate)}} </p>
+        <p *ngIf="device.type.startsWith('virtual-')">{{ device.bridge.name }}</p>
+        <ion-icon item-right class="r-icon bb-disconnected color-gray" *ngIf="!device.connected && !device.type.startsWith('virtual-')"></ion-icon>
+      </button>
+      <ion-item-options side="left" *ngIf="!inEditMode">
+        <button ion-button color="primary" (click)="configure(device)">
+          <ion-icon name="build"></ion-icon>
+          {{ 'devices.reconfigure' | translate }}
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right" *ngIf="!inEditMode">
+        <button ion-button color="secondary" (click)="edit(device)">
+          <ion-icon name="create"></ion-icon>
+          {{ 'edit' | translate }}
+        </button>
+        <button ion-button color="danger" (click)="delete(device)">
+          <ion-icon name="trash"></ion-icon>
+          {{ 'remove' | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <div text-center *ngIf="loading" class="loadingSpinner">
+    <ion-spinner></ion-spinner>
+  </div>
+
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header class="add-button proto-page">
+
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss(null)">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="isNewButton">{{ 'add-button.add-button' | translate }}</ion-title>
+    <ion-title *ngIf="!isNewButton">{{ 'add-button.edit-button' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="add-button proto-page">
+
+  <form [formGroup]="form" #f="ngForm" (ngSubmit)="submit()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>{{ 'add-button.name' | translate }}</ion-label>
+        <ion-input [(ngModel)]="button.name" type="text" formControlName="name"></ion-input>
+      </ion-item>
+
+      <button ion-item type="button" (click)="selectIcon()">
+        <ion-label>
+          {{ 'add-button.icon' | translate }}
+        </ion-label>
+        <ion-icon *ngIf="button.icon.length" [ngClass]="button.icon" item-right></ion-icon>
+        <span *ngIf="!button.icon.length" item-right>{{ 'add-button.text-only' | translate }}</span>
+      </button>
+
+      <button ion-item type="button" (click)="selectColor()">
+        <ion-label>
+          {{ 'add-button.color' | translate }}
+        </ion-label>
+        <span item-right class="color-sample" [ngClass]="button.color"></span>
+      </button>
+
+      <ion-item *ngIf=" button.control.device.type === 'blastbot-hub' ">
+        <ion-label>
+          {{ 'setup-rf-sensor.s2.type' | translate }}
+        </ion-label>
+        <ion-select [(ngModel)]="button.type" [ngModelOptions]="{standalone: true}" cancelText="{{ 'cancel' | translate }}" okText="{{ 'ok' | translate }}">
+          <ion-option value="ir"><em>IR</em></ion-option>
+          <ion-option value="rf"><em>RF</em></ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>{{ 'add-button.code' | translate }}</ion-label>
+        <ion-textarea [(ngModel)]="button.code" rows="5" formControlName="code" onfocus="this.select();"></ion-textarea>
+      </ion-item>
+
+      <div padding text-center>
+        <button ion-button outline type="button" (click)="emit()" [disabled]="!button.control.device.connected">
+          {{ 'add-button.test' | translate }}
+        </button>
+
+        <button ion-button outline type="button" (click)="learn()" [disabled]="!button.control.device.connected">
+          {{ 'add-button.learn' | translate }}
+        </button>
+      </div>
+
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!f.form.valid">{{ 'add-button.save' | translate }}</button>
+    </div>
+  </form>
+
+</ion-content>

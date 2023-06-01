@@ -1,0 +1,168 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'controls.title' | translate }}</ion-title>
+    <ion-buttons end *ngIf="!inEditMode">
+      <button ion-button icon-only (click)="editMode()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="showAddSheet()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="inEditMode">
+      <button ion-button (click)="editMode()">
+        {{ 'done' | translate }}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="controls proto-page"> <!-- fullscreen -->
+
+  <ion-refresher (ionRefresh)="doRefresh($event)" *ngIf="!inEditMode">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list no-lines>
+
+    <ion-item-divider class="translucent-divider" sticky color="light" *ngIf="controls != null && controls.length" no-lines>
+      {{ 'controls.CONTROLS' | translate }}
+    </ion-item-divider>
+    <!-- <ion-list-header *ngIf="controls != null && controls.length">{{ 'controls.my-controls' | translate }}</ion-list-header> -->
+    <ion-item-group [reorder]="inEditMode" (ionItemReorder)="reorderItems($event)">
+      <ng-container *ngFor="let item of controls">
+
+        <ion-item-sliding class="control-item">
+
+          <ion-item>
+
+            <switch-widget *ngIf=" item.type === 'switch' " [item]="item" [inEditMode]="inEditMode"
+              (open)="open($event[0], $event[1])"
+              >
+            </switch-widget>
+
+            <ir-widget *ngIf=" item.type === 'ir' " [item]="item" [inEditMode]="inEditMode"
+              (open)="open($event[0], $event[1])"
+              >
+            </ir-widget>
+
+            <ac-widget *ngIf=" item.type === 'ac' " [item]="item" [inEditMode]="inEditMode"
+              (open)="open($event[0], $event[1])"
+              >
+            </ac-widget>
+
+          </ion-item>
+          
+          <ion-item-options *ngIf="!inEditMode && !item.isShared" side="right">
+            <button ion-button color="secondary" (click)="editControl(item, item.type)">
+              <ion-icon name="create"></ion-icon>
+              {{ 'controls.edit' | translate }}
+            </button>
+            <button ion-button color="danger" (click)="deleteControl(item, item.type)" *ngIf="item.type !== 'switch'">
+              <ion-icon name="trash"></ion-icon>
+              {{ 'controls.remove' | translate }}
+            </button>
+          </ion-item-options>
+
+          <ion-item-options *ngIf="!inEditMode && item.isShared" side="right">
+            <button ion-button color="danger" (click)="unfollowControl(item, item.type)">
+              <ion-icon name="trash"></ion-icon>
+              {{ 'controls.unfollow' | translate }}
+            </button>
+          </ion-item-options>
+
+          <!-- Shared -->
+
+          <!-- <ion-item *ngIf=" item.type === 'shared' ">
+
+            <switch-widget *ngIf=" item.sharedControl.type === 'switch' " [item]="item.sharedControl" [inEditMode]="inEditMode"
+              (open)="open(item, item.type)"
+              >
+            </switch-widget>
+
+            <ir-widget *ngIf=" item.sharedControl.type === 'ir' " [item]="item.sharedControl" [inEditMode]="inEditMode"
+              (open)="open(item, item.type)"
+              >
+            </ir-widget>
+
+            <ac-widget *ngIf=" item.sharedControl.type === 'ac' " [item]="item.sharedControl" [inEditMode]="inEditMode"
+              (open)="open(item, item.type)"
+              >
+            </ac-widget>
+
+          </ion-item> -->
+
+
+        </ion-item-sliding>
+
+      </ng-container>
+
+      <!-- <ion-item-sliding *ngFor="let item of controls" class="control-item">
+
+        <button *ngIf=" item.type === 'ir' || item.type === 'ac' " ion-item (click)="open(item, item.type)" [attr.detail-none]="true">
+          <div item-left *ngIf="inEditMode" class="edit-icon">
+            <ion-icon name="build" color="secondary"></ion-icon>
+          </div>
+          <div item-left>
+            <ion-icon class="l-icon" [ngClass]="[ item.icon != null ? item.icon : 'bb-remote' , item.device.connected ? '' : 'color-gray' ]"></ion-icon>
+          </div>
+          <h2>{{item.name}}</h2>
+          <p>{{item.device.name}} {{item.device.connected ? '' : ('controls.disconnected' | translate) }} </p>
+
+          <ion-icon item-right class="r-icon bb-disconnected color-gray" *ngIf="!item.device.connected && !inEditMode"></ion-icon>
+        </button>
+        <ion-item-options *ngIf=" (item.type === 'ir' || item.type === 'ac' || item.type === 'switch') && !inEditMode " side="left">
+          <button ion-button color="primary" (click)="shareControl(item, item.type)">
+            <ion-icon name="share"></ion-icon>
+            {{ 'controls.share' | translate }}
+          </button>
+        </ion-item-options>
+        <ion-item-options *ngIf=" (item.type === 'ir' || item.type === 'ac' || item.type === 'switch') && !inEditMode " side="right">
+          <button ion-button color="secondary" (click)="editControl(item, item.type)">
+            <ion-icon name="create"></ion-icon>
+            {{ 'controls.edit' | translate }}
+          </button>
+          <button ion-button color="danger" (click)="deleteControl(item, item.type)" *ngIf="item.type !== 'switch'">
+            <ion-icon name="trash"></ion-icon>
+            {{ 'controls.remove' | translate }}
+          </button>
+        </ion-item-options>
+
+        <button *ngIf=" item.type === 'shared' " ion-item (click)="open(item, item.type)" [attr.detail-none]="inEditMode? true: null">
+          <div item-left *ngIf="inEditMode" class="edit-icon">
+            <ion-icon name="build" color="secondary"></ion-icon>
+          </div>
+          <div item-left>
+            <ion-icon class="l-icon" [ngClass]="[ item.sharedControl.icon != null ? item.sharedControl.icon : 'bb-remote' , item.sharedControl.device.connected ? '' : 'color-gray' ]"></ion-icon>
+          </div>
+          <h2>{{item.sharedControl.name}}</h2>
+          <p>{{ 'controls.shared-by' | translate:{ user: item.owner.email } }}</p>
+          <ion-icon item-right class="r-icon bb-disconnected color-gray" *ngIf="!item.sharedControl.device.connected && !inEditMode"></ion-icon>
+        </button>
+        <ion-item-options *ngIf=" (item.type === 'shared') && !inEditMode " side="right">
+          <button ion-button color="danger" (click)="unfollowControl(item, item.type)">
+            <ion-icon name="trash"></ion-icon>
+            {{ 'controls.unfollow' | translate }}
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding> -->
+    </ion-item-group>
+
+  </ion-list>
+
+  <div text-center padding *ngIf="(controls != null && !controls.length)">
+    <ion-icon name="game-controller-a" class="empty-icon"></ion-icon>
+    <h1 class="empty-title">{{ 'controls.no-control' | translate }}</h1>
+    <button class="empty-button" ion-button color="primary" (click)="addControl()">{{ 'controls.add-control' | translate }}</button>
+  </div>
+
+  <div text-center *ngIf="loading" class="loadingSpinner">
+    <ion-spinner></ion-spinner>
+  </div>
+
+</ion-content>

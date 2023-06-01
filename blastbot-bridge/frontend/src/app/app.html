@@ -1,0 +1,26 @@
+<ion-split-pane>
+  <ion-menu [content]="content" [hidden]="isSideMenuHidden()" id="sideMenu">
+
+    <ion-header>
+      <ion-toolbar color="primary" class="sideToolbar">
+        <ion-title>
+          <img src="assets/img/blastbotLogo.png">
+        </ion-title>
+        <p>Bridge</p>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="sideToolbarContent">
+      <ion-list>
+        <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon *ngIf="!p.icon.startsWith('bb-')" [name]="p.icon" item-left></ion-icon>
+          <ion-icon *ngIf="p.icon.startsWith('bb-')" [ngClass]="p.icon" item-left></ion-icon>
+          {{p.title}}
+        </button>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-nav [root]="rootPage" #content [swipeBackEnabled]="swipeBackEnabled" main></ion-nav>
+</ion-split-pane>

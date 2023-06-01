@@ -1,0 +1,47 @@
+
+<div class="top-row">
+  <button class="inside-button item item-block" (click)="onOpen(item, item.type)" [attr.detail-none]="true">
+
+    <div item-left *ngIf="inEditMode" class="edit-icon">
+      <ion-icon name="build" color="secondary"></ion-icon>
+    </div>
+    <div item-left>
+      <ion-icon class="l-icon" [ngClass]="[ item.icon != null ? item.icon : 'bb-remote' , item.device.connected ? '' : 'color-gray' ]"></ion-icon>
+    </div>
+    <div class="inner-label">
+      <h2>{{item.name}}</h2>
+      <p *ngIf="!item.isShared">{{item.device.name}} {{item.device.connected ? '' : ('controls.disconnected' | translate) }} </p>
+      <p *ngIf="item.isShared">{{ 'controls.shared-by' | translate:{ user: item.owner.email } }}</p>
+    </div>
+
+    <div class="button-effect"></div>
+
+  </button>
+
+
+  <switch-view *ngIf=" !inEditMode && item.device.connected " item-right [loading]="loading" [switch]="switch" [direction]="'horizontal-sm'" (onToggle)="set($event, 0)"></switch-view>
+
+  <ion-icon item-right class="r-icon bb-disconnected color-gray" *ngIf="!item.device.connected && !inEditMode"></ion-icon>
+
+</div>
+
+<div class="bottom-row">
+  <ion-grid text-center>
+
+    <ion-row center>
+      <!-- <ion-col class="set-button">
+        <button ion-button color="light" round>-</button>
+      </ion-col> -->
+      <ion-col class="set-button">
+        <button ion-button class="button-minus" color="light" round (click)="temperature(-1)" *ngIf=" item.acSettings.state === 'on' ">-</button>
+        <span class="temperature">{{item.acSettings.state === "on" ? item.acSettings.temperature + 'º' : 'OFF'}}</span>
+        <button ion-button class="button-plus" color="light" round (click)="temperature(1)" *ngIf=" item.acSettings.state === 'on' ">+</button>
+      </ion-col>
+      <!-- <ion-col class="set-button">
+        <button ion-button color="light" round>+</button>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+</div>
+
+

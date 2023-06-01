@@ -1,0 +1,210 @@
+<ion-header class="proto-setup-wifi proto-page">
+
+  <ion-navbar color="primary">
+    <ion-buttons start *ngIf="currentPage === 1 && isModal">
+      <button ion-button (click)="dismiss(null)" *ngIf="!isLearning">
+        {{ 'cancel' | translate }}
+      </button>
+    </ion-buttons>
+
+    <button ion-button icon-only menuToggle *ngIf="currentPage === 1 && !isModal">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-buttons start *ngIf="currentPage > 1">
+      <button ion-button icon-only (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>{{ 'setup-blastbot.initial-setup' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="proto-setup-wifi proto-page" no-bounce>
+
+  <div class="page-flex" *ngIf="currentPage === 1">
+    <div class="page-flex-section">
+      <h1>1/5</h1>
+      <p [innerHTML]=" baseTranslateClass + '.s1.p1' | translate "></p>
+    </div>
+
+    <div class="page-flex-image-big">
+      <img [src]="images.page1">
+    </div>
+
+    <div class="page-flex-button">
+      <button ion-button color="light" full (click)="next()">{{ 'setup-blastbot.next' | translate }}</button>
+    </div>
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 2">
+    <div class="page-flex-section">
+      <h1>2/5</h1>
+      <p [innerHTML]=" 'setup-blastbot.s2.p1' | translate "></p>
+    </div>
+
+    <div class="page-flex-image-big">
+      <img [src]="images.page2">
+    </div>
+
+    <div class="page-flex-button">
+      <button ion-button color="light" full (click)="next()">{{ 'setup-blastbot.next' | translate }}</button>
+    </div>
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 3">
+    <div class="page-flex-section">
+      <h1>3/5</h1>
+      <p [innerHTML]=" 'setup-blastbot.s3.p1' | translate "></p>
+    </div>
+
+    <div class="page-flex-image-big">
+      <img [src]="images.page3">
+    </div>
+
+    <div class="page-flex-button">
+      <button ion-button color="light" full (click)="next()">{{ 'setup-blastbot.next' | translate }}</button>
+    </div>
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 4">
+    <div class="page-flex-section">
+      <h1>4/5</h1>
+      <p [innerHTML]=" 'setup-blastbot.s4.p1' | translate "></p>
+    </div>
+
+    <div class="page-flex-image">
+      <img src="assets/img/settingsWiFi.png" width="250px">
+    </div>
+
+    <div class="page-flex-section">
+      <p [innerHTML]=" baseTranslateClass + '.s4.p2' | translate "></p>
+    </div>
+
+    <div class="page-flex-image">
+      <img src="assets/img/wifisetting.png" width="300px">
+    </div>
+
+    <div class="page-flex-section">
+      <p [innerHTML]=" 'setup-blastbot.s4.p3' | translate "></p>
+    </div>
+    <div class="page-flex-image">
+      <img src="assets/img/appIcon.png" width="70px">
+    </div>
+
+    <div class="page-flex-button" [style.visibility]="locationAllowed ? 'hidden': 'visible'">
+      <button ion-button color="light" full (click)="forceGetPermission()">
+        <ion-icon name="navigate">
+          {{ 'setup-blastbot.locationPermission' | translate }}
+        </ion-icon>
+      </button>
+    </div>
+    
+    <div class="page-flex-button" [style.visibility]="showButtonNotPermission ? 'visible' : 'hidden'">
+      <button ion-button color="light" full (click)="next()">{{ 'setup-blastbot.next' | translate }}</button>
+    </div>
+
+  </div>
+
+  <div class="page-flex" *ngIf="currentPage === 5">
+    <div class="page-flex-section">
+      <h1>5/5</h1>
+      <p [innerHTML]=" baseTranslateClass + '.s5.p1' | translate "></p>
+
+      <ion-list no-border>
+        <ion-item>
+          <ion-label>
+            {{ 'setup-blastbot.s5.net-name' | translate }}
+          </ion-label>
+          <ion-select [(ngModel)]="selectedSsid" (ionChange)="ssidSelectChanged($event)" cancelText="{{ 'cancel' | translate }}" okText="{{ 'ok' | translate }}">
+            <ion-option *ngFor="let ssid of ssids" [value]="ssid">{{ssid.ssid}} {{ ssid.rssi ? '(' + rssiToPercent(ssid.rssi) + '%)' : '' }}</ion-option>
+            <ion-option value=""><em>{{ 'setup-blastbot.s5.other' | translate }}</em></ion-option>
+          </ion-select>
+        </ion-item>
+        <div class="input-error-container">
+          <p class="input-error" *ngIf="!config.ssid.length">{{ 'setup-blastbot.s5.required-field' | translate }}</p>
+        </div>
+
+        <ion-item>
+          <ion-label inline>
+            {{ 'setup-blastbot.s5.password' | translate }}
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="config.password"></ion-input>
+        </ion-item>
+        <div class="input-error-container">
+          <p class="input-error" *ngIf="config.password.length > 64">{{ 'setup-blastbot.s5.max-64-characters' | translate }}</p>
+        </div>
+
+        <ion-item>
+          <ion-label inline>
+            {{ 'setup-blastbot.s5.repeat-password' | translate }}
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="config.passwordRepeat"></ion-input>
+        </ion-item>
+        <div class="input-error-container">
+          <p class="input-error" *ngIf="config.passwordRepeat.length > 64">{{ 'setup-blastbot.s5.max-64-characters' | translate }}</p>
+          <p class="input-error" *ngIf="config.passwordRepeat !== config.password ">{{ 'setup-blastbot.s5.passwords-dont-match' | translate }}</p>
+        </div>
+
+      </ion-list>
+
+      <button ion-button color="dark" full (click)="searchMoreNetworks()">{{ 'setup-blastbot.s5.search-more-networks' | translate }}</button>
+     
+      <ion-list no-border class="margin-top-32">
+        <ion-item>
+          <ion-label>
+            {{ 'setup-blastbot.s5.use-ui' | translate }}
+          </ion-label>
+          <ion-checkbox [(ngModel)]="config.ui"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <ion-list no-border class="margin-top-32">
+        <ion-item>
+          <ion-label>
+            {{ 'setup-blastbot.s5.use-dhcp' | translate }}
+          </ion-label>
+          <ion-checkbox [(ngModel)]="config.dhcp"></ion-checkbox>
+        </ion-item>
+
+        <ion-item *ngIf="!config.dhcp">
+          <ion-label inline>
+            IP:
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="config.ip"></ion-input>
+        </ion-item>
+        <div class="input-error-container" *ngIf="!config.dhcp">
+          <p class="input-error" *ngIf="!validateIp(config.ip)">{{ 'setup-blastbot.s5.invalid-address' | translate }}</p>
+        </div>
+
+        <ion-item *ngIf="!config.dhcp">
+          <ion-label inline>
+            Gateway:
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="config.gateway"></ion-input>
+        </ion-item>
+        <div class="input-error-container" *ngIf="!config.dhcp">
+          <p class="input-error" *ngIf="!validateIp(config.gateway)">{{ 'setup-blastbot.s5.invalid-address' | translate }}</p>
+        </div>
+
+        <ion-item *ngIf="!config.dhcp">
+          <ion-label inline>
+            Subnet Mask:
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="config.subnet"></ion-input>
+        </ion-item>
+        <div class="input-error-container" *ngIf="!config.dhcp">
+          <p class="input-error" *ngIf="!validateIp(config.subnet)">{{ 'setup-blastbot.s5.invalid-address' | translate }}</p>
+        </div>
+
+      </ion-list>
+
+      <button ion-button color="secondary" full [disabled]="!validate()" (click)="apply()">{{ 'apply' | translate }}</button>
+
+    </div>
+  </div>
+
+</ion-content>

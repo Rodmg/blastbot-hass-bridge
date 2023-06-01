@@ -1,0 +1,68 @@
+.devices {
+  .list-icon {
+    border-radius: 20px;
+    border: 0px;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    background-color: #FF5722;
+    color: white;
+    margin-bottom: 8px;
+    margin-left: 0px;
+    margin-right: 16px;
+    margin-top: 8px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .r-icon {
+    font-size: 20px;
+    padding-top: 3px;
+  }
+
+  .blastbot-gray {
+    color: #8e9093;
+  }
+
+  .blastbot-red {
+    color: #d81d55;
+  }
+
+  .empty-icon {
+    font-size: 100px;
+    min-height: 100px;
+    min-width: 80px;
+  }
+
+  .empty-button {
+
+  }
+
+  .empty-title {
+    margin-top: 15px;
+    margin-bottom: 35px;
+    font-weight: 400;
+  }
+
+  .blastbot-list-logo {
+    font-size: 40px;
+  }
+
+  @keyframes edit-icon-in {
+    from { opacity: 0.0; left: -20px; }
+    to { opacity: 1.0; left: 0px; }
+  }
+
+  .edit-icon {
+    position: relative;
+    animation-name: edit-icon-in;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+  }
+
+}
