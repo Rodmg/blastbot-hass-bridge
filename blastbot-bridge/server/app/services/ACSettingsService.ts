@@ -308,6 +308,7 @@ class ACSettingsService extends EventEmitter {
         return result;
       })
       .catch(err => {
+        log.error("ACSettingsService: emitControl error:", err);
         throw err;
       });
     return Promise.resolve(promise);

@@ -54,7 +54,11 @@ class ButtonEntity {
         );
         return;
       }
-      irButtonService.emitButton(buttonId);
+      try {
+        await irButtonService.emitButton(buttonId);
+      } catch (err) {
+        log.error("ButtonEntity: handleCommand error:", err);
+      }
     }
   };
 }

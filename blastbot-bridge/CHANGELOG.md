@@ -1,5 +1,9 @@
 ## What’s changed
 
+## 1.0.3 - 2023-06-02
+
+- Added better error handling, tweaking throttle timeout
+
 ## 1.0.2 - 2023-06-02
 
 - Added throttling for commands being send to an individual device, to mitigate issues when getting bursts of commands

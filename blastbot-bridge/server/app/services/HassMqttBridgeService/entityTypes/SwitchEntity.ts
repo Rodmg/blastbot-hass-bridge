@@ -70,10 +70,14 @@ class SwitchEntity {
         );
         return;
       }
-      const sw = await Switch.findOne({ where: { controlId } });
-      switchService.execute(sw.id, {
-        command: payload.toString().toLowerCase(),
-      });
+      try {
+        const sw = await Switch.findOne({ where: { controlId } });
+        await switchService.execute(sw.id, {
+          command: payload.toString().toLowerCase(),
+        });
+      } catch (err) {
+        log.error("SwitchEntity: handleCommand error:", err);
+      }
     }
   };
 }

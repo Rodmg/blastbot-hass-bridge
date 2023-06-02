@@ -7,6 +7,7 @@ import { EventEmitter } from "events";
 import { IRButton } from "@/models/IRButton";
 import { Control } from "@/models/Control";
 import DeviceService from "./DeviceService";
+import { log } from "@/libraries/Log";
 
 class IRButtonService extends EventEmitter {
   constructor() {
@@ -30,6 +31,7 @@ class IRButtonService extends EventEmitter {
           return result;
         })
         .catch(err => {
+          log.error("IRButtonService emitButton error:", err);
           throw err;
         });
     });

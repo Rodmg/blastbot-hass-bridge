@@ -127,7 +127,7 @@ class SwitchService extends EventEmitter {
 
         await Promise.all(promises);
       } catch (err) {
-        log.debug(err);
+        log.debug("DeviceService: on deviceConnected:", err);
       }
     });
 

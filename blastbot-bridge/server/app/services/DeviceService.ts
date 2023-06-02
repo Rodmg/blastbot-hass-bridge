@@ -8,6 +8,7 @@ import { MqttRequester } from "@/libraries/MqttRequest";
 import MqttClient from "./MqttClient";
 import KissNetService from "./KissNetService";
 import SensorService from "./SensorService";
+import { log } from "@/libraries/Log";
 
 class DeviceService {
   mqttReq: MqttRequester;
@@ -62,6 +63,9 @@ class DeviceService {
       })
       .then(() => {
         return results.device;
+      })
+      .catch(err => {
+        log.error("DeviceService: requestVersion error:", err);
       });
 
     return Promise.resolve(promise);

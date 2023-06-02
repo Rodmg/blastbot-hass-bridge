@@ -118,71 +118,75 @@ class ClimateEntity {
     const acSetTempTopicBase = `${MQTT_BRIDGE_PREFIX}/climate/temperature/`;
     const acSetFanTopicBase = `${MQTT_BRIDGE_PREFIX}/climate/fan/`;
 
-    if (topic.startsWith(acSetModeTopicBase)) {
-      const splitted = topic.split("/");
-      if (splitted.length < 5) return;
-      const objectId = parseInt(
-        splitted[3].replace(CONTROL_OBJECTID_PREFIX, ""),
-      );
-      if (isNaN(objectId)) {
-        log.error(
-          "HassMqttBridgeService: Invalid controlId Received while handling climate command",
+    try {
+      if (topic.startsWith(acSetModeTopicBase)) {
+        const splitted = topic.split("/");
+        if (splitted.length < 5) return;
+        const objectId = parseInt(
+          splitted[3].replace(CONTROL_OBJECTID_PREFIX, ""),
         );
-        return;
+        if (isNaN(objectId)) {
+          log.error(
+            "HassMqttBridgeService: Invalid controlId Received while handling climate command",
+          );
+          return;
+        }
+        const set = splitted[4];
+        if (set !== "set") return;
+        const mode = payload.toString();
+        const command = mode === "off" ? "off" : mode === "cool" ? "on" : "off";
+        await acSettingsService.emitControl(objectId, { command });
       }
-      const set = splitted[4];
-      if (set !== "set") return;
-      const mode = payload.toString();
-      const command = mode === "off" ? "off" : mode === "cool" ? "on" : "off";
-      acSettingsService.emitControl(objectId, { command });
-    }
 
-    if (topic.startsWith(acSetTempTopicBase)) {
-      const splitted = topic.split("/");
-      if (splitted.length < 5) return;
-      const objectId = parseInt(
-        splitted[3].replace(CONTROL_OBJECTID_PREFIX, ""),
-      );
-      if (isNaN(objectId)) {
-        log.error(
-          "HassMqttBridgeService: Invalid controlId Received while handling climate command",
+      if (topic.startsWith(acSetTempTopicBase)) {
+        const splitted = topic.split("/");
+        if (splitted.length < 5) return;
+        const objectId = parseInt(
+          splitted[3].replace(CONTROL_OBJECTID_PREFIX, ""),
         );
-        return;
+        if (isNaN(objectId)) {
+          log.error(
+            "HassMqttBridgeService: Invalid controlId Received while handling climate command",
+          );
+          return;
+        }
+        const set = splitted[4];
+        if (set !== "set") return;
+        const temp = parseInt(payload.toString());
+        if (isNaN(temp)) {
+          log.error(
+            "HassMqttBridgeService: Invalid temperature Received while handling climate command",
+          );
+          return;
+        }
+        await acSettingsService.emitControl(objectId, {
+          command: "set",
+          options: { temperature: temp.toString() },
+        });
       }
-      const set = splitted[4];
-      if (set !== "set") return;
-      const temp = parseInt(payload.toString());
-      if (isNaN(temp)) {
-        log.error(
-          "HassMqttBridgeService: Invalid temperature Received while handling climate command",
-        );
-        return;
-      }
-      acSettingsService.emitControl(objectId, {
-        command: "set",
-        options: { temperature: temp.toString() },
-      });
-    }
 
-    if (topic.startsWith(acSetFanTopicBase)) {
-      const splitted = topic.split("/");
-      if (splitted.length < 5) return;
-      const objectId = parseInt(
-        splitted[3].replace(CONTROL_OBJECTID_PREFIX, ""),
-      );
-      const set = splitted[4];
-      if (set !== "set") return;
-      if (isNaN(objectId)) {
-        log.error(
-          "HassMqttBridgeService: Invalid controlId Received while handling climate command",
+      if (topic.startsWith(acSetFanTopicBase)) {
+        const splitted = topic.split("/");
+        if (splitted.length < 5) return;
+        const objectId = parseInt(
+          splitted[3].replace(CONTROL_OBJECTID_PREFIX, ""),
         );
-        return;
+        const set = splitted[4];
+        if (set !== "set") return;
+        if (isNaN(objectId)) {
+          log.error(
+            "HassMqttBridgeService: Invalid controlId Received while handling climate command",
+          );
+          return;
+        }
+        const fan = payload.toString();
+        await acSettingsService.emitControl(objectId, {
+          command: "set",
+          options: { fan },
+        });
       }
-      const fan = payload.toString();
-      acSettingsService.emitControl(objectId, {
-        command: "set",
-        options: { fan },
-      });
+    } catch (err) {
+      log.error("ClimateEntity: handleCommand error:", err);
     }
   };
 }
