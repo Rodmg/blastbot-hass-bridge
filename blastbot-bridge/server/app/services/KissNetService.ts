@@ -149,7 +149,7 @@ class KissNetService extends EventEmitter {
       .then((device: any) => {
         if (device == null) return;
         // Resend for kissnet
-        this.client.publish(
+        this.mqttReq.publish(
           `${device.bridge.udid}/kni/${device.address}/${action}/req`,
           message,
         );

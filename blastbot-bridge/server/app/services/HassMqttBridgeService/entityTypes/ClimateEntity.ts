@@ -71,7 +71,7 @@ class ClimateEntity {
   }
 
   startHandlingDeviceEvents() {
-    acSettingsService.on("event", async ({ id, command }) => {
+    acSettingsService.on("event", async ({ id }) => {
       try {
         const acSettings = await ACSettings.findOne({
           where: { controlId: id },

@@ -41,7 +41,7 @@ class ButtonEntity {
     this.client.on("message", this.handleCommand);
   }
 
-  handleCommand = async (topic: string, payload: Buffer) => {
+  handleCommand = async (topic: string, _payload: Buffer) => {
     const buttonCommandTopicBase = `${MQTT_BRIDGE_PREFIX}/button/command/`;
     if (topic.startsWith(buttonCommandTopicBase)) {
       const splitted = topic.split("/");

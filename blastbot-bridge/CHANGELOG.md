@@ -1,5 +1,9 @@
 ## What’s changed
 
+## 1.0.2 - 2023-06-02
+
+- Added throttling for commands being send to an individual device, to mitigate issues when getting bursts of commands
+
 ## 1.0.1 - 2023-06-01
 
 - Better error handling on request to Blastbot Cloud to get IR and AC codes on setup

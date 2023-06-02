@@ -6,16 +6,21 @@
 import { EventEmitter } from "events";
 import mqtt from "mqtt";
 import upath from "upath";
+import { ThrottleQueues } from "./ThrottleQueue";
 
 const REQ_TIMEOUT = 10000;
 
 export class MqttRequester extends EventEmitter {
+  throttleQueues: ThrottleQueues;
+
   constructor(
     private client: mqtt.Client,
     private reqEnd: string = "req",
     private resEnd: string = "res",
   ) {
     super();
+
+    this.throttleQueues = new ThrottleQueues();
 
     if (this.client.connected) this.subscribeAll();
 
@@ -58,7 +63,18 @@ export class MqttRequester extends EventEmitter {
         return reject(new Error("MQTT request timeout"));
       }, timeout);
       this.once(resTopic, confirmCb);
-      this.client.publish(reqTopic, data, { qos: 1 });
+      this.publish(reqTopic, data, { qos: 1 });
+    });
+  }
+
+  publish(
+    topic: string,
+    data?: string | Buffer,
+    options?: mqtt.IClientPublishOptions,
+  ) {
+    const udid = topic.split("/")[0];
+    this.throttleQueues.do(udid, () => {
+      this.client.publish(topic, data, options);
     });
   }
 }
