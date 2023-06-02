@@ -11,7 +11,6 @@ import {
 } from "ionic-angular";
 import { Device } from "../../providers/device/device";
 import { SettingsProvider } from "../../providers/settings/settings";
-import { Observable } from "rxjs/Observable";
 import { ProtoPage } from "../proto-page/proto-page";
 import { DevicePage } from "../device/device";
 import { SetupBlastbotPage } from "../setup-blastbot/setup-blastbot";

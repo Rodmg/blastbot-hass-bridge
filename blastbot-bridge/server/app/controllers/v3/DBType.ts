@@ -16,13 +16,15 @@ class DBTypeController extends Controller {
       let types = [];
       try {
         const token = await blastbotCloudApiService.getToken();
-        const r = await axios.get(
-          `${config.blastbotCloudApi.baseUrl}/api/v3/dbtype`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          },
-        );
-        types = r.data;
+        if (token != null) {
+          const r = await axios.get(
+            `${config.blastbotCloudApi.baseUrl}/api/v3/dbtype`,
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            },
+          );
+          types = r.data;
+        }
       } catch (err) {
         log.error("Error getting dbtypes from cloud", err.message);
       }

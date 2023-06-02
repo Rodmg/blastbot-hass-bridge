@@ -57,6 +57,12 @@ class ControlController extends Controller {
 
     try {
       const token = await blastbotCloudApiService.getToken();
+      if (token == null) {
+        return Controller.notFound(
+          res,
+          "No DBControl found. Invalid Blastbot Cloud credentials",
+        );
+      }
       const r = await axios.get(
         `${config.blastbotCloudApi.baseUrl}/api/v3/dbcontrol/${dbcontrolId}`,
         {

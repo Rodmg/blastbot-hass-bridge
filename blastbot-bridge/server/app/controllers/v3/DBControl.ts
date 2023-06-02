@@ -23,16 +23,18 @@ class DBControlController extends Controller {
 
     try {
       const token = await blastbotCloudApiService.getToken();
-      const r = await axios.get(
-        `${config.blastbotCloudApi.baseUrl}/api/v3/dbcontrol`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-          params: {
-            ...req.query,
+      if (token != null) {
+        const r = await axios.get(
+          `${config.blastbotCloudApi.baseUrl}/api/v3/dbcontrol`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            params: {
+              ...req.query,
+            },
           },
-        },
-      );
-      controls = r.data;
+        );
+        controls = r.data;
+      }
     } catch (err) {
       log.error("Error getting dbcontrols from cloud", err.message);
     }
@@ -47,16 +49,18 @@ class DBControlController extends Controller {
 
     try {
       const token = await blastbotCloudApiService.getToken();
-      const r = await axios.get(
-        `${config.blastbotCloudApi.baseUrl}/api/v3/dbcontrol/${id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-          params: {
-            ...req.query,
+      if (token != null) {
+        const r = await axios.get(
+          `${config.blastbotCloudApi.baseUrl}/api/v3/dbcontrol/${id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            params: {
+              ...req.query,
+            },
           },
-        },
-      );
-      control = r.data;
+        );
+        control = r.data;
+      }
     } catch (err) {
       log.error("Error getting dbcontrol from cloud", err.message);
     }

@@ -12,6 +12,7 @@ import { Http } from "@angular/http";
 import { Device } from "../../providers/device/device";
 import { TranslateService } from "@ngx-translate/core";
 import { ProtoSetupWifiPage } from "../../components/proto-setup-wifi/proto-setup-wifi";
+import { LocalStorage } from "../../components/local-storage/local-storage";
 
 @Component({
   templateUrl: "../../components/proto-setup-wifi/proto-setup-wifi.html",
@@ -34,7 +35,8 @@ export class SetupBlastbotPage extends ProtoSetupWifiPage {
     public viewCtrl: ViewController,
     public platform: Platform,
     public translate: TranslateService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public localStorage: LocalStorage
   ) {
     super(
       navCtrl,
@@ -46,7 +48,8 @@ export class SetupBlastbotPage extends ProtoSetupWifiPage {
       viewCtrl,
       platform,
       translate,
-      toastController
+      toastController,
+      localStorage
     );
   }
 

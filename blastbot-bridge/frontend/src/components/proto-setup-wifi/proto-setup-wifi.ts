@@ -12,6 +12,8 @@ import { Observable } from "rxjs/Observable";
 import { Device } from "../../providers/device/device";
 import { TranslateService } from "@ngx-translate/core";
 import "rxjs/add/operator/toPromise";
+import { LocalStorage } from "../local-storage/local-storage";
+import { RESTORE_DEVICE_SETUP_KEY } from "../util/util";
 
 // Global variable, should be available in scope
 declare var blastbotCloudServer: any;
@@ -76,7 +78,8 @@ export abstract class ProtoSetupWifiPage {
     public viewCtrl: ViewController,
     public platform: Platform,
     public translate: TranslateService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public localStorage: LocalStorage
   ) {
     this.deviceId = navParams.get("deviceId");
     if (this.deviceId == null) this.deviceId = null;
@@ -84,6 +87,8 @@ export abstract class ProtoSetupWifiPage {
 
     this.isModal = navParams.get("isModal");
     if (this.isModal == null) this.isModal = false;
+
+    this.checkResumeDeviceSetup();
   }
 
   ionViewDidEnter() {
@@ -102,6 +107,32 @@ export abstract class ProtoSetupWifiPage {
 
   ionViewWillLeave() {
     this.deregisterBackButton();
+    // Disable restoring of the device setup if we exit on purpose
+    this.localStorage.remove(RESTORE_DEVICE_SETUP_KEY);
+  }
+
+  async checkResumeDeviceSetup() {
+    let resumeDeviceSetup = await this.localStorage.get(
+      RESTORE_DEVICE_SETUP_KEY
+    );
+
+    if (resumeDeviceSetup == null) {
+      return;
+    }
+    try {
+      resumeDeviceSetup = JSON.parse(resumeDeviceSetup);
+    } catch (err) {
+      console.error("ProtoSetupWifi: Error resuming device setup", err);
+      await this.localStorage.remove(RESTORE_DEVICE_SETUP_KEY);
+      this.dismiss(null);
+    }
+
+    this.config.udid = resumeDeviceSetup.udid;
+    this.config.token = resumeDeviceSetup.token;
+    this.config.type = resumeDeviceSetup.type;
+
+    this.currentPage = 4;
+    this.showButtonNotPermission = true;
   }
 
   presentLoader(msg: string) {
@@ -341,6 +372,15 @@ export abstract class ProtoSetupWifiPage {
             this.config.udid = res.udid;
             this.config.token = res.token;
             this.config.type = res.type;
+            // Setup for resuming config if the app reloads
+            this.localStorage.set(
+              RESTORE_DEVICE_SETUP_KEY,
+              JSON.stringify({
+                udid: res.udid,
+                token: res.token,
+                type: res.type,
+              })
+            );
             observer.next(res);
           },
           (err) => observer.error(err),
@@ -355,6 +395,15 @@ export abstract class ProtoSetupWifiPage {
             this.config.udid = res.udid;
             this.config.token = res.token;
             this.config.type = res.type;
+            // Setup for resuming config if the app reloads
+            this.localStorage.set(
+              RESTORE_DEVICE_SETUP_KEY,
+              JSON.stringify({
+                udid: res.udid,
+                token: res.token,
+                type: res.type,
+              })
+            );
             observer.next(res);
           },
           (err) => {
@@ -473,6 +522,9 @@ export abstract class ProtoSetupWifiPage {
   }
 
   apply() {
+    // Disable restoring of the device setup if we finish the flow
+    this.localStorage.remove(RESTORE_DEVICE_SETUP_KEY);
+
     this.presentLoader(this.translate.instant("setup-blastbot.applying"));
 
     let ip = this.parseIpString(this.config.ip);

@@ -319,6 +319,11 @@ class ACSettingsService extends EventEmitter {
     options: any,
   ): Promise<any> {
     const token = await blastbotCloudApiService.getToken();
+    if (token == null) {
+      throw new Error(
+        "No DB Control found. Invalid Blastbot Cloud credentials.",
+      );
+    }
     const r = await axios.get(
       `${config.blastbotCloudApi.baseUrl}/api/v3/dbcontrol/${dbControlId}`,
       {

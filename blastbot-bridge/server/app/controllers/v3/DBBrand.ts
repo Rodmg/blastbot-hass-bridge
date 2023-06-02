@@ -27,17 +27,19 @@ class DBBrandController extends Controller {
 
     try {
       const token = await blastbotCloudApiService.getToken();
-      const r = await axios.get(
-        `${config.blastbotCloudApi.baseUrl}/api/v3/dbbrand/filter`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-          params: {
-            search,
-            dbtypeId,
+      if (token != null) {
+        const r = await axios.get(
+          `${config.blastbotCloudApi.baseUrl}/api/v3/dbbrand/filter`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            params: {
+              search,
+              dbtypeId,
+            },
           },
-        },
-      );
-      brands = r.data;
+        );
+        brands = r.data;
+      }
     } catch (err) {
       log.error("Error getting dbbrands from cloud", err.message);
     }

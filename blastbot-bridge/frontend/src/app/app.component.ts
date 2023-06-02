@@ -11,8 +11,7 @@ import { LocalStorage } from "../components/local-storage/local-storage";
 
 import { TranslateService } from "@ngx-translate/core";
 import { SettingsProvider } from "../providers/settings/settings";
-
-const noop = () => {};
+import { RESTORE_DEVICE_SETUP_KEY } from "../components/util/util";
 
 @Component({
   templateUrl: "app.html",
@@ -138,7 +137,7 @@ export class MyApp {
   init() {
     // Manage go to configure blastbot from anywhere
     this.events.subscribe("nav:configureBlastbot", () => {
-      this.openPage(this.pages[1]);
+      this.nav.setRoot(DevicesPage, { newBlastbot: true });
     });
 
     this.events.subscribe("nav:setSwipeEnabled", (enabled: boolean) => {
@@ -179,7 +178,18 @@ export class MyApp {
     else this.nav.setRoot(page.component, page.params);
   }
 
-  goControlsOrWelcome() {
+  async goControlsOrWelcome() {
+    const resumeDeviceSetup = await this.localStorage.get(
+      RESTORE_DEVICE_SETUP_KEY
+    );
+
+    // Functionality for resuming device setup if the app gets reloaded in the middle of the flow
+    // Rest of the logic lives in proto-setup-wifi
+    if (resumeDeviceSetup != null) {
+      this.nav.setRoot(DevicesPage, { newBlastbot: true });
+      return;
+    }
+
     this.nav.setRoot(ControlsPage);
   }
 

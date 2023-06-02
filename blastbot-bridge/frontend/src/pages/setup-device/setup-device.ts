@@ -12,6 +12,8 @@ import { SetupBlastbotPage } from "../setup-blastbot/setup-blastbot";
 import { SetupBlastbotPlugPage } from "../setup-blastbot-plug/setup-blastbot-plug";
 import { SetupBlastbotSwitchPage } from "../setup-blastbot-switch/setup-blastbot-switch";
 import { SetupRfSensorPage } from "../setup-rf-sensor/setup-rf-sensor";
+import { LocalStorage } from "../../components/local-storage/local-storage";
+import { RESTORE_DEVICE_SETUP_KEY } from "../../components/util/util";
 
 @Component({
   templateUrl: "setup-device.html",
@@ -29,10 +31,13 @@ export class SetupDevicePage {
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public platform: Platform,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public localStorage: LocalStorage
   ) {
     this.isModal = navParams.get("isModal");
     if (this.isModal == null) this.isModal = false;
+
+    this.checkResumeDeviceSetup();
   }
 
   ionViewDidEnter() {
@@ -46,6 +51,24 @@ export class SetupDevicePage {
   ionViewWillLeave() {
     //super.ionViewWillLeave();
     this.deregisterBackButton();
+  }
+
+  async checkResumeDeviceSetup() {
+    let resumeDeviceSetup = await this.localStorage.get(
+      RESTORE_DEVICE_SETUP_KEY
+    );
+
+    if (resumeDeviceSetup == null) {
+      return;
+    }
+    try {
+      resumeDeviceSetup = JSON.parse(resumeDeviceSetup);
+    } catch (err) {
+      console.error("ProtoSetupWifi: Error resuming device setup", err);
+      await this.localStorage.remove(RESTORE_DEVICE_SETUP_KEY);
+      this.dismiss(null);
+    }
+    this.setup(resumeDeviceSetup.type);
   }
 
   dismiss(data) {
