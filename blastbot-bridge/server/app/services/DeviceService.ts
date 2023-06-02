@@ -63,9 +63,6 @@ class DeviceService {
       })
       .then(() => {
         return results.device;
-      })
-      .catch(err => {
-        log.error("DeviceService: requestVersion error:", err);
       });
 
     return Promise.resolve(promise);

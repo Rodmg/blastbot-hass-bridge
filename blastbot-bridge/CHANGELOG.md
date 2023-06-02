@@ -1,5 +1,9 @@
 ## What’s changed
 
+## 1.0.4 - 2023-06-02
+
+- Hotfix
+
 ## 1.0.3 - 2023-06-02
 
 - Added better error handling, tweaking throttle timeout
