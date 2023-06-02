@@ -22,4 +22,4 @@ cp .env.example .env
 npm run watch
 ```
 
-Frontend code is currently mantained in a sepparate repository and integrated as static pre-compiled assets in `server/public` folder.
+Frontend code is currently lives in the `frontend` folder and is integrated as static pre-compiled assets in `server/public` folder by running the `build-frontend-sh` script.
