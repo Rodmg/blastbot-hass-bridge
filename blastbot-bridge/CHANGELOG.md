@@ -1,5 +1,9 @@
 ## What’s changed
 
+## 1.0.5 - 2023-06-06
+
+- Fix issue that prevented Blastbot Plugs from connecting
+
 ## 1.0.4 - 2023-06-02
 
 - Hotfix
