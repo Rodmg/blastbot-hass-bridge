@@ -51,7 +51,7 @@ class MqttClient extends EventEmitter {
       log.info("MqttClient Online");
     });
 
-    this.client.on("error", error => {
+    this.client.on("error", (error) => {
       log.error("MqttClient error:", error);
       throw new Error("MqttClient failed to connect, forcing restart...");
     });
@@ -105,7 +105,7 @@ class MqttClient extends EventEmitter {
     let isFirstConnection = false;
 
     Device.findOne({ where: { udid: udid } })
-      .then(device => {
+      .then((device) => {
         if (!device) return Promise.reject(`No device found with udid ${udid}`);
 
         // Validate first connection
@@ -113,18 +113,22 @@ class MqttClient extends EventEmitter {
           isFirstConnection = true;
           // Change generic name for new devices
           if (device.name === "Nuevo Blastbot" || device.name.length === 0) {
-            if (device.mac != null && device.mac.length === 12)
-              device.name = "Blastbot " + device.mac.substr(8);
+            if (device.mac != null && device.mac.length === 12) {
+              device.name = "Blastbot " + device.mac.substring(8);
+            }
             if (
               device.type === "blastbot-switch" ||
               device.type === "blastbot-switch-1" ||
               device.type === "blastbot-switch-3"
-            )
+            ) {
               device.name = `Blastbot Switch ${device.address}`;
-            if (device.type === "blastbot-plug" && device.mac.length === 12)
-              device.name = "Blastbot Plug " + device.mac.substr(8);
-            if (device.type === "blastbot-hub" && device.mac.length === 12)
-              device.name = "Blastbot Hub " + device.mac.substr(8);
+            }
+            if (device.type === "blastbot-plug" && device.mac?.length === 12) {
+              device.name = "Blastbot Plug " + device.mac.substring(8);
+            }
+            if (device.type === "blastbot-hub" && device.mac?.length === 12) {
+              device.name = "Blastbot Hub " + device.mac.substring(8);
+            }
           }
           device.loggedAt = new Date();
         }
@@ -143,7 +147,7 @@ class MqttClient extends EventEmitter {
         device.lastSeen = new Date();
         return device.save();
       })
-      .then(updated => {
+      .then((updated) => {
         if (!updated) return Promise.reject(`Device not updated ${udid}`);
         const device = updated;
 
@@ -151,11 +155,11 @@ class MqttClient extends EventEmitter {
         // (For all the necessary subscriptions to be made)
         setTimeout(() => {
           DeviceService.requestVersion(device.id)
-            .then(device => {
+            .then((device) => {
               this.emit("deviceConnected", device);
               if (isFirstConnection) this.emit("deviceFirstConnection", device);
             })
-            .catch(err => {
+            .catch((err) => {
               // TODO: Retry requesting version with extra timeout of 1s?
               // Sometimes a device reconnects and this fails, so the device connection is not saved in the log
               // Or just emit 'deviceConnected' anyway?
@@ -166,7 +170,7 @@ class MqttClient extends EventEmitter {
 
         return Promise.resolve(device);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) return log.debug(err);
       });
   }
@@ -175,7 +179,7 @@ class MqttClient extends EventEmitter {
     if (!udid) return;
 
     Device.findOne({ where: { udid: udid } })
-      .then(device => {
+      .then((device) => {
         if (!device) {
           log.debug(`No device found with udid ${udid}`);
           throw null;
@@ -187,7 +191,7 @@ class MqttClient extends EventEmitter {
 
         return device.save();
       })
-      .then(device => {
+      .then((device) => {
         if (!device) {
           log.debug(`Device not updated, udid: ${udid}`);
           throw null;
@@ -197,11 +201,11 @@ class MqttClient extends EventEmitter {
       })
       .then((devices: Array<any>) => {
         if (devices)
-          devices.forEach(device => {
+          devices.forEach((device) => {
             this.client.publish(`${device.udid}/disconnect`, Buffer.from([]));
           });
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) return log.error(err);
       });
   }

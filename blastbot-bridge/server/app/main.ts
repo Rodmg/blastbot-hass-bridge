@@ -19,6 +19,6 @@ setupDB()
     HassWsApi.init();
     setupServer();
   })
-  .catch(err => {
+  .catch((err) => {
     log.error(err);
   });

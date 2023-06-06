@@ -9,7 +9,7 @@ import path from "path";
 
 const log = console.log;
 
-const reverseSequelizeColType = function(col, prefix = "Sequelize.") {
+const reverseSequelizeColType = function (col, prefix = "Sequelize.") {
   const attrName =
     typeof col["type"].key === "undefined" ? col["type"] : col["type"].key;
   const attrObj = col.type;
@@ -125,7 +125,7 @@ const reverseSequelizeColType = function(col, prefix = "Sequelize.") {
   }
 };
 
-const reverseSequelizeDefValueType = function(
+const reverseSequelizeDefValueType = function (
   defaultValue,
   prefix = "Sequelize.",
 ) {
@@ -146,7 +146,7 @@ const reverseSequelizeDefValueType = function(
   return { value: defaultValue };
 };
 
-const parseIndex = function(idx) {
+const parseIndex = function (idx) {
   delete idx.parser;
   if (idx.type == "") delete idx.type;
 
@@ -169,7 +169,7 @@ const parseIndex = function(idx) {
   return idx;
 };
 
-export const reverseModels = function(sequelize, models) {
+export const reverseModels = function (sequelize, models) {
   const tables = {};
 
   delete models.default;
@@ -289,7 +289,7 @@ export const reverseModels = function(sequelize, models) {
   return tables;
 };
 
-export const parseDifference = function(previousState, currentState) {
+export const parseDifference = function (previousState, currentState) {
   //    log(JSON.stringify(currentState, null, 4));
   const actions = [];
   const difference = diff(previousState, currentState);
@@ -305,7 +305,7 @@ export const parseDifference = function(previousState, currentState) {
           if (df.path.length === 1) {
             const depends = [];
             const tableName = df.rhs.tableName;
-            _.each(df.rhs.schema, v => {
+            _.each(df.rhs.schema, (v) => {
               if (v.references) depends.push(v.references.model);
             });
 
@@ -538,7 +538,7 @@ export const parseDifference = function(previousState, currentState) {
 //   return array;
 // }
 
-export const sortActions = function(actions) {
+export const sortActions = function (actions) {
   const orderedActionTypes = [
     "removeIndex",
     "removeColumn",
@@ -594,8 +594,8 @@ export const sortActions = function(actions) {
     }
 };
 
-export const getMigration = function(actions) {
-  const propertyToStr = obj => {
+export const getMigration = function (actions) {
+  const propertyToStr = (obj) => {
     const vals = [];
     for (const k in obj) {
       if (k === "seqType") {
@@ -624,7 +624,7 @@ export const getMigration = function(actions) {
     return "{ " + vals.reverse().join(", ") + " }";
   };
 
-  const getAttributes = attrs => {
+  const getAttributes = (attrs) => {
     const ret = [];
     for (const attrName in attrs) {
       ret.push(`      "${attrName}": ${propertyToStr(attrs[attrName])}`);

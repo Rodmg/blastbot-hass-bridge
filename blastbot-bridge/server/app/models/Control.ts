@@ -76,7 +76,7 @@ export class Control extends BaseModel<Control> {
       let next = 1;
       const max = Math.max.apply(
         Math,
-        controls.map(function(o) {
+        controls.map(function (o) {
           if (o.order == null) return null;
           return o.order;
         }),

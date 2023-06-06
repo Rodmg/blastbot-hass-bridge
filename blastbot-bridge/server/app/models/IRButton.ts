@@ -27,14 +27,14 @@ export class IRButton extends BaseModel<IRButton> {
     allowNull: true,
     defaultValue: null,
   })
-  icon: string;
+  icon?: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
     defaultValue: null,
   })
-  color: string;
+  color?: string;
 
   @Column({
     type: DataType.STRING(2048),
@@ -79,7 +79,7 @@ export class IRButton extends BaseModel<IRButton> {
         let next = 0;
         const max = Math.max.apply(
           Math,
-          buttons.map(function(o) {
+          buttons.map(function (o) {
             if (o.order == null) return null;
             return o.order;
           }),

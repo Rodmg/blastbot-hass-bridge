@@ -30,7 +30,8 @@ function testSerialExecutions(
     const n = differencies.length;
     const mean = differencies.reduce((a, b) => a + b) / n;
     const stdDev = Math.sqrt(
-      differencies.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n,
+      differencies.map((x) => Math.pow(x - mean, 2)).reduce((a, b) => a + b) /
+        n,
     );
 
     console.log("Intended executions:", 100);
@@ -71,7 +72,8 @@ function testRandomExecutions(
     const n = differencies.length;
     const mean = differencies.reduce((a, b) => a + b) / n;
     const stdDev = Math.sqrt(
-      differencies.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n,
+      differencies.map((x) => Math.pow(x - mean, 2)).reduce((a, b) => a + b) /
+        n,
     );
 
     console.log("Intended executions:", 100);

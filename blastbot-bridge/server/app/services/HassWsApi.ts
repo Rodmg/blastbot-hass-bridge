@@ -54,14 +54,13 @@ class HassWsApi {
     password: string,
   ): Promise<void> {
     try {
-      const createdUser = await this.connection.sendMessagePromise<
-        HassUserResult
-      >({
-        type: "config/auth/create",
-        local_only: false,
-        name,
-        group_ids: ["system-users"],
-      });
+      const createdUser =
+        await this.connection.sendMessagePromise<HassUserResult>({
+          type: "config/auth/create",
+          local_only: false,
+          name,
+          group_ids: ["system-users"],
+        });
 
       await this.connection.sendMessagePromise<null>({
         type: "config/auth_provider/homeassistant/create",
@@ -76,7 +75,7 @@ class HassWsApi {
     try {
       const users = await this.listUsers();
       const user = users.find(
-        u => u.username?.toLowerCase() === username.toLowerCase(),
+        (u) => u.username?.toLowerCase() === username.toLowerCase(),
       );
       if (!user) {
         log.error(
@@ -98,7 +97,7 @@ class HassWsApi {
     try {
       const users = await this.listUsers();
       const user = users.find(
-        u => u.username?.toLowerCase() === username.toLowerCase(),
+        (u) => u.username?.toLowerCase() === username.toLowerCase(),
       );
       if (!user) {
         log.error(

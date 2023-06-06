@@ -4,7 +4,7 @@ import { Request, Response } from "express";
   Strips nested objects, substituting with their id (if any)
 */
 export function stripNestedObjects() {
-  return (req: Request, res: Response, next: Function) => {
+  return (req: Request, res: Response, next: () => void) => {
     if (!req.body) req.body = {};
     // Iterate through all keys in the body
     for (const key in req.body) {

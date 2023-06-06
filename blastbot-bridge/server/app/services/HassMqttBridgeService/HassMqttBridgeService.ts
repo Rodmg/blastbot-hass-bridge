@@ -63,7 +63,7 @@ class HassMqttBridgeService {
       const controls = await Control.findAll({
         where: { deviceId: device.id },
       });
-      controls.forEach(control => this.reportDiscovery(control, true));
+      controls.forEach((control) => this.reportDiscovery(control, true));
       this.reportDiscoveryDevice(device, true);
     } catch (err) {
       log.error("Error on deviceConnected in HassMqttBridgeService", err);
@@ -75,7 +75,7 @@ class HassMqttBridgeService {
       const controls = await Control.findAll({
         where: { deviceId: device.id },
       });
-      controls.forEach(control => this.reportOffline(control));
+      controls.forEach((control) => this.reportOffline(control));
       this.reportOfflineDevice(device);
     } catch (err) {
       log.error("Error on deviceConnected in HassMqttBridgeService", err);

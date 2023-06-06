@@ -24,7 +24,7 @@ class SwitchService extends EventEmitter {
 
     this.mqttReq = MqttClient.mqttReq;
 
-    MqttClient.on("status/rep", data => {
+    MqttClient.on("status/rep", (data) => {
       const udid: string = data.udid;
       let body: any;
       try {
@@ -63,13 +63,13 @@ class SwitchService extends EventEmitter {
           }
           return;
         })
-        .catch(err => {
+        .catch((err) => {
           log.error(err);
         });
     });
 
     // Send last state to newly connected device
-    MqttClient.on("deviceConnected", async device => {
+    MqttClient.on("deviceConnected", async (device) => {
       if (
         device.type !== "blastbot-plug" &&
         device.type !== "blastbot-switch" &&
@@ -132,7 +132,7 @@ class SwitchService extends EventEmitter {
     });
 
     // Create default control on first connection
-    MqttClient.on("deviceFirstConnection", device => {
+    MqttClient.on("deviceFirstConnection", (device) => {
       if (device.type === "blastbot-plug") {
         Control.create({
           type: "switch",
@@ -263,7 +263,7 @@ class SwitchService extends EventEmitter {
         results.sw.state = results.update.state;
         return results.sw.save();
       })
-      .then(result => {
+      .then((result) => {
         // Append switch name to results
         results.update.name = results.sw.name;
         // Emit control event
@@ -276,7 +276,7 @@ class SwitchService extends EventEmitter {
           this.emit("event", { id: results.sw.controlId, command: "toggle" });
         return result;
       })
-      .catch(err => {
+      .catch((err) => {
         throw err;
       });
     return Promise.resolve(promise);
@@ -325,7 +325,7 @@ class SwitchService extends EventEmitter {
         results.sw.state = results.update.state;
         return results.sw.save();
       })
-      .then(result => {
+      .then((result) => {
         // Append switch name to results
         results.update.name = results.sw.name;
         // Emit control event
@@ -338,7 +338,7 @@ class SwitchService extends EventEmitter {
           this.emit("event", { id: results.sw.controlId, command: "toggle" });
         return result;
       })
-      .catch(err => {
+      .catch((err) => {
         throw err;
       });
     return Promise.resolve(promise);

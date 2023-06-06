@@ -33,7 +33,7 @@ class ControlController extends Controller {
     const controls = req.body;
     if (!Array.isArray(controls))
       return Controller.badRequest(res, "Expecting array of controls.");
-    const promises: Array<Promise<any>> = controls.map(control => {
+    const promises: Array<Promise<any>> = controls.map((control) => {
       const promise = Control.update(
         { order: control.order },
         { where: { id: control.id } },
@@ -45,7 +45,7 @@ class ControlController extends Controller {
       .then(() => {
         Controller.ok(res);
       })
-      .catch(err => {
+      .catch((err) => {
         Controller.serverError(res, err);
       });
   }

@@ -32,7 +32,7 @@ export function setupDBAlterSchema(): Promise<any> {
 
 export function printDBCreateSQL(): Promise<any> {
   return db.sync({
-    logging: data => {
+    logging: (data) => {
       // Clean output
       data = data.replace("Executing (default): ", "");
       if (data.indexOf("SHOW INDEX FROM") != -1) return;

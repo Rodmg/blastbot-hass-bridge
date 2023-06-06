@@ -33,7 +33,7 @@ class SensorEntity {
   }
 
   startHandlingDeviceEvents() {
-    MqttClient.on("temp/rep", async data => {
+    MqttClient.on("temp/rep", async (data) => {
       const udid: string = data.udid;
       const temp: number = parseFloat(data.message.toString());
       if (temp == null || isNaN(temp)) return;

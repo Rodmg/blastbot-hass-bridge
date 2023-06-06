@@ -56,7 +56,7 @@ export class Controller {
   constructor() {
     this.router = Router();
     // Initialize req.session
-    this.router.use(function(req: Request, res: Response, next) {
+    this.router.use(function (req: Request, res: Response, next) {
       if (req.session == null) req.session = {};
       next();
     });
@@ -151,7 +151,7 @@ export class Controller {
       // Omit built-in runtime config (like query modifiers)
       where = _.omit(where, ["limit", "skip", "sort"]);
       // Omit any params w/ undefined values
-      where = _.omit(where, function(p) {
+      where = _.omit(where, function (p) {
         if (_.isUndefined(p)) {
           return true;
         }
@@ -243,7 +243,7 @@ export class Controller {
       return { model: this.getModelFromList(m), required: false };
     };
 
-    const parseIncludeRecursive = item => {
+    const parseIncludeRecursive = (item) => {
       if (_.isString(item)) {
         return tryWithFilter(item);
       } else {
@@ -251,13 +251,13 @@ export class Controller {
         const content = item[model];
 
         const result: any = tryWithFilter(model);
-        result.include = content.map(i => parseIncludeRecursive(i));
+        result.include = content.map((i) => parseIncludeRecursive(i));
 
         return result;
       }
     };
 
-    return include.map(item => parseIncludeRecursive(item));
+    return include.map((item) => parseIncludeRecursive(item));
   }
 
   public static ok(res: Response, data?: any) {
@@ -322,11 +322,11 @@ export class Controller {
       return Controller.serverError(res, new Error("Invalid data in body"));
     this.model
       .create(values)
-      .then(result => {
+      .then((result) => {
         res.status(201).json(result);
         return null;
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) Controller.serverError(res, err);
       });
   }
@@ -337,18 +337,18 @@ export class Controller {
     where.id = req.params.id;
     this.model
       .findOne({ where: where })
-      .then(result => {
+      .then((result) => {
         if (!result) {
           res.status(404).end();
           throw null;
         }
         return result.destroy();
       })
-      .then(result => {
+      .then((result) => {
         if (result != null) res.status(204).end();
         return null;
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) Controller.serverError(res, err);
       });
   }
@@ -362,12 +362,12 @@ export class Controller {
         order: this.parseOrder(req),
         include: this.parseInclude(req),
       })
-      .then(result => {
+      .then((result) => {
         res.set("Content-Count", String(result.count));
         res.status(200).json(result.rows);
         return null;
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) Controller.serverError(res, err);
       });
   }
@@ -378,12 +378,12 @@ export class Controller {
     where.id = req.params.id;
     this.model
       .findOne({ where: where, include: this.parseInclude(req) })
-      .then(result => {
+      .then((result) => {
         if (!result) res.status(404).end();
         else res.status(200).json(result);
         return null;
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) Controller.serverError(res, err);
       });
   }
@@ -402,19 +402,19 @@ export class Controller {
     // Update
     this.model
       .findOne({ where: where, include: this.parseInclude(req) })
-      .then(result => {
+      .then((result) => {
         if (!result) {
           res.status(404).end();
           throw null;
         }
         return result.update(values);
       })
-      .then(result => {
+      .then((result) => {
         if (!result) res.status(404).end();
         else res.status(200).json(result);
         return null;
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) Controller.serverError(res, err);
       });
   }

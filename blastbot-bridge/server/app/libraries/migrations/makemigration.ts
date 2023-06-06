@@ -58,7 +58,7 @@ async function main() {
   }
 
   // log migration actions
-  _.each(migration.consoleOut, v => {
+  _.each(migration.consoleOut, (v) => {
     console.log("[Actions] " + v);
   });
 

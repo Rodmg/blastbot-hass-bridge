@@ -32,32 +32,32 @@ export class ACSettings extends BaseModel<ACSettings> {
     type: DataType.STRING,
     allowNull: true,
   })
-  timer: string;
+  timer?: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  mode: string;
+  mode?: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
     defaultValue: "off",
   })
-  state: string;
+  state?: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  pastState: string;
+  pastState?: string;
 
   @Column({
     type: DataType.DATE,
     allowNull: true,
   })
-  sleepTime: Date;
+  sleepTime?: Date;
 
   @Column({
     type: DataType.TEXT,

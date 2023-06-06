@@ -74,7 +74,7 @@ class ACSettingsService extends EventEmitter {
       where: { id: controlId },
       include: [{ model: ACSettings, as: "acSettings" }],
     })
-      .then(control => {
+      .then((control) => {
         if (!control) throw new Error("No Control found");
         if (!control.acSettings) throw new Error("No AC Settings found");
         let acSettings = control.acSettings;
@@ -176,13 +176,13 @@ class ACSettingsService extends EventEmitter {
         acSettingsupdate = _.merge(acSettingsupdate, results.controlUpdate);
         return acSettingsupdate.save();
       })
-      .then(result => {
+      .then((result) => {
         // Emit control event
         this.emit("event", { command: options.command, id: controlId });
 
         return result;
       })
-      .catch(err => {
+      .catch((err) => {
         throw err;
       });
     return Promise.resolve(promise);
@@ -301,13 +301,13 @@ class ACSettingsService extends EventEmitter {
         acSettings = _.merge(acSettings, results.controlUpdate);
         return acSettings.save();
       })
-      .then(result => {
+      .then((result) => {
         // Emit control event
         this.emit("event", { command: options.command, id: controlId });
 
         return result;
       })
-      .catch(err => {
+      .catch((err) => {
         log.error("ACSettingsService: emitControl error:", err);
         throw err;
       });

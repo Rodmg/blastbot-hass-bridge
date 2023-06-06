@@ -25,12 +25,12 @@ class IRButtonService extends EventEmitter {
         button.code,
         button.type,
       )
-        .then(result => {
+        .then((result) => {
           // Emit control event
           this.emit("event", { id: button.control.id, buttonId: button.id });
           return result;
         })
-        .catch(err => {
+        .catch((err) => {
           log.error("IRButtonService emitButton error:", err);
           throw err;
         });

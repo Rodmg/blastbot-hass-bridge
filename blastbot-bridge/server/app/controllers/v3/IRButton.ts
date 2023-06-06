@@ -35,10 +35,10 @@ class IRButtonController extends Controller {
     const id: number = parseInt(req.params.id);
     if (id == null) return Controller.badRequest(res, "No id in request");
     IRButtonService.emitButton(id)
-      .then(result => {
+      .then((result) => {
         Controller.ok(res, result);
       })
-      .catch(err => {
+      .catch((err) => {
         Controller.timeout(res, err);
       });
   }

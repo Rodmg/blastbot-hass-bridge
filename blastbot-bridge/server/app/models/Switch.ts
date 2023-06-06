@@ -26,14 +26,14 @@ export class Switch extends BaseModel<Switch> {
     allowNull: true,
     defaultValue: null,
   })
-  icon: string;
+  icon?: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
     defaultValue: null,
   })
-  color: string;
+  color?: string;
 
   @Column({
     type: DataType.BOOLEAN,

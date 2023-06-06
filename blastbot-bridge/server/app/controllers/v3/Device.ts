@@ -58,10 +58,10 @@ class DeviceController extends Controller {
     }
 
     DeviceService.action(device, action, data)
-      .then(result => {
+      .then((result) => {
         Controller.ok(res, result);
       })
-      .catch(err => {
+      .catch((err) => {
         log.debug(err);
         Controller.timeout(res, err);
       });
@@ -84,10 +84,10 @@ class DeviceController extends Controller {
     }
 
     DeviceService.getInformation(device)
-      .then(result => {
+      .then((result) => {
         Controller.ok(res, result);
       })
-      .catch(err => {
+      .catch((err) => {
         log.debug(err);
         Controller.timeout(res, err);
       });
@@ -101,7 +101,7 @@ class DeviceController extends Controller {
         let tout = null;
         let interval = null;
         const interFunction = (id: number) => {
-          Device.findOne({ where: { id: id } }).then(device => {
+          Device.findOne({ where: { id: id } }).then((device) => {
             if (device == null) return;
             if (device.connected) {
               if (interval != null) clearInterval(interval);
@@ -117,7 +117,7 @@ class DeviceController extends Controller {
           return Controller.timeout(res, "TIMEOUT");
         }, 20000);
       })
-      .catch(err => {
+      .catch((err) => {
         log.debug(err);
         Controller.timeout(res, err);
       });
@@ -165,7 +165,7 @@ class DeviceController extends Controller {
         res.status(200).json(foundDevice);
         return null;
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) Controller.serverError(res, err);
       });
   }
@@ -177,7 +177,7 @@ class DeviceController extends Controller {
       .then((code: string) => {
         Controller.ok(res, code);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err) Controller.serverError(res, err);
       });
   }

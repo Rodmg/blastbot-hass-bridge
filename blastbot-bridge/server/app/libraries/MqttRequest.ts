@@ -50,7 +50,7 @@ export class MqttRequester extends EventEmitter {
 
     return new Promise((resolve, reject) => {
       let tout = null;
-      const confirmCb = data => {
+      const confirmCb = (data) => {
         if (tout) {
           clearTimeout(tout);
           this.removeListener(resTopic, confirmCb);

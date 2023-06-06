@@ -16,7 +16,7 @@ class SensorService extends EventEmitter {
 
   init() {
     // Manage ook events
-    MqttClient.on("ook/rep", data => {
+    MqttClient.on("ook/rep", (data) => {
       const udid: string = data.udid;
       const code: string = data.message.toString("utf8");
       /*
@@ -83,7 +83,7 @@ class SensorService extends EventEmitter {
               break;
           }
         })
-        .catch(err => {
+        .catch((err) => {
           if (err) return log.error(err);
         });
     });
@@ -142,7 +142,7 @@ class SensorService extends EventEmitter {
         if (!results.length) return;
         const now = new Date();
 
-        results.forEach(device => {
+        results.forEach((device) => {
           let newConfig;
           try {
             newConfig = JSON.parse(device.config);
@@ -171,7 +171,7 @@ class SensorService extends EventEmitter {
           }
         });
       })
-      .catch(err => {
+      .catch((err) => {
         log.error(err);
       });
   }

@@ -58,7 +58,7 @@ if (config.log.logToFiles) {
 }
 
 export const requestLogStream: any = {
-  write: function(message) {
+  write: function (message) {
     requestLog.info(message.trim());
   },
 };

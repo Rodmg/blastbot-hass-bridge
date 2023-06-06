@@ -84,15 +84,15 @@ class ACSettingsController extends Controller {
         if (!device) throw new Error(`No device with id ${where.id} found.`);
 
         ACSettingsService.emitTest(device.id, dbControlId, { command: command })
-          .then(result => {
+          .then((result) => {
             Controller.ok(res, result);
           })
-          .catch(err => {
+          .catch((err) => {
             log.debug(err);
             Controller.timeout(res, err);
           });
       })
-      .catch(err => {
+      .catch((err) => {
         log.debug(err);
         Controller.notFound(res, err);
       });

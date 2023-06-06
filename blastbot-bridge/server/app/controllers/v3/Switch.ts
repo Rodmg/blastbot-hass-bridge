@@ -31,10 +31,10 @@ class SwitchController extends Controller {
     const options: any = req.body;
     if (id == null) return Controller.badRequest(res, "No id in request");
     SwitchService.updateSwitch(id, options)
-      .then(result => {
+      .then((result) => {
         Controller.ok(res, result);
       })
-      .catch(err => {
+      .catch((err) => {
         log.debug(err);
         Controller.timeout(res, err);
       });
@@ -46,10 +46,10 @@ class SwitchController extends Controller {
     const options: any = req.body;
     if (id == null) return Controller.badRequest(res, "No id in request");
     SwitchService.execute(id, options)
-      .then(result => {
+      .then((result) => {
         Controller.ok(res, result);
       })
-      .catch(err => {
+      .catch((err) => {
         log.debug(err);
         Controller.timeout(res, err);
       });

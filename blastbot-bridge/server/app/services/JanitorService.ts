@@ -24,7 +24,7 @@ class JanitorService {
       // Cleanup never connected devices after 24h
       Device.destroy({
         where: { loggedAt: null, createdAt: { [Op.lt]: hours1ago } },
-      }).catch(err => {
+      }).catch((err) => {
         if (err) return log.error("Jaintor error:", err);
       });
     });

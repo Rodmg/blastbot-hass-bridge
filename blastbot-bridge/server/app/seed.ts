@@ -15,7 +15,7 @@ setupDB()
     log.info("SEED DONE");
     process.exit();
   })
-  .catch(err => {
+  .catch((err) => {
     log.error("ERROR EXECUTING SEED:", err);
     process.exit();
   });

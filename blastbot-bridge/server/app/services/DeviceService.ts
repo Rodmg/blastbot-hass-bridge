@@ -8,7 +8,6 @@ import { MqttRequester } from "@/libraries/MqttRequest";
 import MqttClient from "./MqttClient";
 import KissNetService from "./KissNetService";
 import SensorService from "./SensorService";
-import { log } from "@/libraries/Log";
 
 class DeviceService {
   mqttReq: MqttRequester;
@@ -21,13 +20,13 @@ class DeviceService {
     const results: any = {};
 
     const promise = Device.findByPk(id)
-      .then(device => {
+      .then((device) => {
         if (!device) throw new Error("No device found");
         results.device = device;
         const udid = device.udid;
         return this.mqttReq.do(`${udid}/info`);
       })
-      .then(data => {
+      .then((data) => {
         const parsed: any = JSON.parse(data);
         const device = results.device;
         if (parsed.version != null) {
@@ -54,7 +53,7 @@ class DeviceService {
 
         return device.save();
       })
-      .then(device => {
+      .then((device) => {
         results.device = device;
         if (device != null && device.type === "blastbot-hub") {
           return KissNetService.attendHubConfig(device);
@@ -71,7 +70,7 @@ class DeviceService {
   emit(id: number, code: string, type = "ir"): Promise<string> {
     if (code == null) return Promise.reject(new Error("Invalid code"));
 
-    const promise = Device.findByPk(id).then(device => {
+    const promise = Device.findByPk(id).then((device) => {
       if (!device) throw new Error("No device found");
       const udid = device.udid;
       if (type === "ir") return this.mqttReq.do(`${udid}/emit`, code);
@@ -83,7 +82,7 @@ class DeviceService {
   }
 
   learn(id: number): Promise<string> {
-    const promise = Device.findByPk(id).then(device => {
+    const promise = Device.findByPk(id).then((device) => {
       if (!device) throw new Error("No device found");
       const udid = device.udid;
       return this.mqttReq.do(`${udid}/learn`);
@@ -93,7 +92,7 @@ class DeviceService {
   }
 
   learnRf(id: number): Promise<string> {
-    const promise = Device.findByPk(id).then(device => {
+    const promise = Device.findByPk(id).then((device) => {
       if (!device) throw new Error("No device found");
       if (!device.hasRf()) throw new Error("Device doesn't have RF");
 
@@ -122,12 +121,12 @@ class DeviceService {
 
   temperature(id: number): Promise<number> {
     const promise = Device.findByPk(id)
-      .then(device => {
+      .then((device) => {
         if (!device) throw new Error("No device found");
         const udid = device.udid;
         return this.mqttReq.do(`${udid}/temp`);
       })
-      .then(data => {
+      .then((data) => {
         return parseFloat(data);
       });
 
@@ -138,7 +137,7 @@ class DeviceService {
     if (device == null) Promise.reject(new Error("No device found"));
 
     const udid = device.udid;
-    const promise = this.mqttReq.do(`${udid}/info`).then(data => {
+    const promise = this.mqttReq.do(`${udid}/info`).then((data) => {
       if (!data) throw new Error("No info found");
 
       const parsed: any = JSON.parse(data);

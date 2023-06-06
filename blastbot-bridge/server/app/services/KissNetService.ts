@@ -56,7 +56,7 @@ class KissNetService extends EventEmitter {
           }
         }
       })
-      .catch(err => {
+      .catch((err) => {
         log.error("Kissnet error maintainin", err);
       });
   }
@@ -99,7 +99,7 @@ class KissNetService extends EventEmitter {
         // republish as device
         this.client.publish(`${device.udid}/${action}/${type}`, message);
       })
-      .catch(err => {
+      .catch((err) => {
         log.error("Kissnet error:", err);
       });
   }
@@ -154,7 +154,7 @@ class KissNetService extends EventEmitter {
           message,
         );
       })
-      .catch(err => {
+      .catch((err) => {
         log.error("Kissnet error req", err);
       });
   }
@@ -186,7 +186,7 @@ class KissNetService extends EventEmitter {
 
     if (validConfig) return this.sendHubConfig(device);
     else
-      return this.generateHubConfig(device).then(device => {
+      return this.generateHubConfig(device).then((device) => {
         return this.sendHubConfig(device);
       });
   }

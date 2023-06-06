@@ -5,7 +5,7 @@ import { config } from "@/config";
 
 const importedCtrls3 = require("require-dir-all")("controllers/v3");
 const controllers3 = Object.keys(importedCtrls3).map(
-  k => importedCtrls3[k].default,
+  (k) => importedCtrls3[k].default,
 );
 
 function sendServersJs(req: Request, res: Response) {

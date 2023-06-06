@@ -81,13 +81,13 @@ export class Device extends BaseModel<Device> {
     type: DataType.STRING,
     allowNull: true,
   })
-  mac: string;
+  mac?: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  version: string;
+  version?: string;
 
   @Column({
     type: DataType.ENUM("connected", "disconnected", "lost"),
@@ -100,31 +100,31 @@ export class Device extends BaseModel<Device> {
     type: DataType.DATE,
     allowNull: true,
   })
-  lastSeen: Date;
+  lastSeen?: Date;
 
   @Column({
     type: DataType.DATE,
     allowNull: true,
   })
-  loggedAt: Date;
+  loggedAt?: Date;
 
   @Column({
     type: DataType.DATE,
     allowNull: true,
   })
-  expiredAt: Date;
+  expiredAt?: Date;
 
   @Column({
     type: DataType.INTEGER,
     allowNull: true,
   })
-  duration: number;
+  duration?: number;
 
   @Column({
     type: DataType.INTEGER,
     allowNull: true,
   })
-  address: number;
+  address?: number;
 
   // For KISSNet config and others
   @Column({
@@ -132,13 +132,13 @@ export class Device extends BaseModel<Device> {
     allowNull: true,
     defaultValue: null,
   })
-  config: string;
+  config?: string;
 
   @Column({
     type: DataType.TEXT,
     allowNull: true,
   })
-  information: string;
+  information?: string;
 
   @ForeignKey(() => Device)
   @Column({ type: DataType.INTEGER })
@@ -231,8 +231,8 @@ export class Device extends BaseModel<Device> {
           ],
         },
         order: [["address", "ASC"]],
-      }).then(found => {
-        const foundAddrs = found.map(item => {
+      }).then((found) => {
+        const foundAddrs = found.map((item) => {
           return parseInt(item.address as any);
         });
         let nextIndex = null;
