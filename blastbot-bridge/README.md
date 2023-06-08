@@ -33,11 +33,12 @@ Follow these steps to get the MQTT Broker add-on installed on your system:
 2. Add this Add-on repository: https://github.com/Rodmg/blastbot-hass-bridge.git
 3. Find the "Blastbot Bridge" add-on and click it.
 4. Click on the "INSTALL" button.
-5. After it finishes installing, go to the "Configuration" tab.
-6. Under "External MQTT Broker Address" enter the address that a device would use to connect to your Home Assistant in a local network, it is usually the ip address of your Home Assistant device. Enter the plain address or domain name.
-7. Under "Blastbot Cloud API User" and "Blastbot Cloud API Password", enter your Blastbot Cloud credentials. You can create a new blank account in https://cloud.blastbot.io if needed.
-8. Click the "SAVE" button.
-9. Go to the main info tab and enable "Watchdog" and "Show in sidebar".
-10. Start the add-on.
+5. Have some patience and wait, it may take up to 20 minutes to install.
+6. After it finishes installing, go to the "Configuration" tab.
+7. Under "External MQTT Broker Address" enter the address that a device would use to connect to your Home Assistant in a local network, it is usually the ip address of your Home Assistant device. Enter the plain address or domain name.
+8. Under "Blastbot Cloud API User" and "Blastbot Cloud API Password", enter your Blastbot Cloud credentials. You can create a new blank account in https://cloud.blastbot.io if needed.
+9. Click the "SAVE" button.
+10. Go to the main info tab and enable "Watchdog" and "Show in sidebar".
+11. Start the add-on.
 
 Now you can open the Blastbot Config interface from the sidebar and start configuring your devices. The devicess will appear automatically as devices and entities in Home Assistant.
