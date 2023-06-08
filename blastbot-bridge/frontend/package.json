@@ -2,6 +2,7 @@
   "name": "blastbot-bridge-frontend",
   "author": "Rodrigo Méndez <rmendez@makerlab.mx>",
   "homepage": "http://blastbot.io/",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",

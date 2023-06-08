@@ -1,8 +1,8 @@
 {
   "name": "blastbot-bridge",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "flugzeugVersion": "2.1.0-partial",
-  "description": "Blastbot Cloud Backend",
+  "description": "Blastbot Bridge Backend",
   "private": true,
   "main": "dist/main.js",
   "scripts": {
