@@ -22,7 +22,7 @@
     "dist-migrate": "node dist/libraries/migrations/migrate.js"
   },
   "author": "Rodrigo Méndez <rmendez@makerlab.mx>",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/bcrypt": "3.0.0",
     "@types/body-parser": "1.19.0",
